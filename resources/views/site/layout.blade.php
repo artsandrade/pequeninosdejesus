@@ -68,8 +68,8 @@
 					</div>
 					<div class="col-sm-4 col-md-6">
 						<div class="sosmed-icon pull-right d-inline-flex">
-							<a href="#" class="fb"><i class="fa fa-facebook"></i></a>
-							<a href="#" class="ig"><i class="fa fa-instagram"></i></a>
+							<a href="https://www.facebook.com/InstitutoPequeninosdeJesus/" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
+							<a href="https://www.instagram.com/pequeninos_dejesus/" target="_blank" class="ig"><i class="fa fa-instagram"></i></a>
 						</div>
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 			<div class="container">
 				<nav id="navbar-example" class="navbar navbar-expand-lg">
 					<a class="navbar-brand" href="/">
-						<img src="/template_site/images/logomarca.png" alt="Logomarca Pequeninos de Jesus">
+						<img src="/template_site/images/logo-pequeninos.png" alt="Logomarca Pequeninos de Jesus">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
@@ -96,9 +96,9 @@
 									INSTITUCIONAL
 								</a>
 								<div class="dropdown-menu">
+									<a class="dropdown-item" href="/colaboradores">COLABORADORES</a>
 									<a class="dropdown-item" href="/galeria">GALERIA</a>
 									<a class="dropdown-item" href="/prestacao-de-contas">PRESTAÇÃO DE CONTAS</a>
-									<a class="dropdown-item" href="/professores">PROFESSORES</a>
 									<a class="dropdown-item" href="/sobre-nos">SOBRE NÓS</a>
 								</div>
 							</li>
@@ -120,14 +120,14 @@
 	@yield('conteudo')
 
 	<!-- FOOTER SECTION -->
-	<div class="footer" data-background="/template_site/images/dummy-img-1920x900-3.jpg">
+	<div class="footer" style="background-color: #000;">
 		<div class="content-wrap">
 			<div class="container">
 
 				<div class="row">
 					<div class="col-sm-12 col-md-6 col-lg-4">
 						<div class="footer-item">
-							<img src="/template_site/images/logo.png" alt="logo bottom" class="logo-bottom">
+							<img src="/template_site/images/logo-pequeninos.png" alt="logo bottom" class="logo-bottom">
 							<div class="spacer-30"></div>
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
 							<a href="/sobre-nos"><i class="fa fa-angle-right"></i> Leia mais</a>
@@ -176,8 +176,8 @@
 							</div>
 							<p>Siga-nos nas redes sociais para acompanhar todas as informações.</p>
 							<div class="sosmed-icon d-inline-flex">
-								<a href="#" class="fb"><i class="fa fa-facebook"></i></a>
-								<a href="#" class="ig"><i class="fa fa-instagram"></i></a>
+								<a href="https://www.facebook.com/InstitutoPequeninosdeJesus/" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
+								<a href="https://www.instagram.com/pequeninos_dejesus/" target="_blank" class="ig"><i class="fa fa-instagram"></i></a>
 							</div>
 						</div>
 					</div>
@@ -206,10 +206,6 @@
 	<!-- SENDMAIL -->
 	<script src="/template_site/js/vendor/validator.min.js"></script>
 	<script src="/template_site/js/vendor/form-scripts.js"></script>
-
-	<!-- GOOGLEMAP -->
-	<script src="/template_site/js/googlemap-setting.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU&callback=initMap"> </script>
 
 	<script src="/template_site/js/script.js"></script>
 

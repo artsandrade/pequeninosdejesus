@@ -27,8 +27,8 @@ Route::get('/galeria', function () {
 Route::get('/prestacao-de-contas', function () {
     return view('site/prestacao-de-contas');
 });
-Route::get('/professores', function () {
-    return view('site/professores');
+Route::get('/colaboradores', function () {
+    return view('site/colaboradores');
 });
 Route::get('/sobre-nos', function () {
     return view('site/sobre-nos');

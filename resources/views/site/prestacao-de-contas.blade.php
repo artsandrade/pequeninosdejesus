@@ -3,7 +3,7 @@
 @section('conteudo')
 
 <!-- BANNER -->
-<div class="section banner-page" data-background="/template_site/images/dummy-img-1920x300.jpg">
+<div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<div class="title-page">Prestação de contas</div>
@@ -39,159 +39,9 @@
 							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
 							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
 							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
-						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
-							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
-						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
-							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
-						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
-							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
-						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
-							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
-						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
-							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
-						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
-							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
-						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
-							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
-						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
-							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">Baixar arquivo</div>
+								<div class="age col">
+								<a href="#">Baixar arquivo</a>
+								</div>
 							</div>
 						</div>
 					</div>

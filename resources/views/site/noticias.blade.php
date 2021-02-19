@@ -3,7 +3,7 @@
 @section('conteudo')
 
 <!-- BANNER -->
-<div class="section banner-page" data-background="/template_site/images/dummy-img-1920x300.jpg">
+<div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<div class="title-page">Notícias</div>
@@ -30,98 +30,14 @@
 				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
 					<div class="rs-news-1">
 						<div class="media-box">
-							<a href="page-news-single.html"><img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid"></a>
+							<a href="/noticias/post"><img src="/template_site/images/quadra/img2.png" alt="" class="img-fluid"></a>
 						</div>
 						<div class="body-box">
 							<div class="title">
-								<a href="page-news-single.html">English Day on Carfr
-									ee day</a>
+								<a href="/noticias/post">Inauguração da quadra</a>
 							</div>
-							<div class="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 2 -->
-				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-					<div class="rs-news-1">
-						<div class="media-box">
-							<a href="page-news-single.html"><img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid"></a>
-						</div>
-						<div class="body-box">
-							<div class="title">
-								<a href="page-news-single.html">Play & Study with Mr
-									s. Smith</a>
-							</div>
-							<div class="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 3 -->
-				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-					<div class="rs-news-1">
-						<div class="media-box">
-							<a href="page-news-single.html"><img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid"></a>
-						</div>
-						<div class="body-box">
-							<div class="title">
-								<a href="page-news-single.html">Drawing at City Park</a>
-							</div>
-							<div class="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 4 -->
-				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-					<div class="rs-news-1">
-						<div class="media-box">
-							<a href="page-news-single.html"><img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid"></a>
-						</div>
-						<div class="body-box">
-							<div class="title">
-								<a href="page-news-single.html">English Day on Carfr
-									ee day</a>
-							</div>
-							<div class="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 5 -->
-				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-					<div class="rs-news-1">
-						<div class="media-box">
-							<a href="page-news-single.html"><img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid"></a>
-						</div>
-						<div class="body-box">
-							<div class="title">
-								<a href="page-news-single.html">Play & Study with Mr
-									s. Smith</a>
-							</div>
-							<div class="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 6 -->
-				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-					<div class="rs-news-1">
-						<div class="media-box">
-							<a href="page-news-single.html"><img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid"></a>
-						</div>
-						<div class="body-box">
-							<div class="title">
-								<a href="page-news-single.html">Drawing at City Park</a>
-							</div>
-							<div class="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
+							<div class="meta-date">01 de janeiro de 2021</div>
+							<p>Na manhã do dia 01/02/2021, juntamente com as autoridades locais, foi inaugurada a quadra poliesportiva do instituto...</p>
 						</div>
 					</div>
 				</div>

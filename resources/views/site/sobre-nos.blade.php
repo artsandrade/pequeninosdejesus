@@ -3,7 +3,7 @@
 @section('conteudo')
 
 <!-- BANNER -->
-<div class="section banner-page" data-background="/template_site/images/dummy-img-1920x300.jpg">
+<div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<div class="title-page">Sobre nós</div>

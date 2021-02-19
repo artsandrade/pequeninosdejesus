@@ -2377,9 +2377,9 @@ TABS
   font-weight: 700;
   padding: 0.5rem 3rem; }
   .rs-tabs .nav-tabs .nav-link.active {
-    background-color: #FD4D40;
+    background-color: #3f4095;
     color: #ffffff;
-    border-color: #FD4D40; }
+    border-color: #3f4095; }
 .rs-tabs .tab-content {
   padding: 30px;
   background-color: #fafafa;
@@ -2515,7 +2515,7 @@ Back To Top Section
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: #fd4d40 url("../images/cd-top-arrow.svg") no-repeat center 50%;
+  background: #3f4095 url("../images/cd-top-arrow.svg") no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -2605,7 +2605,7 @@ Back To Top Section
  */
 /* 4.1 - NAVBAR */
 .topbar {
-  background-color: #F1C22E;
+  background-color: #3f4095;
   color: #ffffff;
   font-family: "Open Sans", sans-serif; }
   .topbar .row {
@@ -2717,7 +2717,7 @@ Back To Top Section
     /* END STIKY */ }
     .header-1 .navbar-main .active > .nav-link {
       color: #ffffff;
-      background-color: #FD4D40; }
+      background-color: #3f4095; }
     .header-1 .navbar-main .nav-link {
       color: #222222;
       padding: .5rem 1.5rem;
@@ -2729,7 +2729,7 @@ Back To Top Section
       -ms-border-radius: 30px;
       border-radius: 30px; }
       .header-1 .navbar-main .nav-link:hover {
-        color: #FD4D40;
+        color: #3f4095;
         background-color: transparent; }
     .header-1 .navbar-main.stiky {
       height: auto;
@@ -2765,7 +2765,7 @@ Back To Top Section
       .header-1 .navbar-main.stiky .nav-link {
         /*color: $navbar-stiky-color;*/ }
         .header-1 .navbar-main.stiky .nav-link:hover, .header-1 .navbar-main.stiky .nav-link:focus {
-          color: #FD4D40; }
+          color: #3f4095; }
 
 @media (max-width: 767px) {
   .header-1 .navbar-main {
@@ -2890,7 +2890,7 @@ Back To Top Section
     line-height: 1; }
   .wrap-caption .caption-supheading {
     font-family: "Pacifico", cursive;
-    color: #ff7300;
+    color: #3f4095;
     margin-bottom: 0; }
   .wrap-caption .bg {
     background-color: rgba(153, 153, 153, 0.5);
@@ -3505,8 +3505,7 @@ Back To Top Section
   .footer .fcopy {
     padding: 15px 0;
     font-size: 14px;
-    border-top: 1px solid #FD4D40;
-    background-color: #F1C22E; }
+    background-color: #3f4095; }
 
 .list-info {
   margin: 0;

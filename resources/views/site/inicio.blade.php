@@ -6,35 +6,26 @@
 <div id="oc-fullslider" class="banner">
 	<div class="owl-carousel owl-theme full-screen">
 		<div class="item">
-			<img src="template_site/images/dummy-img-1920x900.jpg" alt="Slider">
+			<img src="template_site/images/slides/matriculas.png" alt="Slider">
 			<div class="overlay-bg"></div>
 			<div class="container d-flex align-items-center">
 				<div class="wrap-caption">
-					<h5 class="caption-supheading">Welcome to Kids</h5>
-					<h1 class="caption-heading">Best Kindergarten at California</h1>
-					<a href="#" class="btn btn-secondary">LEARN MORE</a>
+					<h3 class="caption-supheading">Matrículas abertas</h3>
+					<h1 class="caption-heading">Garanta a vaga de seu filho em nosso instituto!</h1>
+					<br>
+					<a href="#" class="btn btn-secondary">Fazer matrícula</a>
 				</div>
 			</div>
 		</div>
 		<div class="item">
-			<img src="template_site/images/dummy-img-1920x900-2.jpg" alt="Slider">
+			<img src="template_site/images/slides/noticias.png" alt="Slider">
 			<div class="overlay-bg"></div>
 			<div class="container d-flex align-items-center">
 				<div class="wrap-caption">
-					<h5 class="caption-supheading">Sejam bem-vindos</h5>
-					<h1 class="caption-heading">Best Kindergarten at California</h1>
-					<a href="#" class="btn btn-secondary">LEARN MORE</a>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<img src="template_site/images/dummy-img-1920x900-3.jpg" alt="Slider">
-			<div class="overlay-bg"></div>
-			<div class="container d-flex align-items-center">
-				<div class="wrap-caption">
-					<h5 class="caption-supheading">Welcome to Kids</h5>
-					<h1 class="caption-heading">Best Kindergarten at California</h1>
-					<a href="#" class="btn btn-secondary">LEARN MORE</a>
+					<h3 class="caption-supheading">Mantenha-se atualizado</h3>
+					<h1 class="caption-heading">Confira todas as notícias da Pequeninos de Jesus</h1>
+					<br>
+					<a href="/noticias" class="btn btn-secondary">Leia mais</a>
 				</div>
 			</div>
 		</div>
@@ -52,12 +43,12 @@
 						<div class="col-sm-12 col-md-4 col-lg-4">
 							<!-- BOX 1 -->
 							<div class="rs-feature-box-1 bg-primary">
-								<i class="fa fa-clock-o"></i>
+								<i class="fa fa-users"></i>
 								<div class="body">
-									<h4>Conheça os professores</h4>
-									<p>Sedut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+									<h4>Conheça os colaboradores</h4>
+									<p>Confira nosso quadro de colaboradores que contribuem para a excelência do instituto.</p>
 									<div class="spacer-10"></div>
-									<a href="#" class="btn">LEARN MORE</a>
+									<a href="/colaboradores" class="btn">CONHECER</a>
 								</div>
 							</div>
 						</div>
@@ -67,21 +58,21 @@
 								<i class="fa fa-home"></i>
 								<div class="body">
 									<h4>Visite virtualmente a instituição</h4>
-									<p>Sedut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium</p>
+									<p>Conheça nossa história e confira as fotos da Pequeninos de Jesus.</p>
 									<div class="spacer-10"></div>
-									<a href="#" class="btn">LEARN MORE</a>
+									<a href="/sobre-nos" class="btn">LER MAIS</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-4 col-lg-4">
 							<!-- BOX 3 -->
 							<div class="rs-feature-box-1 bg-tertiary">
-								<i class="fa fa-trophy"></i>
+								<i class="fa fa-photo"></i>
 								<div class="body">
 									<h4>Veja nossa galeria de fotos</h4>
-									<p>Sedut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium</p>
+									<p>Todas as fotos das nossas ações e eventos em um único local.</p>
 									<div class="spacer-10"></div>
-									<a href="#" class="btn">LEARN MORE</a>
+									<a href="/galeria" class="btn">VER GALERIA</a>
 								</div>
 							</div>
 						</div>
@@ -98,7 +89,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-6">
-					<img src="template_site/images/dummy-img-900x600.jpg" alt="" class="img-fluid img-border">
+					<img src="template_site/images/fachada.png" alt="" class="img-fluid img-border">
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-6">
 					<h2 class="section-heading">
@@ -107,7 +98,7 @@
 					<p>Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent. Sed ut perspiciatis unde omnis iste natus error sitdolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod. Praesent interdum est gravida vehicula est node maecenas loareet morbi a dosis luctus novum est praesent. Magna est consectetur interdum modest dictum.</p>
 					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent. </p>
 					<div class="spacer-10"></div>
-					<a href="#" class="btn btn-secondary">LEIA MAIS SOBRE NÓS</a>
+					<a href="/sobre-nos" class="btn btn-secondary">LEIA MAIS SOBRE NÓS</a>
 					<div class="spacer-30"></div>
 				</div>
 			</div>
@@ -116,7 +107,7 @@
 </div>
 
 <!-- FUNFACT -->
-<div class="section bgi-overlay bgi-cover-center" data-background="template_site/images/dummy-img-1920x900-2.jpg">
+<div class="section bgi-overlay bgi-cover-center" style="background-color: #3f4095;">
 	<div class="content-wrap">
 		<div class="container">
 			<div class="row">
@@ -235,18 +226,15 @@
 </div>
 
 <!-- WHY CHOOSE US -->
-<div class="section bgi-repeat" data-background="template_site/images/dummy-img-1920x900-3.jpg">
+<div class="section bgi-repeat" style="background-color: #3f4095;">
 	<div class="content-wrap pb-0">
 		<div class="container">
-			<div class="row align-items-end">
+			<div class="row align-items-center">
 				<div class="col-sm-12 col-md-12 col-lg-7">
 					<h2 class="section-heading">
 						Nosso calendário
 					</h2>
-					<p class="text-white">Dolor sit amet, dolor gravida placerat liberolorem ipsum dolor consectetur adipiscing elit, sed do eiusmod. Dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod. Praesent interdum est gravida vehicula est node maecenas loareet morbi a dosis luctus novum est praesent. Praesent interdum est gravida vehicula est node maecenas loareet morbi a dosis luctus novum est praesent.</p>
-					<p class="p-check text-white">100% education, for your kids, consectetuer adipiscing elit, sed diam nonummy nibh euismod. Dolor sit amet, dolor gravida placerat liberolorem ipsum dolor consectetur adipiscing elit, sed do eiusmod.</p>
-					<p class="p-check text-white">More programs activities, sed diam nonummy nibh euismod. Lorem ipsum dolor sit amet.</p>
-					<p class="p-check text-white">More benefit nonummy nibh euismod. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+					<p class="text-white">Ao lado você pode conferir nosso calendário com todas as datas importantes.</p>
 					<div class="spacer-90"></div>
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-5">
@@ -266,7 +254,7 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
 					<h2 class="section-heading text-center mb-5">
-						Momentos com as crianças
+						Confira as fotos recentes
 					</h2>
 				</div>
 			</div>
@@ -275,8 +263,8 @@
 				<!-- Item 1 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="template_site/images/dummy-img-600x400.jpg" title="Gallery #1">
-							<img src="template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img1.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img1.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -288,8 +276,8 @@
 				<!-- Item 1 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="template_site/images/dummy-img-600x400.jpg" title="Gallery #2">
-							<img src="template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img2.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img2.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -301,8 +289,8 @@
 				<!-- Item 1 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="template_site/images/dummy-img-600x400.jpg" title="Gallery #3">
-							<img src="template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img3.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img3.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -314,8 +302,8 @@
 				<!-- Item 2 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="template_site/images/dummy-img-600x400.jpg" title="Gallery #4">
-							<img src="template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img4.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img4.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -327,8 +315,8 @@
 				<!-- Item 3 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="template_site/images/dummy-img-600x400.jpg" title="Gallery #5">
-							<img src="template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img5.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img5.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -340,8 +328,8 @@
 				<!-- Item 4 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="template_site/images/dummy-img-600x400.jpg" title="Gallery #6">
-							<img src="template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img6.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img6.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>

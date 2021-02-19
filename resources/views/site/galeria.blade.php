@@ -2,7 +2,7 @@
 
 @section('conteudo')
 <!-- BANNER -->
-<div class="section banner-page" data-background="/template_site/images/dummy-img-1920x300.jpg">
+<div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<div class="title-page">Galeria</div>
@@ -27,8 +27,34 @@
 				<!-- Item 1 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #1">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img1.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img1.png" alt="" class="img-fluid">
+							<div class="project-info">
+								<div class="project-icon">
+									<span class="fa fa-search"></span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- Item 1 -->
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					<div class="box-gallery">
+						<a href="template_site/images/quadra/img2.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img2.png" alt="" class="img-fluid">
+							<div class="project-info">
+								<div class="project-icon">
+									<span class="fa fa-search"></span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- Item 1 -->
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					<div class="box-gallery">
+						<a href="template_site/images/quadra/img3.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img3.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -40,8 +66,8 @@
 				<!-- Item 2 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #2">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img4.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img4.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -53,8 +79,8 @@
 				<!-- Item 3 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #3">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img5.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img5.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -66,73 +92,8 @@
 				<!-- Item 4 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #4">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 5 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #5">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 6 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #6">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 7 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #7">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 8 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #8">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 9 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/dummy-img-600x400.jpg" title="Gallery #9">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+						<a href="template_site/images/quadra/img6.png" title="Inauguração da quadra">
+							<img src="template_site/images/quadra/img6.png" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>

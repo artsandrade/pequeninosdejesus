@@ -4,17 +4,17 @@
 
 
 <!-- BANNER -->
-<div class="section banner-page" data-background="/template_site/images/dummy-img-1920x300.jpg">
+<div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
-			<div class="title-page">Notícia tal</div>
+			<div class="title-page">Inauguração da quadra</div>
 		</div>
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb ">
 					<li class="breadcrumb-item"><a href="/">Início</a></li>
 					<li class="breadcrumb-item"><a href="/noticias">Notícias</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Notícia tal</li>
+					<li class="breadcrumb-item active" aria-current="page">Inauguração da quadra</li>
 				</ol>
 			</nav>
 		</div>
@@ -32,10 +32,10 @@
 
 					<div class="single-news">
 						<div class="media">
-							<img src="/template_site/images/dummy-img-900x600.jpg" alt="" class="rounded img-fluid">
+							<img src="/template_site/images/quadra/img2.2.png" alt="" class="rounded img-fluid">
 						</div>
-						<h2 class="title">Play & Study with Mr. Smith</h2>
-						<div class="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
+						<h2 class="title">Inauguração da quadra</h2>
+						<div class="meta-date">01 de janeiro de 2021</div>
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -118,56 +118,22 @@
 
 				<div class="col-sm-12 col-md-12 col-lg-3">
 
-					<div class="widget categories">
-						<ul class="category-nav">
-							<li class="active"><a href="#">Why Choose Us</a></li>
-							<li><a href="#">Programs</a></li>
-							<li><a href="#">Enrichment</a></li>
-							<li><a href="#">Meet Our Staff</a></li>
-							<li><a href="#">Staff Corner</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
+					<div class="widget-title">
+						Últimas notícias
+					</div>
+					<div class="rs-news-1">
+						<div class="media-box">
+							<a href="/noticias/post"><img src="/template_site/images/quadra/img2.png" alt="" class="img-fluid"></a>
+						</div>
+						<div class="body-box">
+							<div class="title">
+								<a href="/noticias/post">Inauguração da quadra</a>
+							</div>
+							<div class="meta-date">01 de janeiro de 2021</div>
+							<p>Na manhã do dia 01/02/2021, juntamente com as autoridades locais, foi inaugurada a quadra poliesportiva do instituto...</p>
+						</div>
 					</div>
 
-					<div class="widget widget-text">
-						<div class="widget-title">
-							Text Widget
-						</div>
-						<p><strong>Pets is responsive multi-purpose HTML5 template compatible with Bootstrap 4. Take your Startup business website to the next level. it is designed for pet care, clinic, veterinary, shop, store, adopt, food, pets, businesses or any type of person or business who wants to showcase their work, services and professional way.</strong></p>
-						<p>Nam efficitur orci quis leo tincidunt, ac lacinia purus aliquet. Nam pellentesque pretium nibh cursus diam dapibus a.</p>
-					</div>
-
-					<div class="widget widget-archive">
-						<div class="widget-title">
-							Archive
-						</div>
-						<select class="form-control">
-							<option>April 2017</option>
-							<option>March 2017</option>
-							<option>February 2017</option>
-							<option>January 2017</option>
-						</select>
-					</div>
-
-					<div class="widget tags">
-						<div class="widget-title">
-							Tags
-						</div>
-						<div class="tagcloud">
-							<a href="#" title="3 topics">business</a>
-							<a href="#" title="1 topic">care</a>
-							<a href="#" title="1 topic">childcare</a>
-							<a href="#" title="4 topics">children</a>
-							<a href="#" title="2 topics">clean</a>
-							<a href="#" title="1 topic">corporate</a>
-							<a href="#" title="2 topics">happykids</a>
-							<a href="#" title="1 topic">homeschool</a>
-							<a href="#" title="2 topics">kids</a>
-							<a href="#" title="5 topics">kindergarten</a>
-							<a href="#" title="2 topics">themeforest</a>
-							<a href="#" title="1 topic">playground</a>
-						</div>
-					</div>
 				</div>
 				<!-- end sidebar -->
 

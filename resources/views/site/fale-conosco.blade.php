@@ -3,7 +3,7 @@
 @section('conteudo')
 
 <!-- BANNER -->
-<div class="section banner-page" data-background="images/dummy-img-1920x300.jpg">
+<div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<div class="title-page">Fale conosco</div>
@@ -26,45 +26,40 @@
 			<div class="row">
 				<div class="col-12 col-md-6">
 
-					<form action="#" class="form-contact" id="contactForm" data-toggle="validator"
-						novalidate="true">
+					<form action="#" class="form-contact" id="contactForm" data-toggle="validator" novalidate="true">
 						<div class="row">
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" id="p_name" placeholder="Enter Name"
-										required="">
+									<input type="text" class="form-control" id="p_name" placeholder="Digite seu nome completo" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="email" class="form-control" id="p_email" placeholder="Enter Email"
-										required="">
+									<input type="email" class="form-control" id="p_email" placeholder="Digite seu e-mail">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" id="p_subject" placeholder="Subject">
+									<input type="text" class="form-control" id="p_subject" placeholder="Digite o assunto" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" id="p_phone"
-										placeholder="Enter Phone Number">
+									<input type="text" class="form-control" id="p_phone" placeholder="Digite seu telefone" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<textarea id="p_message" class="form-control" rows="6"
-								placeholder="Enter Your Message"></textarea>
+							<textarea id="p_message" class="form-control" rows="6" placeholder="Escreva sua mensagem..."></textarea>
 							<div class="help-block with-errors"></div>
 						</div>
 						<div class="form-group">
 							<div id="success"></div>
-							<button type="submit" class="btn btn-primary">Send Message</button>
+							<button type="submit" class="btn btn-primary">Enviar mensagem</button>
 						</div>
 					</form>
 					<div class="spacer-content"></div>
@@ -76,34 +71,32 @@
 							<div class="info-icon">
 								<span class="fa fa-map-marker"></span>
 							</div>
-							<div class="info-text">99 S.t Jomblo Park Pekanbaru 28292. Indonesia</div>
+							<div class="info-text">Rua João Signorelli, 880 - XX - Frutal/MG</div>
 						</li>
 						<li>
 							<div class="info-icon">
 								<span class="fa fa-phone"></span>
 							</div>
-							<div class="info-text">(0761) 654-123987</div>
+							<div class="info-text">(34) 3423-5608</div>
 						</li>
 						<li>
 							<div class="info-icon">
 								<span class="fa fa-envelope"></span>
 							</div>
-							<div class="info-text">info@yoursite.com</div>
+							<div class="info-text">contato@pequeninosdejesus.com.br</div>
 						</li>
 						<li>
 							<div class="info-icon">
 								<span class="fa fa-clock-o"></span>
 							</div>
-							<div class="info-text">Mon - Sat 09:00 - 17:00</div>
+							<div class="info-text">Segunda - Sexta 08:00 - 17:00</div>
 						</li>
 					</ul>
 
 					<!-- MAPS -->
 					<div class="maps-wraper">
-						<div id="cd-zoom-in"></div>
-						<div id="cd-zoom-out"></div>
-						<div id="maps" class="maps" data-lat="-7.452278" data-lng="112.708992"
-							data-marker="/template_site/images/cd-icon-location.png">
+						<div class="maps-wraper">
+							<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-48.91980707645416%2C-20.036564768754037%2C-48.91681373119355%2C-20.035022603154957&amp;layer=mapnik&amp;marker=-20.03579368784666%2C-48.91831040382385" style="border: 1px solid black"></iframe><br /><small><a href="https://www.openstreetmap.org/?mlat=-20.03579&amp;mlon=-48.91831#map=19/-20.03579/-48.91831">Ver mapa ampliado</a></small>
 						</div>
 					</div>
 				</div>
