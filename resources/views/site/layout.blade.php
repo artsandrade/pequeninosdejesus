@@ -120,7 +120,7 @@
 	@yield('conteudo')
 
 	<!-- FOOTER SECTION -->
-	<div class="footer" style="background-color: #000;">
+	<div class="footer" style="background-color: #FFF; border-top:1px solid black">
 		<div class="content-wrap">
 			<div class="container">
 
@@ -129,8 +129,8 @@
 						<div class="footer-item">
 							<img src="/template_site/images/logo-pequeninos.png" alt="logo bottom" class="logo-bottom">
 							<div class="spacer-30"></div>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-							<a href="/sobre-nos"><i class="fa fa-angle-right"></i> Leia mais</a>
+							<p style="color: #000;">É com imensa alegria que o Instituto Educacional Pequeninos de Jesus dá as boas-vindas aos alunos, pais e responsáveis e a toda equipe que compõe o quadro de funcionários.</p>
+							<a href="/sobre-nos" style="color: #000;"><i class="fa fa-angle-right"></i> Leia mais</a>
 						</div>
 					</div>
 
@@ -144,25 +144,25 @@
 									<div class="info-icon">
 										<span class="fa fa-map-marker"></span>
 									</div>
-									<div class="info-text">Rua João Signorelli, 880 - XX - Frutal/MG</div>
+									<div class="info-text" style="color: #000;">Rua João Signorelli, 880 - XX - Frutal/MG</div>
 								</li>
 								<li>
 									<div class="info-icon">
 										<span class="fa fa-phone"></span>
 									</div>
-									<div class="info-text">(34) 3423-5608</div>
+									<div class="info-text" style="color: #000;">(34) 3423-5608</div>
 								</li>
 								<li>
 									<div class="info-icon">
 										<span class="fa fa-envelope"></span>
 									</div>
-									<div class="info-text">contato@pequeninosdejesus.com.br</div>
+									<div class="info-text" style="color: #000;">contato@pequeninosdejesus.com.br</div>
 								</li>
 								<li>
 									<div class="info-icon">
 										<span class="fa fa-clock-o"></span>
 									</div>
-									<div class="info-text">Segunda - Sexta 08:00 - 17:00</div>
+									<div class="info-text" style="color: #000;">Segunda - Sexta 08:00 - 17:00</div>
 								</li>
 							</ul>
 
@@ -174,7 +174,7 @@
 							<div class="footer-title">
 								Redes sociais
 							</div>
-							<p>Siga-nos nas redes sociais para acompanhar todas as informações.</p>
+							<p style="color: #000;">Siga-nos nas redes sociais para acompanhar todas as informações.</p>
 							<div class="sosmed-icon d-inline-flex">
 								<a href="https://www.facebook.com/InstitutoPequeninosdeJesus/" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
 								<a href="https://www.instagram.com/pequeninos_dejesus/" target="_blank" class="ig"><i class="fa fa-instagram"></i></a>

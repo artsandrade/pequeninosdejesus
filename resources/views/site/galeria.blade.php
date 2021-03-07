@@ -23,83 +23,16 @@
 	<div class="content-wrap">
 		<div class="container">
 
-			<div class="row popup-gallery gutter-5">
-				<!-- Item 1 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img1.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img1.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
+			<!-- Item 1 -->
+			<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
+				<div class="rs-news-1">
+					<div class="media-box">
+						<a href="/galeria/post"><img src="/template_site/images/quadra/img2.png" alt="" class="img-fluid"></a>
 					</div>
-				</div>
-				<!-- Item 1 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img2.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img2.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 1 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img3.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img3.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 2 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img4.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img4.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 3 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img5.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img5.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 4 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img6.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img6.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
+					<div class="body-box">
+						<div class="title">
+							<a href="/galeria/post">Inauguração da quadra</a>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -24,6 +24,11 @@ Route::get('/fale-conosco', function () {
 Route::get('/galeria', function () {
     return view('site/galeria');
 });
+
+Route::get('/galeria/post', function () {
+    return view('site/galeria-post');
+});
+
 Route::get('/prestacao-de-contas', function () {
     return view('site/prestacao-de-contas');
 });

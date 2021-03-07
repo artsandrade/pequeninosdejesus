@@ -28,32 +28,65 @@
 
 					<form action="#" class="form-contact" id="contactForm" data-toggle="validator" novalidate="true">
 						<div class="row">
-							<div class="col-sm-6 col-md-6">
+							<div class="col-sm-12 col-md-12">
 								<div class="form-group">
+									<label for="">Nome</label>
 									<input type="text" class="form-control" id="p_name" placeholder="Digite seu nome completo" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
-							<div class="col-sm-6 col-md-6">
+							<div class="col-sm-12 col-md-8">
 								<div class="form-group">
+									<label for="">Nome do aluno</label>
+									<input type="text" class="form-control" id="p_name" placeholder="Digite o nome do aluno" required="">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<div class="form-group">
+									<label for="">CPF do aluno</label>
+									<input type="text" class="form-control" id="p_name" placeholder="Digite o CPF do aluno" required="">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12">
+								<div class="form-group">
+									<label for="">E-mail</label>
 									<input type="email" class="form-control" id="p_email" placeholder="Digite seu e-mail">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" id="p_subject" placeholder="Digite o assunto" required="">
+									<label for="">Telefone</label>
+									<input type="text" class="form-control" id="p_phone" placeholder="Digite seu telefone">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" id="p_phone" placeholder="Digite seu telefone" required="">
+									<label for="">Celular</label>
+									<input type="text" class="form-control" id="p_phone" placeholder="Digite seu celular">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
+							<div class="col-sm-12 col-md-12">
+								<div class="form-group">
+									<label for="">Assunto</label>
+									<select class="form-control" name="" id="" required="">
+										<option value="">Selecione</option>
+										<option value="critica">Crítica</option>
+										<option value="duvida">Dúvida</option>
+										<option value="solicitacao-de-documentos">Solicitação de documentos</option>
+										<option value="sugestao">Sugestão</option>
+									</select>
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+
 						</div>
 						<div class="form-group">
+							<label for="">Mensagem</label>
 							<textarea id="p_message" class="form-control" rows="6" placeholder="Escreva sua mensagem..."></textarea>
 							<div class="help-block with-errors"></div>
 						</div>

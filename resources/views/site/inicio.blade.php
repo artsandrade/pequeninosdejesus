@@ -95,8 +95,10 @@
 					<h2 class="section-heading">
 						Sejm bem-vindos
 					</h2>
-					<p>Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent. Sed ut perspiciatis unde omnis iste natus error sitdolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod. Praesent interdum est gravida vehicula est node maecenas loareet morbi a dosis luctus novum est praesent. Magna est consectetur interdum modest dictum.</p>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent. </p>
+					<p>É com imensa alegria que o Instituto Educacional Pequeninos de Jesus dá as boas-vindas aos alunos, pais e responsáveis e a toda equipe que compõe o quadro de funcionários.</p>
+					<p>Nossa clientela são crianças devidamente matriculadas na Educação Infantil de 1 ano a 5 anos e 11 meses.</p>
+					<p>O Instituto, neste ano de 2021 completa 30 anos de fundação e traz em seu nome o maior educador de todos os tempos, Jesus Cristo.</p>
+					<p></p>
 					<div class="spacer-10"></div>
 					<a href="/sobre-nos" class="btn btn-secondary">LEIA MAIS SOBRE NÓS</a>
 					<div class="spacer-30"></div>
@@ -115,7 +117,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-primary">
 						<div class="box-fun">
-							<h2>852</h2>
+							<h2>215</h2>
 						</div>
 						<div class="title">Alunos matriculados</div>
 					</div>
@@ -124,7 +126,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-secondary">
 						<div class="box-fun">
-							<h2>125</h2>
+							<h2>15</h2>
 						</div>
 						<div class="title">Professores</div>
 					</div>
@@ -133,7 +135,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-tertiary">
 						<div class="box-fun">
-							<h2>32</h2>
+							<h2>17</h2>
 						</div>
 						<div class="title">Salas de aula</div>
 					</div>
@@ -142,7 +144,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-quaternary">
 						<div class="box-fun">
-							<h2>15</h2>
+							<h2>4.865</h2>
 						</div>
 						<div class="title">Alunos que já estudaram aqui</div>
 					</div>
