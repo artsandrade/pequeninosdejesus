@@ -26,16 +26,20 @@
 			<div class="row align-items-end">
 				<div class="col-sm-12 col-md-12 col-lg-7">
 					<h2 class="section-heading mb-5">
-						É com imensa alegria que ...
+						O Instituto Educacional Pequeninos de Jesus ...
 					</h2>
-					<p class="text-justify">o Instituto Educacional Pequeninos de Jesus dá as boas-vindas aos alunos, pais e responsáveis e a toda equipe que compõe o quadro de funcionários.</p>
-					<p class="text-justify">Nossa clientela são crianças devidamente matriculadas na Educação Infantil de 1 ano a 5 anos e 11 meses.</p>
-					<p class="text-justify">O Instituto, neste ano de 2021 completa 30 anos de fundação e traz em seu nome o maior educador de todos os tempos, Jesus Cristo.</p>
-					<p class="text-justify">Segundo D. Deusmanda, fundadora deste Instituto, somos todos Pequeninos de Jesus nesta jornada evolutiva rumo ao conhecimento. Empenhamos para que seu ideal cristão perpetue nas novas gerações, através dos bons exemplos e dos valores morais e éticos.</p>
+					<p class="text-justify">entidade sem fins lucrativos e de caráter filantrópico foi fundado por Deusmanda Ferreira de Oliveira, juntamente com 53pessoas amigas de ideal, em 02 de junho de 1991.</p>
+					<p class="text-justify">Quando a educadora Deusmanda lançou os fundamentos da Creche e Centro de Formação Pequeninos de Jesus (CCFPJ), dava início a uma grandiosa obra assistencial e educacional, que visava acolher, amparar e educar, oferecendo uma infância digna às crianças e adolescentes que, até então, não tinham onde ficar para que os pais pudessem trabalhar. D. Deusmanda sempre quis ajudar as pessoas sem desejar nenhuma recompensa em troca. Dedicou sua vida a fazer o bem e a criar oportunidades para as crianças e adolescentes carentes.</p>
+					<p class="text-justify">Modestamente, em fevereiro de 1994, com 4 funcionários, os portões foram abertos
+						para atender as primeiras 25 crianças. Atendia-se crianças de 1 a 5 anos em período integral e
+						crianças de 6 anos a 14 anos que permaneciam na instituição no contra turno escolar. </p>
+					<p class="text-justify">No ano de 2003, a instituição passou a denominar-se Centro de Educação Infantil e de
+						Formação Pequeninos de Jesus (CEIFPJ). De 1991 até meados de 2004, a Instituição esteve sob
+						a presidência e direção de sua fundadora que passou a presidência, no período de 2004 a 2010 para a professora Edna Assunção da Silva. </p>
 					<div class="spacer-90"></div>
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-5">
-					<img src="/template_site/images/sobre-nos/fachada.png" alt="" class="img-fluid">
+					<img src="/template_site/images/sobre-nos/inicio.png" alt="" class="img-fluid">
 				</div>
 			</div>
 
@@ -46,25 +50,62 @@
 <div class="section">
 	<div class="content-wrap pb-0">
 		<div class="container">
-			<div class="row align-items-end">
+			<div class="row align-items-start">
 				<div class="col-sm-12 col-md-12 col-lg-5">
 					<img src="/template_site/images/sobre-nos/deusmanda.png" alt="" class="img-fluid">
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-7">
-
-					<p class="text-justify">E é com amor, planejamento, boa vontade, responsabilidade, entrosamento, persistência e profissionalismo que os objetivos serão alcançados com sucesso.</p>
-					<p class="text-justify">Como na educação o trabalho é coletivo, todos da equipe têm responsabilidade nesse processo com toda a comunidade escolar.</p>
-					<p class="text-justify">Damos boas-vindas a todos os pais e responsáveis, e a todas as crianças, desejando-lhes um ano de muitas conquistas e aprendizado. Que o Cristo esteja sempre conosco, sendo luz e guia e que todos nós sejamos faróis de esperança na vida de cada criança e de cada família que passa pelo Instituto Educacional Pequeninos de Jesus.</p>
-					<p class="text-justify">Damos boas-vindas a todos os pais e responsáveis, e a todas as crianças, desejando-lhes um ano de muitas conquistas e aprendizado. Que o Cristo esteja sempre conosco, sendo luz e guia e que todos nós sejamos faróis de esperança na vida de cada criança e de cada família que passa pelo Instituto Educacional Pequeninos de Jesus.</p>
-					<p class="text-justify">Agradecemos a confiança dos pais em nosso processo educacional.</p>
-					<p class="text-center">
-						José Maria Perim
-						<br>
-						Presidente
-					</p>
+					<p class="text-justify">Conforme publicação no Diário Oficial de Minas Gerais, Caderno I, pág. 31 de
+						18/05/2007, o CEIFPJ foi credenciado e recebeu a autorização da SEE/MG, portaria nº
+						011/2007, para o atendimento às crianças da primeira etapa da Educação Básica, de 1 ano a 5
+						anos e 11 meses. </p>
+					<p class="text-justify">Além do Departamento da Educação Infantil, mais dois departamentos começaram a
+						funcionar: Departamento da Área Azul e o Departamento da Guarda Mirim (hoje Menor
+						Aprendiz), fundado em 1997, pelo empresário José Maria Perim, então presidente do Rotary
+						Clube Frutal Sul, juntamente com outros membros da sociedade.</p>
+					<p class="text-justify">O departamento Menor aprendiz (com sede no centro da cidade), iniciou suas atividades
+						atendendo mais de 100 adolescentes/estudantes, de ambos os sexos, com idade mínima de 14
+						anos, participando de cursos profissionalizantes para atuarem no comércio de Frutal. Todos
+						registrados pelo Instituto Educacional Pequeninos de Jesus, tendo como parceiros a Prefeitura
+						Municipal de Frutal, Polícia Militar de Minas Gerais e Rotary Clube de Frutal Sul. </p>
+					<p class="text-justify">Também o Departamento Área Azul com mais de 50 adultos, de ambos os sexos, com
+						idade mínima de 18 anos, atuando, após receberem treinamento e orientação, nas ruas da cidade de Frutal. Todos registrados pela instituição, tendo a mesma sede do Menor Aprendiz. </p>
+					<p class="text-justify">No período de 2010 a 2016, quem assumiu a presidência do CEIFPJ foi o empresário
+						José Jerônimo da Silva. Em meados de 2016 até março de 2019, Deusmanda Ferreira de
+						Oliveira assumiu novamente a presidência do referido estabelecimento de ensino.</p>
 					<div class="spacer-90"></div>
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="content-wrap pb-0">
+		<div class="container">
+			<div class="row align-items-start">
+				<div class="col-sm-12 col-md-12 col-lg-7">
+					<p class="text-justify">Em março de 2019, o empresário José Maria Perim assume a presidência do CEIPJ, para o triênio 2019 a meados de 2022, podendo ser reeleito. Por decisão unânime dos sócios e
+						fundadores, a instituição passou a denominar-se Instituto Educacional Pequeninos de Jesus.</p>
+					<p class="text-justify">O Instituto Educacional Pequeninos de Jesus muito tem prosperado, sob a dinâmica e
+						atuante direção das pedagogas Geovana Aparecida Perim (voluntária), Lelia Lucia Jonas Nunes
+						(diretora), Vilma Dutra (voluntária) e demais funcionários.</p>
+					<p class="text-justify">A melhoria do processo educacional está ligada, diretamente, à formação e valorização
+						do corpo docente, profissionais responsáveis pela qualidade da aprendizagem dos
+						nossos alunos, preparando-os para viverem harmonicamente em sociedade no mercado de
+						trabalho.</p>
+					<p class="text-justify">Visando ao pleno funcionamento da Instituição a gestão frequentemente oferece capacitação tanto à equipe pedagógica quanto à equipe administrativa, a fim de se chegar à excelência no atendimento educacional.</p>
+					<p class="text-justify">Através da União e do equilíbrio de sua estrutura de gestão, aliada ao trabalho eficiente
+						da equipe pedagógica, administrativa e de apoio, o Instituto Educacional Pequeninos de Jesus
+						vem se destacando como um dos melhores estabelecimentos de ensino da Educação Infantil, da
+						cidade de Frutal-MG.</p>
+					<div class="spacer-90"></div>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-5">
+					<img src="/template_site/images/sobre-nos/fachada.png" alt="" class="img-fluid">
+				</div>
+			</div>
+
 		</div>
 	</div>
 </div>
