@@ -32,6 +32,11 @@ Route::get('/galeria/post', function () {
 Route::get('/prestacao-de-contas', function () {
     return view('site/prestacao-de-contas');
 });
+
+Route::get('/prestacao-de-contas/post', function () {
+    return view('site/prestacao-de-contas-post');
+});
+
 Route::get('/colaboradores', function () {
     return view('site/colaboradores');
 });
@@ -55,8 +60,8 @@ Route::get('/painel/galeria', function () {
     return view('painel/galeria/galeria');
 });
 
-Route::get('/painel/galeria/incluir', function () {
-    return view('painel/galeria/incluir');
+Route::get('/painel/galeria/inserir', function () {
+    return view('painel/galeria/inserir');
 });
 
 Route::get('/painel/galeria/visualizar', function () {
@@ -71,8 +76,8 @@ Route::get('/painel/noticias', function () {
     return view('painel/noticias/noticias');
 });
 
-Route::get('/painel/noticias/incluir', function () {
-    return view('painel/noticias/incluir');
+Route::get('/painel/noticias/inserir', function () {
+    return view('painel/noticias/inserir');
 });
 
 Route::get('/painel/noticias/visualizar', function () {
@@ -81,4 +86,52 @@ Route::get('/painel/noticias/visualizar', function () {
 
 Route::get('/painel/noticias/alterar', function () {
     return view('painel/noticias/alterar');
+});
+
+Route::get('/painel/atendimentos', function () {
+    return view('painel/atendimentos/visualizar');
+});
+
+Route::get('/painel/prestacao-de-contas/inserir', function () {
+    return view('painel/prestacao-de-contas/inserir');
+});
+
+Route::get('/painel/prestacao-de-contas', function () {
+    return view('painel/prestacao-de-contas/prestacao-de-contas');
+});
+
+Route::get('/painel/prestacao-de-contas/visualizar', function () {
+    return view('painel/prestacao-de-contas/visualizar');
+});
+
+Route::get('/painel/prestacao-de-contas/alterar', function () {
+    return view('painel/prestacao-de-contas/alterar');
+});
+
+Route::get('/painel/usuarios/inserir', function () {
+    return view('painel/usuarios/inserir');
+});
+
+Route::get('/painel/usuarios', function () {
+    return view('painel/usuarios/usuarios');
+});
+
+Route::get('/painel/usuarios/visualizar', function () {
+    return view('painel/usuarios/visualizar');
+});
+
+Route::get('/painel/usuarios/alterar', function () {
+    return view('painel/usuarios/alterar');
+});
+
+Route::get('/painel/meu-perfil', function () {
+    return view('painel/perfil/perfil');
+});
+
+Route::get('/login', function () {
+    return view('painel/login/login');
+});
+
+Route::get('/esqueci-minha-senha', function () {
+    return view('painel/login/esqueci-minha-senha');
 });

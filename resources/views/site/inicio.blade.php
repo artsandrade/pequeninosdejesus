@@ -87,7 +87,7 @@
 <div class="section">
 	<div class="content-wrap">
 		<div class="container">
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col-sm-12 col-md-12 col-lg-6">
 					<img src="template_site/images/fachada.png" alt="" class="img-fluid img-border">
 				</div>
@@ -96,9 +96,14 @@
 						Sejm bem-vindos
 					</h2>
 					<p>É com imensa alegria que o Instituto Educacional Pequeninos de Jesus dá as boas-vindas aos alunos, pais e responsáveis e a toda equipe que compõe o quadro de funcionários.</p>
-					<p>Nossa clientela são crianças devidamente matriculadas na Educação Infantil de 1 ano a 5 anos e 11 meses.</p>
-					<p>O Instituto, neste ano de 2021 completa 30 anos de fundação e traz em seu nome o maior educador de todos os tempos, Jesus Cristo.</p>
-					<p></p>
+					<p>Nossa clientela são crianças devidamente matriculadas na Educação Infantil de 1 ano a 5 anos e 11 meses. O Instituto, neste ano de 2021 completa 30 anos de fundação e traz em seu nome o maior educador de todos os tempos, Jesus Cristo.</p>
+					<p>Segundo D. Deusmanda, fundadora deste Instituto, somos todos Pequeninos de Jesus nesta jornada evolutiva rumo ao conhecimento. Empenhamos para que seu ideal cristão perpetue nas novas gerações, através dos bons exemplos e dos valores morais e éticos.</p>
+					<p>Damos boas-vindas a todos os pais e responsáveis, e a todas as crianças, desejando-lhes um ano de muitas conquistas e aprendizado. Que o Cristo esteja sempre conosco, sendo luz e guia e que todos nós sejamos faróis de esperança na vida de cada criança e de cada família que passa pelo Instituto Educacional Pequeninos de Jesus.</p>
+					<p class="text-center">
+						José Maria Perim
+						<br>
+						Presidente
+					</p>
 					<div class="spacer-10"></div>
 					<a href="/sobre-nos" class="btn btn-secondary">LEIA MAIS SOBRE NÓS</a>
 					<div class="spacer-30"></div>
@@ -227,20 +232,41 @@
 	</div>
 </div>
 
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var calendarEl = document.getElementById('calendar');
+		var calendar = new FullCalendar.Calendar(calendarEl, {
+			initialView: 'dayGridMonth',
+			locale: 'pt-br',
+			events: [{
+				title: 'Teste',
+				start: '2021-03-01T10:30:00',
+				end: '2021-03-01T11:30:00',
+				extendedProps: {
+					department: 'BioChemistry'
+				},
+				description: 'Lecture'
+			}]
+		});
+		calendar.render();
+	});
+</script>
+
 <!-- WHY CHOOSE US -->
 <div class="section bgi-repeat" style="background-color: #3f4095;">
 	<div class="content-wrap pb-0">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-sm-12 col-md-12 col-lg-7">
+				<div class="col-sm-12 col-md-12 col-lg-3">
 					<h2 class="section-heading">
 						Nosso calendário
 					</h2>
 					<p class="text-white">Ao lado você pode conferir nosso calendário com todas as datas importantes.</p>
 					<div class="spacer-90"></div>
 				</div>
-				<div class="col-sm-12 col-md-12 col-lg-5">
-					<img src="template_site/images/dummy-img-600x700.jpg" alt="" class="img-fluid">
+				<div class="col-sm-12 col-md-12 col-lg-9">
+					<div id="calendar" style="background-color: white;"></div>
+					<div class="spacer-90"></div>
 				</div>
 			</div>
 
@@ -350,14 +376,14 @@
 
 
 <!-- CTA -->
-<div class="section bg-tertiary">
+<div class="section" style="background-color: #3f4095;">
 	<div class="content-wrap py-5">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-sm-12 col-md-12">
 					<div class="cta-1">
 						<div class="body-text mb-3">
-							<h3 class="my-1 text-secondary">Deseja falar conosco?</h3>
+							<h3 class="my-1" style="color: #FD4D40;">Deseja falar conosco?</h3>
 							<p class="uk18 mb-0 text-white">Clique no botão "Fale conosco" para ir até o formulário de contato.</p>
 						</div>
 						<div class="body-action">

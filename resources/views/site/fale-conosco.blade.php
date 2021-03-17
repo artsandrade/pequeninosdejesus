@@ -102,25 +102,25 @@
 					<ul class="list-info">
 						<li>
 							<div class="info-icon">
-								<span class="fa fa-map-marker"></span>
+								<span class="fa fa-map-marker" style="color: #FD4D40;"></span>
 							</div>
 							<div class="info-text">Rua João Signorelli, 880 - XX - Frutal/MG</div>
 						</li>
 						<li>
 							<div class="info-icon">
-								<span class="fa fa-phone"></span>
+								<span class="fa fa-phone" style="color: #FD4D40;"></span>
 							</div>
-							<div class="info-text">(34) 3423-5608</div>
+							<div class="info-text">(34) 3423-5608 (Disponível também para WhatsApp)</div>
 						</li>
 						<li>
 							<div class="info-icon">
-								<span class="fa fa-envelope"></span>
+								<span class="fa fa-envelope" style="color: #FD4D40;"></span>
 							</div>
 							<div class="info-text">contato@pequeninosdejesus.com.br</div>
 						</li>
 						<li>
 							<div class="info-icon">
-								<span class="fa fa-clock-o"></span>
+								<span class="fa fa-clock-o" style="color: #FD4D40;"></span>
 							</div>
 							<div class="info-text">Segunda - Sexta 08:00 - 17:00</div>
 						</li>

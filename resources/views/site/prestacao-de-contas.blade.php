@@ -27,22 +27,33 @@
 			<div class="row mt-4">
 
 				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="rs-class-box mb-5">
+				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
+					<div class="rs-news-1">
 						<div class="media-box">
-							<img src="/template_site/images/dummy-img-600x400.jpg" alt="" class="img-fluid">
+							<a href="/prestacao-de-contas/post"><img src="/template_site/images/prestacao-de-contas.png" alt="" class="img-fluid"></a>
 						</div>
 						<div class="body-box">
-							<div class="class-name">
-								<div class="title">Janeiro/2021</div>
+							<div class="title">
+								<a href="/prestacao-de-contas/post">Fevereiro/2021</a>
 							</div>
-							<div class="open-class">Publicado em: <span>01/01/2021</span></div>
-							<p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-							<div class="detail">
-								<div class="age col">
-								<a href="#">Baixar arquivo</a>
-								</div>
+							<div class="meta-date">01 de fevereiro de 2021</div>
+							<p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Item 1 -->
+				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
+					<div class="rs-news-1">
+						<div class="media-box">
+							<a href="/prestacao-de-contas/post"><img src="/template_site/images/prestacao-de-contas.png" alt="" class="img-fluid"></a>
+						</div>
+						<div class="body-box">
+							<div class="title">
+								<a href="/prestacao-de-contas/post">Janeiro/2021</a>
 							</div>
+							<div class="meta-date">01 de janeiro de 2021</div>
+							<p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
 						</div>
 					</div>
 				</div>
@@ -54,14 +65,14 @@
 </div>
 
 <!-- CTA -->
-<div class="section bg-tertiary">
+<div class="section" style="background-color: #3f4095;">
 	<div class="content-wrap py-5">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-sm-12 col-md-12">
 					<div class="cta-1">
 						<div class="body-text mb-3">
-							<h3 class="my-1 text-secondary">Deseja falar conosco?</h3>
+							<h3 class="my-1" style="color: #FD4D40;">Deseja falar conosco?</h3>
 							<p class="uk18 mb-0 text-white">Clique no botão "Fale conosco" para ir até o formulário de contato.</p>
 						</div>
 						<div class="body-action">

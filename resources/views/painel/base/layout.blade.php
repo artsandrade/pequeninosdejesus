@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/template_site/images/icone.ico">
     <title>Painel de controle</title>
 
     <!-- Prevent the demo from appearing in search engines -->
@@ -31,6 +32,14 @@
     <link type="text/css" href="/template_painel/css/vendor-flatpickr-airbnb.css" rel="stylesheet">
     <link type="text/css" href="/template_painel/css/vendor-flatpickr-airbnb.rtl.css" rel="stylesheet">
 
+    <!-- Dropzone -->
+    <link type="text/css" href="/template_painel/css/vendor-dropzone.css" rel="stylesheet">
+    <link type="text/css" href="/template_painel/css/vendor-dropzone.rtl.css" rel="stylesheet">
+
+    <!-- Quill Theme -->
+    <link type="text/css" href="/template_painel/css/vendor-quill.css" rel="stylesheet">
+    <link type="text/css" href="/template_painel/css/vendor-quill.rtl.css" rel="stylesheet">
+
     <!-- Vector Maps -->
     <link type="text/css" href="/template_painel/vendor/jqvmap/jqvmap.min.css" rel="stylesheet">
 
@@ -47,7 +56,7 @@
         <div id="header" class="mdk-header js-mdk-header m-0" data-fixed>
             <div class="mdk-header__content">
 
-                <div class="navbar navbar-expand-sm navbar-main navbar-dark bg-dark  pr-0" id="navbar" data-primary>
+                <div class="navbar navbar-expand-sm navbar-main pr-0" style="background-color: #3F4095;" id="navbar" data-primary>
                     <div class="container-fluid p-0">
 
                         <!-- Navbar toggler -->
@@ -58,9 +67,8 @@
 
 
                         <!-- Navbar Brand -->
-                        <a href="index.html" class="navbar-brand ">
-                            <img class="navbar-brand-icon" src="/template_painel/images/stack-logo-white.svg" width="22" alt="Stack">
-                            <span>Stack</span>
+                        <a href="/painel" class="navbar-brand">
+                            <img class="navbar-brand-icon" src="/template_site/images/logo-pequeninos.png" width="150" alt="Stack">
                         </a>
 
                         <ul class="nav navbar-nav d-none d-sm-flex border-left navbar-height align-items-center">
@@ -77,9 +85,9 @@
                                     </div>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item active" href="/painel">Painel de controle</a>
-                                    <a class="dropdown-item" href="/painel/perfil">My profile</a>
+                                    <a class="dropdown-item" href="/painel/meu-perfil">Meu perfil</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Logout</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-sair">Sair</a>
                                 </div>
                             </li>
                         </ul>
@@ -117,6 +125,7 @@
                     <div class="mdk-drawer__content">
                         <div class="sidebar sidebar-light sidebar-left simplebar" data-simplebar>
                             <ul class="sidebar-menu">
+                                <br>
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#atendimentos_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-phone"></i>
@@ -207,6 +216,13 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <hr>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-arrow-left"></i>
+                                        <span class="sidebar-menu-text">Retornar ao site</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -265,20 +281,47 @@
     <!-- Global Settings -->
     <script src="/template_painel/js/settings.js"></script>
 
-    <!-- Chart.js -->
-    <script src="/template_painel/vendor/Chart.min.js"></script>
-
-    <!-- App Charts JS -->
-    <script src="/template_painel/js/charts.js"></script>
-
     <!-- Chart Samples -->
     <script src="/template_painel/js/page.dashboard.js"></script>
+
+    <!-- Dropzone -->
+    <script src="/template_painel/vendor/dropzone.min.js"></script>
+    <script src="/template_painel/js/dropzone.js"></script>
+
+    <!-- Quill -->
+    <script src="/template_painel/vendor/quill.min.js"></script>
+    <script src="/template_painel/js/quill.js"></script>
 
     <!-- Vector Maps -->
     <script src="/template_painel/vendor/jqvmap/jquery.vmap.min.js"></script>
     <script src="/template_painel/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
     <script src="/template_painel/js/vector-maps.js"></script>
 
+    <!-- List.js -->
+    <script src="/template_painel/vendor/list.min.js"></script>
+    <script src="/template_painel/js/list.js"></script>
+
+    @yield('footer_layout')
+
+    <div id="modal-sair" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-center-title" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-center-title">Sair</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Você tem certeza que deseja sair do seu perfil?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+                    <a href="/" class="btn btn-danger">Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

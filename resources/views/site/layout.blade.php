@@ -29,11 +29,16 @@
 	<link rel="stylesheet" type="text/css" href="/template_site/css/vendor/owl.theme.default.min.css">
 	<link rel="stylesheet" type="text/css" href="/template_site/css/vendor/magnific-popup.css">
 	<link rel="stylesheet" type="text/css" href="/template_site/css/vendor/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="/template_site/css/vendor/bootstrap-social.css">
 
 	<!-- ==============================================
 	Custom Stylesheet
 	=============================================== -->
 	<link rel="stylesheet" type="text/css" href="/template_site/css/style.css" />
+
+	<link href='/template_site/calendar/main.css' rel='stylesheet' />
+	<script src='/template_site/calendar/main.js'></script>
+	<script src='/template_site/calendar/locales/pt-br.js'></script>
 
 	<script src="/template_site/js/vendor/modernizr.min.js"></script>
 
@@ -47,7 +52,7 @@
 	</div>
 
 	<!-- BACK TO TOP SECTION -->
-	<a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a>
+	<!-- <a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a> -->
 
 	<!-- HEADER -->
 	<div class="header header-1">
@@ -119,6 +124,7 @@
 
 	@yield('conteudo')
 
+
 	<!-- FOOTER SECTION -->
 	<div class="footer" style="background-color: #FFF; border-top:1px solid black">
 		<div class="content-wrap">
@@ -136,31 +142,31 @@
 
 					<div class="col-sm-12 col-md-6 col-lg-4">
 						<div class="footer-item">
-							<div class="footer-title">
+							<div class="footer-title" style="color: #FD4D40;">
 								Informações de contato
 							</div>
 							<ul class="list-info">
 								<li>
 									<div class="info-icon">
-										<span class="fa fa-map-marker"></span>
+										<span class="fa fa-map-marker" style="color: #FD4D40;"></span>
 									</div>
 									<div class="info-text" style="color: #000;">Rua João Signorelli, 880 - XX - Frutal/MG</div>
 								</li>
 								<li>
 									<div class="info-icon">
-										<span class="fa fa-phone"></span>
+										<span class="fa fa-phone" style="color: #FD4D40;"></span>
 									</div>
 									<div class="info-text" style="color: #000;">(34) 3423-5608</div>
 								</li>
 								<li>
 									<div class="info-icon">
-										<span class="fa fa-envelope"></span>
+										<span class="fa fa-envelope" style="color: #FD4D40;"></span>
 									</div>
 									<div class="info-text" style="color: #000;">contato@pequeninosdejesus.com.br</div>
 								</li>
 								<li>
 									<div class="info-icon">
-										<span class="fa fa-clock-o"></span>
+										<span class="fa fa-clock-o" style="color: #FD4D40;"></span>
 									</div>
 									<div class="info-text" style="color: #000;">Segunda - Sexta 08:00 - 17:00</div>
 								</li>
@@ -171,7 +177,7 @@
 
 					<div class="col-sm-12 col-md-6 col-lg-4">
 						<div class="footer-item">
-							<div class="footer-title">
+							<div class="footer-title" style="color: #FD4D40;">
 								Redes sociais
 							</div>
 							<p style="color: #000;">Siga-nos nas redes sociais para acompanhar todas as informações.</p>
@@ -208,6 +214,43 @@
 	<script src="/template_site/js/vendor/form-scripts.js"></script>
 
 	<script src="/template_site/js/script.js"></script>
+
+	<style>
+		#imagem_whats {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			display: block;
+			cursor: pointer;
+			z-index: 9999999;
+			float: right
+		}
+
+		#imagem_whats2 {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			display: block;
+			cursor: pointer;
+			z-index: 9999999;
+			float: right;
+			display: none
+		}
+
+		@media only screen and (max-width: 999px) and (min-width: 100px) {
+			#imagem_whats {
+				display: none
+			}
+
+			#imagem_whats2 {
+				display: block
+			}
+		}
+	</style>
+	<img id="imagem_whats" class="mr-2 mb-2" style="border-color: #000;" src="/template_site/images/whatsapp.png" onClick="window.open('https://web.whatsapp.com/send?phone=+553434235608&amp;text=Olá, tudo bem?', '_blank');"><img id="imagem_whats2" class="mr-2 mb-2" style="border-color: #000;" src="/template_site/images/whatsapp.png" onClick="window.open('https://api.whatsapp.com/send?phone=+553434235608&amp;text=Olá, tudo bem?', '_blank');">
+	<div class="preloader">
+		<div class="preloaderimg"></div>
+	</div>
 
 </body>
 

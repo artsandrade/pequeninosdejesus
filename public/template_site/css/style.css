@@ -832,7 +832,7 @@ blockquote.quote {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(34, 34, 34, 0.4); }
+    background-color: #3f4095; }
   .banner-page .content-wrap {
     padding: 60px 0; }
   .banner-page .title-page {
@@ -1098,17 +1098,21 @@ SOSMED-ICON
     /*color: $color-body;*/
     background-color: transparent; }
   .sosmed-icon a.fb {
-    background-color: #FD4D40; }
+    background-color:#1977F3; }
     .sosmed-icon a.fb:hover {
-      background-color: #fd3527; }
+      background-color:#1977F3; }
+  .sosmed-icon a.wpp {
+    background-color:#27A219; }
+    .sosmed-icon a.wpp:hover {
+      background-color:#27A219; }
   .sosmed-icon a.tw {
-    background-color: #16C3B0; }
+    background-color: #4DA6E9; }
     .sosmed-icon a.tw:hover {
-      background-color: #13ac9b; }
+      background-color: #4DA6E9; }
   .sosmed-icon a.ig {
-    background-color: #FF7300; }
+    background-color: #E70C20; }
     .sosmed-icon a.ig:hover {
-      background-color: #e66800; }
+      background-color: #E70C20; }
   .sosmed-icon a.in {
     background-color: #2DB3D9; }
     .sosmed-icon a.in:hover {
@@ -2515,7 +2519,7 @@ Back To Top Section
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: #3f4095 url("../images/cd-top-arrow.svg") no-repeat center 50%;
+  background: #3f4095 no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
