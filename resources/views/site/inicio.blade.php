@@ -127,13 +127,22 @@
 						<div class="title">Alunos matriculados</div>
 					</div>
 				</div>
+				<!-- Item 4 -->
+				<div class="col-sm-6 col-md-3">
+					<div class="rs-funfact bg-quaternary">
+						<div class="box-fun">
+							<h2>4.865</h2>
+						</div>
+						<div class="title">Alunos que já estudaram aqui</div>
+					</div>
+				</div>
 				<!-- Item 2 -->
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-secondary">
 						<div class="box-fun">
 							<h2>15</h2>
 						</div>
-						<div class="title">Professores</div>
+						<div class="title">Colaboradores</div>
 					</div>
 				</div>
 				<!-- Item 3 -->
@@ -145,15 +154,7 @@
 						<div class="title">Salas de aula</div>
 					</div>
 				</div>
-				<!-- Item 4 -->
-				<div class="col-sm-6 col-md-3">
-					<div class="rs-funfact bg-quaternary">
-						<div class="box-fun">
-							<h2>4.865</h2>
-						</div>
-						<div class="title">Alunos que já estudaram aqui</div>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>

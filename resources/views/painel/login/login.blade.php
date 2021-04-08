@@ -26,46 +26,9 @@
     <link type="text/css" href="/template_painel/css/vendor-fontawesome-free.css" rel="stylesheet">
     <link type="text/css" href="/template_painel/css/vendor-fontawesome-free.rtl.css" rel="stylesheet">
 
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133433427-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-133433427-1');
-</script>
-
-
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '327167911228268');
-  fbq('track', 'PageView');
-</script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=327167911228268&ev=PageView&noscript=1" /></noscript>
-    <!-- End Facebook Pixel Code -->
-
-
-
-
-
-
 </head>
 
 <body class="layout-login-centered-boxed">
-
-
-
-
 
     <div class="layout-login-centered-boxed__form card">
         <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-5 navbar-light">
@@ -75,11 +38,13 @@
             <p class="m-0">Faça login para entrar no painel de controle</p>
         </div>
 
-        <form action="/painel" novalidate>
+        <form action="javascript:void(0)" method="POST" id="form-login">
+            @csrf
+            <input type="hidden" name="url_form" id="url_form" value="{{route('efetuar_login')}}">
             <div class="form-group">
-                <label class="text-label" for="email_2">E-mail:</label>
+                <label class="text-label" for="email">E-mail:</label>
                 <div class="input-group input-group-merge">
-                    <input id="email_2" type="email" required="" class="form-control form-control-prepended" placeholder="Insira seu e-mail">
+                    <input id="email" name="email" type="email" required="" class="form-control form-control-prepended" placeholder="Insira seu e-mail">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="far fa-envelope"></span>
@@ -88,9 +53,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="text-label" for="password_2">Senha:</label>
+                <label class="text-label" for="senha">Senha:</label>
                 <div class="input-group input-group-merge">
-                    <input id="password_2" type="password" required="" class="form-control form-control-prepended" placeholder="Insira sua senha">
+                    <input id="senha" name="senha" type="password" required="" class="form-control form-control-prepended" placeholder="Insira sua senha">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="fa fa-key"></span>
@@ -99,7 +64,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button class="btn btn-block btn-primary" type="submit">Entrar</button>
+                <button class="btn btn-block btn-primary" id="btn-login" type="submit">Entrar</button>
             </div>
             <div class="form-group text-center">
                 <a href="/esqueci-minha-senha">Esqueceu sua senha?</a> <br>
@@ -107,6 +72,25 @@
         </form>
     </div>
 
+    <div class="modal fade" id="modal-resposta" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mensagem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="texto-resposta"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/public/template_painel/functionsJs/login.js" defer></script>
 
     <!-- jQuery -->
     <script src="/template_painel/vendor/jquery.min.js"></script>
@@ -133,10 +117,6 @@
 
     <!-- App Settings (safe to remove) -->
     <script src="/template_painel/js/app-settings.js"></script>
-
-
-
-
 
 </body>
 

@@ -15,15 +15,15 @@
     <div class="row no-gutters">
         <div class="col-lg-12 card-body">
             <form>
-                <div class="avatar avatar-xxl" data-toggle="tooltip" data-placement="top" title="Dhouglas">
-                    <img src="/template_painel/images/256_daniel-gaffey-1060698-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                <div class="avatar avatar-xxl" data-toggle="tooltip" data-placement="top" title="{{session('usuario_nome')}}">
+                    <img src="{{session('usuario_avatar')}}" alt="Avatar" class="avatar-img rounded-circle">
                 </div>
                 <br>
                 <br>
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-10">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome do usuário..." disabled>
+                        <input type="text" class="form-control" id="nome" name="nome" value="{{session('usuario_nome')}}" disabled>
                     </div>
                     <div class="form-group col-sm-12 col-md-2">
                         <label for="tipo_usuario">Tipo do usuário</label>
@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-6">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Insira o e-mail..." disabled>
+                        <input type="email" class="form-control" id="email" name="email" value="{{session('usuario_email')}}" disabled>
                     </div>
                 </div>
                 <br>

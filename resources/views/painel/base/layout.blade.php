@@ -74,14 +74,14 @@
                         <ul class="nav navbar-nav d-none d-sm-flex border-left navbar-height align-items-center">
                             <li class="nav-item dropdown">
                                 <a href="#account_menu" class="nav-link dropdown-toggle" data-toggle="dropdown" data-caret="false">
-                                    <img src="/template_painel/images/avatar/demi.png" class="rounded-circle" width="32" alt="Frontted">
+                                    <img src="{{session('usuario_avatar')}}" class="rounded-circle" width="32" alt="Avatar">
                                     <span class="ml-1 d-flex-inline">
-                                        <span class="text-light">Dhouglas</span>
+                                        <span class="text-light">{{session('usuario_nome')}}</span>
                                     </span>
                                 </a>
                                 <div id="account_menu" class="dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-item-text dropdown-item-text--lh">
-                                        <div><strong>Dhouglas</strong></div>
+                                        <div><strong>{{session('usuario_nome')}}</strong></div>
                                     </div>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item active" href="/painel">Painel de controle</a>
@@ -141,6 +141,44 @@
                                     </ul>
                                 </li>
                                 <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" data-toggle="collapse" href="#colaboradores_menu">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-chalkboard-teacher"></i>
+                                        <span class="sidebar-menu-text">Colaboradores</span>
+                                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                    </a>
+                                    <ul class="sidebar-submenu collapse show " id="colaboradores_menu">
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/painel/colaboradores/inserir">
+                                                <span class="sidebar-menu-text">Inserir</span>
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/painel/colaboradores">
+                                                <span class="sidebar-menu-text">Visualizar</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" data-toggle="collapse" href="#eventos_menu">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-calendar"></i>
+                                        <span class="sidebar-menu-text">Eventos</span>
+                                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                    </a>
+                                    <ul class="sidebar-submenu collapse show " id="eventos_menu">
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/painel/eventos/inserir">
+                                                <span class="sidebar-menu-text">Inserir</span>
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/painel/eventos">
+                                                <span class="sidebar-menu-text">Visualizar</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#galeria_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-images"></i>
                                         <span class="sidebar-menu-text">Galeria</span>
@@ -174,6 +212,20 @@
                                         <li class="sidebar-menu-item">
                                             <a class="sidebar-menu-button" href="/painel/noticias">
                                                 <span class="sidebar-menu-text">Visualizar</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" data-toggle="collapse" href="#parametros_inicio_menu">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-tools"></i>
+                                        <span class="sidebar-menu-text">Parâmetros início</span>
+                                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                    </a>
+                                    <ul class="sidebar-submenu collapse show " id="parametros_inicio_menu">
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/painel/parametros-inicio/alterar">
+                                                <span class="sidebar-menu-text">Alterar</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -317,7 +369,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
-                    <a href="/" class="btn btn-danger">Sair</a>
+                    <a href="/logout" class="btn btn-danger">Sair</a>
                 </div>
             </div>
         </div>
