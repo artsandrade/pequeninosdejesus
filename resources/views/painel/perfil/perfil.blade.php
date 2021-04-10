@@ -14,7 +14,11 @@
 <div class="card card-form">
     <div class="row no-gutters">
         <div class="col-lg-12 card-body">
-            <form>
+            <form action="javascript:void(0)" method="POST" id="form-alterar-senha">
+                @CSRF
+                <input type="hidden" name="id_usuario" value="{{session('usuario_id')}}">
+                <input type="hidden" name="url_form" id="url_form" value="{{route('perfil_alterar_senha')}}">
+
                 <div class="avatar avatar-xxl" data-toggle="tooltip" data-placement="top" title="{{session('usuario_nome')}}">
                     <img src="{{session('usuario_avatar')}}" alt="Avatar" class="avatar-img rounded-circle">
                 </div>
@@ -46,20 +50,43 @@
                     </div>
                     <div class="form-group col-sm-12 col-md-4">
                         <label for="senha">Senha antiga</label>
-                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira a senha antiga senha...">
+                        <input type="password" class="form-control" id="senha" name="senha_antiga" placeholder="Insira a senha antiga senha...">
                     </div>
                     <div class="form-group col-sm-12 col-md-4">
                         <label for="senha">Nova senha</label>
-                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira a nova senha...">
+                        <input type="password" class="form-control" id="senha" name="senha_nova" placeholder="Insira a nova senha...">
                     </div>
                 </div>
                 <br>
                 <div class="form-group text-right">
                     <a href="/painel" class="btn btn-secondary">Voltar</a>
-                    <button type="submit" class="btn btn-primary">Alterar senha</button>
+                    <button type="submit" class="btn btn-primary" id="btn-alterar">Alterar senha</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+@stop
+
+@section('footer_layout')
+<div class="modal fade" id="modal-resposta" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="texto-resposta"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/public/template_painel/functionsJs/login.js" defer></script>
 @stop

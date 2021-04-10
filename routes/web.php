@@ -68,9 +68,24 @@ Route::middleware(['usuario_logado'])->group(function () {
 
 Route::post('/login', [loginController::class, 'efetuar_login'])->name('efetuar_login');
 
+Route::get('/esqueci-minha-senha', function () {
+    return view('painel/login/esqueci-minha-senha');
+});
+
+Route::post('/esqueci-minha-senha', [loginController::class, 'recuperar_senha'])->name('recuperar_senha');
+
+Route::get('/redefinir-senha', function () {
+    return view('painel/login/redefinir-senha');
+});
+
+Route::post('/redefinir-senha', [loginController::class, 'alterar_senha2'])->name('redefinir_senha');
+
 Route::middleware(['autenticacao'])->group(function () {
     Route::get('/painel', function () {
-        return view('painel/inicio/inicio');
+        $atendimentos = DB::table('atendimentos');
+        $noticias = DB::table('noticias');
+        $prestacoes_de_contas = DB::table('prestacoes_de_contas');
+        return view('painel/inicio/inicio', compact('atendimentos', 'noticias', 'prestacoes_de_contas'));
     })->name('painel');
 
     Route::get('/logout', [loginController::class, 'logout'])->name('logout');
@@ -135,13 +150,11 @@ Route::middleware(['autenticacao'])->group(function () {
     });
 
     //Login e perfil
-    Route::get('/esqueci-minha-senha', function () {
-        return view('painel/login/esqueci-minha-senha');
-    });
-
     Route::get('/painel/meu-perfil', function () {
         return view('painel/perfil/perfil');
     });
+
+    Route::post('/painel/meu-perfil', [loginController::class, 'alterar_senha'])->name('perfil_alterar_senha');
 
     //Noticias
     Route::get('/painel/noticias', function () {

@@ -84,7 +84,7 @@
                                         <div><strong>{{session('usuario_nome')}}</strong></div>
                                     </div>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item active" href="/painel">Painel de controle</a>
+                                    <a class="dropdown-item" href="/painel">Painel de controle</a>
                                     <a class="dropdown-item" href="/painel/meu-perfil">Meu perfil</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-sair">Sair</a>

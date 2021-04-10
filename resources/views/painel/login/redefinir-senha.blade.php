@@ -25,7 +25,6 @@
     <!-- Font Awesome FREE Icons -->
     <link type="text/css" href="/template_painel/css/vendor-fontawesome-free.css" rel="stylesheet">
     <link type="text/css" href="/template_painel/css/vendor-fontawesome-free.rtl.css" rel="stylesheet">
-
 </head>
 
 <body class="layout-login-centered-boxed">
@@ -39,17 +38,17 @@
             <a href="index.html" class="navbar-brand flex-column mb-2 align-items-center mr-0" style="min-width: 0">
                 <img class="navbar-brand-icon mr-0 mb-2" src="/template_site/images/logo-pequeninos.png" width="350" alt="Stack">
             </a>
-            <p class="m-0">Solicitar uma nova senha</p>
+            <p class="m-0">Redefinir senha</p>
         </div>
 
-        <form action="javascript:void(0)" method="POST" id="form-solicitar">
+        <form action="javascript:void(0)" method="POST" id="form-redefinir">
             @csrf
-            <input type="hidden" name="url_form" id="url_form" value="{{route('recuperar_senha')}}">
+            <input type="hidden" name="url_form" id="url_form" value="{{route('redefinir_senha')}}">
 
             <div class="form-group">
-                <label class="text-label" for="email">E-mail:</label>
+                <label class="text-label" for="senha">Nova senha:</label>
                 <div class="input-group input-group-merge">
-                    <input id="email" name="email" type="email" required="" class="form-control form-control-prepended" placeholder="Insira seu e-mail">
+                    <input id="senha" type="password" name="senha" required="" class="form-control form-control-prepended" placeholder="Insira a nova senha...">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="far fa-envelope"></span>
@@ -59,7 +58,7 @@
             </div>
 
             <div class="form-group">
-                <button class="btn btn-block btn-primary" type="submit" id="btn-solicitar">Solicitar senha</button>
+                <button class="btn btn-block btn-primary" type="submit" id="btn-redefinir">Redefinir senha</button>
             </div>
             <div class="form-group text-center">
                 <a href="/login">Fazer login com minha conta</a> <br>

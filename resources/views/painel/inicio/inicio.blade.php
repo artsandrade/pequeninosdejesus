@@ -16,7 +16,7 @@
         <div class="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
             <div class="flex">
                 <div class="card-header__title text-muted mb-2">Atendimentos</div>
-                <div class="text-amount">27</div>
+                <div class="text-amount">{{$atendimentos->count()}}</div>
             </div>
             <div><i class="icon-muted icon-40pt fas fa-phone ml-3"></i></div>
         </div>
@@ -25,7 +25,7 @@
         <div class="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
             <div class="flex">
                 <div class="card-header__title text-muted mb-2">Notícias</div>
-                <div class="text-amount">10</div>
+                <div class="text-amount">{{$noticias->count()}}</div>
             </div>
             <div><i class="icon-muted icon-40pt fas fa-newspaper ml-3"></i></div>
         </div>
@@ -34,7 +34,7 @@
         <div class="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
             <div class="flex">
                 <div class="card-header__title text-muted mb-2">Prestação de contas</div>
-                <div class="text-amount">360</div>
+                <div class="text-amount">{{$prestacoes_de_contas->count()}}</div>
             </div>
             <div><i class="icon-muted icon-40pt fas fa-hand-holding-usd ml-3"></i></div>
         </div>
@@ -49,49 +49,31 @@
             <div class="list-group tab-content list-group-flush">
                 <div class="tab-pane active show fade" id="activity_all">
 
-
+                    @if($atendimentos->count()!=0)
+                    @foreach($atendimentos->get() as $atendimento)
+                    @if($atendimento->dt_criacao>=date('Y-m-d H:i:s', strtotime('-7 days')))
                     <div class="list-group-item list-group-item-action d-flex align-items-center ">
                         <div class="flex">
                             <div class="d-flex align-items-middle">
-                                <strong class="text-15pt mr-1">Fulano de tal (Assunto: Solicitação de documentos)</strong>
+                                <strong class="text-15pt mr-1">{{$atendimento->nome}} (Assunto: {{$atendimento->assunto}})</strong>
                             </div>
-                            <small class="text-muted">11/03/2021</small>
+                            <small class="text-muted">{{date('d/m/Y', strtotime($atendimento->dt_criacao))}}</small>
                         </div>
+                        @if($atendimento->situacao=='1')
+                        <div><span class="badge badge-success">CONCLUÍDO</span></div>
+                        @elseif($atendimento->situacao=='2')
                         <div><span class="badge badge-warning">EM ANDAMENTO</span></div>
+                        @else
+                        <div><span class="badge badge-danger">PENDENTE</span></div>
+                        @endif
                     </div>
+                    @endif
+                    @endforeach
+                    @else
 
-                    <div class="list-group-item list-group-item-action d-flex align-items-center ">
-                        <div class="flex">
-                            <div class="d-flex align-items-middle">
-                                <strong class="text-15pt mr-1">Fulano de tal (Assunto: Solicitação de documentos)</strong>
-                            </div>
-                            <small class="text-muted">11/03/2021</small>
-                        </div>
-                        <div><span class="badge badge-warning">EM ANDAMENTO</span></div>
-                    </div>
-
-                    <div class="list-group-item list-group-item-action d-flex align-items-center ">
-                        <div class="flex">
-                            <div class="d-flex align-items-middle">
-                                <strong class="text-15pt mr-1">Fulano de tal (Assunto: Solicitação de documentos)</strong>
-                            </div>
-                            <small class="text-muted">11/03/2021</small>
-                        </div>
-                        <div><span class="badge badge-warning">EM ANDAMENTO</span></div>
-                    </div>
-
-                    <div class="list-group-item list-group-item-action d-flex align-items-center ">
-                        <div class="flex">
-                            <div class="d-flex align-items-middle">
-                                <strong class="text-15pt mr-1">Fulano de tal (Assunto: Solicitação de documentos)</strong>
-                            </div>
-                            <small class="text-muted">11/03/2021</small>
-                        </div>
-                        <div><span class="badge badge-warning">EM ANDAMENTO</span></div>
-                    </div>
-
+                    @endif
                     <div class="card-footer text-center border-0">
-                        <a class="text-muted" href="/painel/atendimentos">Ver todos (15)</a>
+                        <a class="text-muted" href="/painel/atendimentos">Ver todos ({{$atendimentos->count()}})</a>
                     </div>
                 </div>
             </div>
