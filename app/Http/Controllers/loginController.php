@@ -46,6 +46,7 @@ class loginController extends Controller
   {
     $usuario = new loginModel();
     $usuario->setEmail($_POST['email']);
+    $usuario->recuperar_senha();
     $resposta = array('resposta' => $usuario->getResposta());
     return response()->json($resposta);
   }
