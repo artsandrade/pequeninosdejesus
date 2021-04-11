@@ -44,6 +44,8 @@
         <form action="javascript:void(0)" method="POST" id="form-redefinir">
             @csrf
             <input type="hidden" name="url_form" id="url_form" value="{{route('redefinir_senha')}}">
+            <input type="hidden" name="email" value="{{$_GET['email']}}">
+            <input type="hidden" name="codigo_senha" value="{{$_GET['codigo_senha']}}">
 
             <div class="form-group">
                 <label class="text-label" for="senha">Nova senha:</label>

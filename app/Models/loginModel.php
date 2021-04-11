@@ -210,7 +210,7 @@ class loginModel extends Model
         if (!empty($this->getEmail())) {
             if ((DB::table('usuarios')->where('email', '=', $this->getEmail())->count()) > 0) {
                 $codigo = mt_rand(9999999, 99999999);
-                $url = "http://" . $_SERVER["HTTP_HOST"] . "/redefinir-senha?c=$codigo";
+                $url = "http://" . $_SERVER["HTTP_HOST"] . "/redefinir-senha?email=" . $this->getEmail() . "?codigo_senha=" . $codigo;
                 DB::table('usuarios')->where('email', '=', $this->getEmail())->update([
                     'codigo_senha' => $codigo
                 ]);
