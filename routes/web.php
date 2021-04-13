@@ -3,6 +3,7 @@
 use App\Http\Controllers\atendimentosController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\noticiasController;
+use App\Http\Controllers\parametrosInicioController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 //Rotas site principal
 
 Route::get('/', function () {
-    return view('site/inicio');
+    $parametros_inicio = DB::table(('parametros_inicio'))->get();
+    return view('site/inicio', compact('parametros_inicio'));
 });
 
 Route::get('/colaboradores', function () {
@@ -30,6 +32,8 @@ Route::get('/colaboradores', function () {
 Route::get('/fale-conosco', function () {
     return view('site/fale-conosco');
 });
+
+Route::post('/fale-conosco', [atendimentosController::class, 'inserir'])->name('atendimentos_inserir');
 
 Route::get('/galeria', function () {
     return view('site/galeria');
@@ -48,7 +52,8 @@ Route::get('/noticias/post', function () {
     if (!empty($_GET['id'])) {
         if ((DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->count()) > 0) {
             $noticias = DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->get();
-            return view('site/noticias-post', compact('noticias'));
+            $ultimas_noticias = DB::table('noticias')->where('id_noticia', '!=', $_GET['id'])->limit(3)->orderByDesc('dt_criacao')->get();
+            return view('site/noticias-post', compact('noticias', 'ultimas_noticias'));
         } else {
             return redirect()->route('noticias_site');
         }
@@ -93,7 +98,7 @@ Route::post('/redefinir-senha', [loginController::class, 'alterar_senha2'])->nam
 
 Route::middleware(['autenticacao'])->group(function () {
     Route::get('/painel', function () {
-        $atendimentos = DB::table('atendimentos');
+        $atendimentos = DB::table('atendimentos')->limit(7)->orderByDesc('dt_criacao');
         $noticias = DB::table('noticias');
         $prestacoes_de_contas = DB::table('prestacoes_de_contas');
         return view('painel/inicio/inicio', compact('atendimentos', 'noticias', 'prestacoes_de_contas'));
@@ -211,8 +216,11 @@ Route::middleware(['autenticacao'])->group(function () {
 
     //Parametros inicio
     Route::get('/painel/parametros-inicio/alterar', function () {
-        return view('painel/parametros-inicio/alterar');
+        $parametros_inicio = DB::table(('parametros_inicio'))->get();
+        return view('painel/parametros-inicio/alterar', compact('parametros_inicio'));
     });
+
+    Route::post('/painel/parametros-inicio/alterar', [parametrosInicioController::class, 'alterar'])->name('parametros_alterar');
 
     //Prestacao de contas
     Route::get('/painel/prestacao-de-contas/inserir', function () {

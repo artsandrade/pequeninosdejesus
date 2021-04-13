@@ -55,9 +55,8 @@
 </div>
 @endforeach
 <script src="/public/template_painel/functionsJs/noticias.js" defer></script>
+<script src="/public/template_painel/functionsJs/quill.js" defer></script>
 
-<script type="text/javascript" defer>
-</script>
 @stop
 
 @section('footer_layout')

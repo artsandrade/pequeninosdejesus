@@ -31,7 +31,7 @@
                             <a href="/painel/noticias/visualizar?id={{$noticia->id_noticia}}" class="btn btn-secondary"><i class="material-icons">visibility</i></a>
                         </div>
                         <div class="col-sm-4">
-                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-center"><i class="material-icons">delete</i></a>
+                            <a href="#" class="btn btn-danger" onclick="modalRemover('{{$noticia->titulo}}', '{{$noticia->id_noticia}}')"><i class="material-icons">delete</i></a>
                         </div>
                     </div>
                 </div>
@@ -40,10 +40,11 @@
     </div>
     @endforeach
 </div>
+
+<script src="/public/template_painel/functionsJs/noticias.js" defer></script>
 @stop
 
 @section('footer_layout')
-
 <div id="modal-center" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-center-title" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -54,14 +55,33 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Você tem certeza que deseja remover a notícia <b>Nome da notícia</b>?</p>
+                <p id="modal-texto"></p>
             </div>
             <div class="modal-footer">
+                @csrf
                 <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-danger" onclick="remover('{{$noticia->id_noticia}}')">Remover</button>
+                <button type="submit" id="modal-botao" class="btn btn-danger">Remover</button>
             </div>
         </div>
     </div>
 </div>
 
+<div class="modal fade" id="modal-resposta" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="texto-resposta"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 @stop

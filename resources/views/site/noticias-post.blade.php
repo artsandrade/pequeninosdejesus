@@ -2,19 +2,19 @@
 
 @section('conteudo')
 
-
+@foreach($noticias as $noticia)
 <!-- BANNER -->
 <div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
-			<div class="title-page">Inauguração da quadra</div>
+			<div class="title-page">{{$noticia->titulo}}</div>
 		</div>
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb ">
 					<li class="breadcrumb-item"><a href="/">Início</a></li>
 					<li class="breadcrumb-item"><a href="/noticias">Notícias</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Inauguração da quadra</li>
+					<li class="breadcrumb-item active" aria-current="page">{{$noticia->titulo}}</li>
 				</ol>
 			</nav>
 		</div>
@@ -30,7 +30,6 @@
 
 				<div class="col-sm-12 col-md-12 col-lg-9">
 					
-					@foreach($noticias as $noticia)
 					<div class="single-news">
 						<div class="media">
 							<img src="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" alt="" class="rounded img-fluid">
@@ -40,7 +39,6 @@
 
 						{!! $noticia->noticia !!}
 					</div>
-					@endforeach
 					<!-- end single blog -->
 
 					<div class="author-box">
@@ -64,19 +62,20 @@
 					<div class="widget-title">
 						Últimas notícias
 					</div>
+					@foreach($ultimas_noticias as $ultima_noticia)
 					<div class="rs-news-1">
 						<div class="media-box">
-							<a href="/noticias/post"><img src="/template_site/images/quadra/img2.png" alt="" class="img-fluid"></a>
+							<a href="/noticias/post"><img src="data:image/jpeg;base64, {{base64_encode( $ultima_noticia->capa )}}" alt="" class="img-fluid"></a>
 						</div>
 						<div class="body-box">
 							<div class="title">
-								<a href="/noticias/post">Inauguração da quadra</a>
+								<a href="/noticias/post?id={{$ultima_noticia->id_noticia}}">{{$ultima_noticia->titulo}}</a>
 							</div>
-							<div class="meta-date">01 de janeiro de 2021</div>
-							<p>Na manhã do dia 01/02/2021, juntamente com as autoridades locais, foi inaugurada a quadra poliesportiva do instituto...</p>
+							<div class="meta-date">{{date('d/m/Y', strtotime($ultima_noticia->dt_criacao))}}</div>
 						</div>
 					</div>
-
+					<br>
+					@endforeach
 				</div>
 				<!-- end sidebar -->
 
@@ -85,6 +84,7 @@
 		</div>
 	</div>
 </div>
+@endforeach
 
 <!-- CTA -->
 <div class="section" style="background-color: #3f4095;">

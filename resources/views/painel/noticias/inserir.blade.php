@@ -39,6 +39,8 @@
 </div>
 
 <script src="/public/template_painel/functionsJs/noticias.js" defer></script>
+<script src="/public/template_painel/functionsJs/quill.js" defer></script>
+
 @stop
 
 @section('footer_layout')

@@ -26,59 +26,61 @@
 			<div class="row">
 				<div class="col-12 col-md-6">
 
-					<form action="#" class="form-contact" id="contactForm" data-toggle="validator" novalidate="true">
+					<form action="javascript:void(0)" method="POST" class="form-contact" id="contactForm" data-toggle="validator" novalidate="true">
 						<div class="row">
+							@csrf
+							<input type="hidden" name="url_form" id="url_form" value="{{route('atendimentos_inserir')}}">
 							<div class="col-sm-12 col-md-12">
 								<div class="form-group">
 									<label for="">Nome</label>
-									<input type="text" class="form-control" id="p_name" placeholder="Digite seu nome completo" required="">
+									<input type="text" class="form-control" id="p_name" name="nome" placeholder="Digite seu nome completo" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-8">
 								<div class="form-group">
 									<label for="">Nome do aluno</label>
-									<input type="text" class="form-control" id="p_name" placeholder="Digite o nome do aluno" required="">
+									<input type="text" class="form-control" id="p_name" name="nome_aluno" placeholder="Digite o nome do aluno" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-4">
 								<div class="form-group">
 									<label for="">CPF do aluno</label>
-									<input type="text" class="form-control" id="p_name" placeholder="Digite o CPF do aluno" required="">
+									<input type="text" class="form-control" id="p_name" name="cpf_aluno" placeholder="Digite o CPF do aluno" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-12">
 								<div class="form-group">
 									<label for="">E-mail</label>
-									<input type="email" class="form-control" id="p_email" placeholder="Digite seu e-mail">
+									<input type="email" class="form-control" id="p_email" name="email" placeholder="Digite seu e-mail">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
 									<label for="">Telefone</label>
-									<input type="text" class="form-control" id="p_phone" placeholder="Digite seu telefone">
+									<input type="text" class="form-control" id="p_phone" name="telefone" placeholder="Digite seu telefone">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
 									<label for="">Celular</label>
-									<input type="text" class="form-control" id="p_phone" placeholder="Digite seu celular">
+									<input type="text" class="form-control" id="p_phone" name="celular" placeholder="Digite seu celular">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-12">
 								<div class="form-group">
 									<label for="">Assunto</label>
-									<select class="form-control" name="" id="" required="">
+									<select class="form-control" name="assunto" id="assunto" required="">
 										<option value="">Selecione</option>
-										<option value="critica">Crítica</option>
-										<option value="duvida">Dúvida</option>
-										<option value="solicitacao-de-documentos">Solicitação de documentos</option>
-										<option value="sugestao">Sugestão</option>
+										<option value="Crítica">Crítica</option>
+										<option value="Dúvida">Dúvida</option>
+										<option value="Solicitação de documentos">Solicitação de documentos</option>
+										<option value="Sugestão">Sugestão</option>
 									</select>
 									<div class="help-block with-errors"></div>
 								</div>
@@ -87,12 +89,12 @@
 						</div>
 						<div class="form-group">
 							<label for="">Mensagem</label>
-							<textarea id="p_message" class="form-control" rows="6" placeholder="Escreva sua mensagem..."></textarea>
+							<textarea id="p_message" class="form-control" name="mensagem" rows="6" placeholder="Escreva sua mensagem..."></textarea>
 							<div class="help-block with-errors"></div>
 						</div>
 						<div class="form-group">
 							<div id="success"></div>
-							<button type="submit" class="btn btn-primary">Enviar mensagem</button>
+							<button type="submit" class="btn btn-primary" id="btn-inserir">Enviar mensagem</button>
 						</div>
 					</form>
 					<div class="spacer-content"></div>
@@ -137,6 +139,27 @@
 			<br>
 		</div>
 	</div>
+</div>
+
+<script src="/public/template_site/functionsJs/atendimentos.js" defer></script>
+
+<div class="modal fade" id="modal-resposta" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="texto-resposta"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 @stop

@@ -122,7 +122,11 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-primary">
 						<div class="box-fun">
-							<h2>215</h2>
+							@foreach($parametros_inicio as $parametro)
+							@if($parametro->id_parametro==1)
+							<h2>{{$parametro->numero}}</h2>
+							@endif
+							@endforeach
 						</div>
 						<div class="title">Alunos matriculados</div>
 					</div>
@@ -131,7 +135,11 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-quaternary">
 						<div class="box-fun">
-							<h2>4.865</h2>
+							@foreach($parametros_inicio as $parametro)
+							@if($parametro->id_parametro==2)
+							<h2>{{$parametro->numero}}</h2>
+							@endif
+							@endforeach
 						</div>
 						<div class="title">Alunos que já estudaram aqui</div>
 					</div>
@@ -140,7 +148,11 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-secondary">
 						<div class="box-fun">
-							<h2>15</h2>
+							@foreach($parametros_inicio as $parametro)
+							@if($parametro->id_parametro==3)
+							<h2>{{$parametro->numero}}</h2>
+							@endif
+							@endforeach
 						</div>
 						<div class="title">Colaboradores</div>
 					</div>
@@ -149,7 +161,11 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="rs-funfact bg-tertiary">
 						<div class="box-fun">
-							<h2>17</h2>
+							@foreach($parametros_inicio as $parametro)
+							@if($parametro->id_parametro==4)
+							<h2>{{$parametro->numero}}</h2>
+							@endif
+							@endforeach
 						</div>
 						<div class="title">Salas de aula</div>
 					</div>
