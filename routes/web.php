@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\atendimentosController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\noticiasController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -39,11 +40,21 @@ Route::get('/galeria/post', function () {
 });
 
 Route::get('/noticias', function () {
-    return view('site/noticias');
-});
+    $noticias = DB::table('noticias')->orderByDesc('dt_criacao')->get();
+    return view('site/noticias', compact('noticias'));
+})->name('noticias_site');
 
 Route::get('/noticias/post', function () {
-    return view('site/noticias-post');
+    if (!empty($_GET['id'])) {
+        if ((DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->count()) > 0) {
+            $noticias = DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->get();
+            return view('site/noticias-post', compact('noticias'));
+        } else {
+            return redirect()->route('noticias_site');
+        }
+    } else {
+        return redirect()->route('noticias_site');
+    }
 });
 
 Route::get('/prestacao-de-contas', function () {
@@ -97,7 +108,7 @@ Route::middleware(['autenticacao'])->group(function () {
     })->name('atendimentos');
 
     Route::post('/painel/atendimentos', [atendimentosController::class, 'alterar'])->name('atendimentos_alterar');
-    
+
     //Colaboradores
     Route::get('/painel/colaboradores', function () {
         return view('painel/colaboradores/colaboradores');
@@ -158,20 +169,45 @@ Route::middleware(['autenticacao'])->group(function () {
 
     //Noticias
     Route::get('/painel/noticias', function () {
-        return view('painel/noticias/noticias');
-    });
+        $noticias = DB::table('noticias')->orderByDesc('dt_criacao')->get();
+        return view('painel/noticias/noticias', compact('noticias'));
+    })->name('noticias');
 
     Route::get('/painel/noticias/inserir', function () {
         return view('painel/noticias/inserir');
     });
 
+    Route::post('/painel/noticias/inserir', [noticiasController::class, 'inserir'])->name('noticias_inserir');
+
     Route::get('/painel/noticias/visualizar', function () {
-        return view('painel/noticias/visualizar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->count()) > 0) {
+                $noticias = DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->get();
+                return view('painel/noticias/visualizar', compact('noticias'));
+            } else {
+                return redirect()->route('noticias');
+            }
+        } else {
+            return redirect()->route('noticias');
+        }
     });
 
     Route::get('/painel/noticias/alterar', function () {
-        return view('painel/noticias/alterar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->count()) > 0) {
+                $noticias = DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->get();
+                return view('painel/noticias/alterar', compact('noticias'));
+            } else {
+                return redirect()->route('noticias');
+            }
+        } else {
+            return redirect()->route('noticias');
+        }
     });
+
+    Route::post('/painel/noticias/alterar', [noticiasController::class, 'alterar'])->name('noticias_alterar');
+
+    Route::post('/painel/noticias/remover', [noticiasController::class, 'remover'])->name('noticias_remover');
 
     //Parametros inicio
     Route::get('/painel/parametros-inicio/alterar', function () {

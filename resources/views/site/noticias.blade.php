@@ -27,21 +27,21 @@
 			<div class="row">
 
 				<!-- Item 1 -->
+				@foreach($noticias as $noticia)
 				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
 					<div class="rs-news-1">
 						<div class="media-box">
-							<a href="/noticias/post"><img src="/template_site/images/quadra/img2.png" alt="" class="img-fluid"></a>
+							<a href="/noticias/post?id={{$noticia->id_noticia}}"><img src="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" alt="" class="img-fluid"></a>
 						</div>
 						<div class="body-box">
 							<div class="title">
-								<a href="/noticias/post">Inauguração da quadra</a>
+								<a href="/noticias/post?id={{$noticia->id_noticia}}">{{$noticia->titulo}}</a>
 							</div>
-							<div class="meta-date">01 de janeiro de 2021</div>
-							<p>Na manhã do dia 01/02/2021, juntamente com as autoridades locais, foi inaugurada a quadra poliesportiva do instituto...</p>
+							<div class="meta-date">{{date('d/m/Y', strtotime($noticia->dt_criacao))}}</div>
 						</div>
 					</div>
 				</div>
-
+				@endforeach
 			</div>
 
 			<div class="row">
