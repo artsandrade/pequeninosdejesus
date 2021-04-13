@@ -42,6 +42,8 @@
 
 	<script src="/template_site/js/vendor/modernizr.min.js"></script>
 
+	@yield('header')
+
 </head>
 
 <body>
@@ -214,6 +216,8 @@
 	<script src="/template_site/js/vendor/form-scripts.js"></script>
 
 	<script src="/template_site/js/script.js"></script>
+
+	@yield('footer')
 
 	<style>
 		#imagem_whats {

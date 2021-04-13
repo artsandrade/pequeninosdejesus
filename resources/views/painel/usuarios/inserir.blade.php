@@ -15,7 +15,7 @@
 <div class="card card-form">
     <div class="row no-gutters">
         <div class="col-lg-12 card-body">
-            <form>
+            <form id="form-inserir" action="javascript:void(0)" method="POST">
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-10">
                         <label for="nome">Nome</label>
@@ -24,8 +24,10 @@
                     <div class="form-group col-sm-12 col-md-2">
                         <label for="tipo_usuario">Tipo do usuário</label>
                         <select class="form-control" name="tipo_usuario" id="tipo_usuario">
-                            <option value="">Administrador</option>
-                            <option value="">Comum</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Comum</option>
+                            <option value="3">Financeiro</option>
+                            <option value="4">Secretaria</option>
                         </select>
                     </div>
                 </div>
@@ -41,8 +43,8 @@
                     <div class="form-group col-sm-12 col-md-2">
                         <label for="situacao">Situação</label>
                         <select class="form-control" name="situacao" id="situacao">
-                            <option value="">Bloqueado</option>
-                            <option value="">Liberado</option>
+                            <option value="0">Bloqueado</option>
+                            <option value="1">Liberado</option>
                         </select>
                     </div>
                 </div>

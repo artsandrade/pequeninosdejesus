@@ -31,8 +31,7 @@ class atendimentosController extends Controller
         $atendimento->setDt_criacao(date('Y-m-d H:i:s'));
         $atendimento->setSituacao('3');
         $atendimento->inserir();
-        return response()->json([
-            'resposta' => $atendimento->getResposta()
-        ]);
+        $resposta = array('resposta'=>$atendimento->getResposta());
+        return response()->json($resposta);
     }
 }

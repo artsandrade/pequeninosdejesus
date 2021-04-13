@@ -74,7 +74,7 @@
                         <ul class="nav navbar-nav d-none d-sm-flex border-left navbar-height align-items-center">
                             <li class="nav-item dropdown">
                                 <a href="#account_menu" class="nav-link dropdown-toggle" data-toggle="dropdown" data-caret="false">
-                                    <img src="{{session('usuario_avatar')}}" class="rounded-circle" width="32" alt="Avatar">
+                                    <img src="data:image/jpeg;base64, {{base64_encode( session('usuario_avatar') )}}" class="rounded-circle" width="32" alt="Avatar">
                                     <span class="ml-1 d-flex-inline">
                                         <span class="text-light">{{session('usuario_nome')}}</span>
                                     </span>

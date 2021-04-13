@@ -31,19 +31,25 @@
                         </tr>
                     </thead>
                     <tbody class="list" id="staff02">
+                        @foreach($usuarios as $usuario)
                         <tr>
                             <td>
-                                <span class="js-lists-values-employee-name">Arthur Andrade</span>
+                                <span class="js-lists-values-employee-name">{{$usuario->nome}}</span>
                             </td>
                             <td>
-                                <span class="js-lists-values-login">arthur.andrade@pequeninosdejesus.com.br</span>
+                                <span class="js-lists-values-login">{{$usuario->email}}</span>
                             </td>
+                            @if($usuario->situacao==1)
                             <td><span class="badge badge-success js-lists-values-status">LIBERADO</span></td>
+                            @else
+                            <td><span class="badge badge-danger js-lists-values-status">BLOQUEADO</span></td>
+                            @endif
                             <td>
-                                <a href="/painel/usuarios/alterar?id=" class="text-muted" title="Alterar"><i class="material-icons">create</i></a>
-                                <a href="#" class="text-muted" data-toggle="modal" data-target="#modal-center" title="Remover"><i class="material-icons">delete</i></a>
+                                <a href="/painel/usuarios/alterar?id={{$usuario->id_usuario}}" class="text-muted" title="Alterar"><i class="material-icons">create</i></a>
+                                <a href="#" class="text-muted" onclick="remover('{{$usuario->nome}}','{{$usuario->id_usuario}}')" title="Remover"><i class="material-icons">delete</i></a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -64,14 +70,32 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Você tem certeza que deseja remover o usuário <b>Nome do usuário</b>?</p>
+                <p id="modal-texto"></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-danger">Remover</button>
+                <button type="submit" class="btn btn-danger" id="modal-botao">Remover</button>
             </div>
         </div>
     </div>
 </div>
 
+<div class="modal fade" id="modal-resposta" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="texto-resposta"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 @stop

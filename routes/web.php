@@ -245,14 +245,24 @@ Route::middleware(['autenticacao'])->group(function () {
     });
 
     Route::get('/painel/usuarios', function () {
-        return view('painel/usuarios/usuarios');
-    });
+        $usuarios = DB::table('usuarios')->orderBy('nome')->get();
+        return view('painel/usuarios/usuarios', compact('usuarios'));
+    })->name('usuarios');
 
     Route::get('/painel/usuarios/visualizar', function () {
         return view('painel/usuarios/visualizar');
     });
 
     Route::get('/painel/usuarios/alterar', function () {
-        return view('painel/usuarios/alterar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('usuarios')->where('id_usuario', '=', $_GET['id'])->count()) > 0) {
+                $usuarios = DB::table('usuarios')->where('id_usuario', '=', $_GET['id'])->get();
+                return view('painel/usuarios/alterar', compact('usuarios'));
+            } else {
+                return redirect()->route('usuarios');
+            }
+        } else {
+            return redirect()->route('usuarios');
+        }
     });
 });

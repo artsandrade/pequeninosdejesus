@@ -33,42 +33,42 @@
 							<div class="col-sm-12 col-md-12">
 								<div class="form-group">
 									<label for="">Nome</label>
-									<input type="text" class="form-control" id="p_name" name="nome" placeholder="Digite seu nome completo" required="">
+									<input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-8">
 								<div class="form-group">
 									<label for="">Nome do aluno</label>
-									<input type="text" class="form-control" id="p_name" name="nome_aluno" placeholder="Digite o nome do aluno" required="">
+									<input type="text" class="form-control" id="nome_aluno" name="nome_aluno" placeholder="Digite o nome do aluno" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-4">
 								<div class="form-group">
 									<label for="">CPF do aluno</label>
-									<input type="text" class="form-control" id="p_name" name="cpf_aluno" placeholder="Digite o CPF do aluno" required="">
+									<input type="text" class="form-control" id="cpf_aluno" name="cpf_aluno" placeholder="Digite o CPF do aluno" required="">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-12">
 								<div class="form-group">
 									<label for="">E-mail</label>
-									<input type="email" class="form-control" id="p_email" name="email" placeholder="Digite seu e-mail">
+									<input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
 									<label for="">Telefone</label>
-									<input type="text" class="form-control" id="p_phone" name="telefone" placeholder="Digite seu telefone">
+									<input type="text" class="form-control" id="telefone" name="telefone" placeholder="Digite seu telefone">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-md-6">
 								<div class="form-group">
 									<label for="">Celular</label>
-									<input type="text" class="form-control" id="p_phone" name="celular" placeholder="Digite seu celular">
+									<input type="text" class="form-control" id="celular" name="celular" placeholder="Digite seu celular">
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
@@ -89,7 +89,7 @@
 						</div>
 						<div class="form-group">
 							<label for="">Mensagem</label>
-							<textarea id="p_message" class="form-control" name="mensagem" rows="6" placeholder="Escreva sua mensagem..."></textarea>
+							<textarea id="mensagem" class="form-control" name="mensagem" rows="6" placeholder="Escreva sua mensagem..."></textarea>
 							<div class="help-block with-errors"></div>
 						</div>
 						<div class="form-group">
@@ -162,4 +162,9 @@
     </div>
 </div>
 
+@stop
+
+@section('footer')
+<!--Jquery Mask (formatação de campos) -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 @stop

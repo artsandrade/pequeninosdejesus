@@ -222,18 +222,18 @@ class atendimentosModel extends Model
             $headers .= "Return-Path: atendimento@pequeninosdejesus.com.br\r\n"; // return-path
             $text = "<html>
                                 <head>
-                                    <title>Atendimento site - '$Nome'</title>
+                                    <title>Atendimento site - $Nome</title>
                                 </head>
                                 <body>
-                                    <h3>Nome: '$Nome'</h3>
-                                    <h3>Nome do aluno: '$NomeAluno'</h3>
-                                    <h3>CPF do aluno: '$CpfAluno'</h3>
-                                    <h3>E-mail: '$Email'</h3>
-                                    <h3>Telefone: '$Telefone'</h3>
-                                    <h3>Celular: '$Celular'</h3>
-                                    <h3>Assunto: '$Assunto'</h3>
-                                    <h3>Mensagem: '$Mensagem'</h3>
-                                    <h3>Data do atendimento: '$DtCriacao'</h3>
+                                    <h3>Nome: $Nome</h3>
+                                    <h3>Nome do aluno: $NomeAluno</h3>
+                                    <h3>CPF do aluno: $CpfAluno</h3>
+                                    <h3>E-mail: $Email</h3>
+                                    <h3>Telefone: $Telefone</h3>
+                                    <h3>Celular: $Celular</h3>
+                                    <h3>Assunto: $Assunto</h3>
+                                    <h3>Mensagem: $Mensagem</h3>
+                                    <h3>Data do atendimento: $DtCriacao</h3>
                                     </div>
                                 </body>
                             </html>";
