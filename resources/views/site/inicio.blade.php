@@ -248,22 +248,38 @@
 		</div>
 	</div>
 </div>
-
+<input type="hidden" id="dados_eventos" value="{{ json_encode($eventos) }}">
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
 		var calendarEl = document.getElementById('calendar');
+		var eventos = document.getElementById('dados_eventos');
+		var dados_eventos = JSON.parse(eventos.value);
+		var events = [];
+		for (i = 0; i < dados_eventos.length; i++) {
+			//var data = ;
+			//var hora = ;
+			var dados = {
+				title: dados_eventos[i]['nome'],
+				start: dados_eventos[i]['data'].replace(' ', 'T'),
+				description: dados_eventos[i]['local'],
+				backgroundColor: dados_eventos[i]['cor']
+			};
+			events.push(dados);
+		}
+		console.log(events);
 		var calendar = new FullCalendar.Calendar(calendarEl, {
+			eventClick: function(info) {
+				var eventObj = info.event;
+				var description = eventObj.extendedProps;
+
+				alert('Evento: ' + eventObj.title + '\n' +
+					'Local: ' + description.description + '\n' +
+					'Data/hora: ' + eventObj.start.toLocaleDateString() + ' '+ eventObj.start.toLocaleTimeString());
+				console.log(info)
+			},
 			initialView: 'dayGridMonth',
 			locale: 'pt-br',
-			events: [{
-				title: 'Teste',
-				start: '2021-03-01T10:30:00',
-				end: '2021-03-01T11:30:00',
-				extendedProps: {
-					department: 'BioChemistry'
-				},
-				description: 'Lecture'
-			}]
+			events: events
 		});
 		calendar.render();
 	});

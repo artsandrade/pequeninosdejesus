@@ -26,9 +26,7 @@
                     <label for="capa">Capa da notícia</label>
                     <input type="file" class="form-control-file" accept=".jpeg, .jpg, .gif, .png" id="capa" id="capa" name="capa">
                 </div>
-                <div style="height: 400px;" id="editor-container"></div>
-
-                <input type="hidden" id="noticia" name="noticia" value="">
+                <textarea name="noticia" id="editor"></textarea>
                 <br>
                 <div class="form-group text-right">
                     <button type="submit" class="btn btn-primary" id="btn-inserir">Inserir</button>
@@ -39,7 +37,7 @@
 </div>
 
 <script src="/public/template_painel/functionsJs/noticias.js" defer></script>
-<script src="/public/template_painel/functionsJs/quill.js" defer></script>
+<script src="/public/template_painel/functionsJs/editor.js" defer></script>
 
 @stop
 

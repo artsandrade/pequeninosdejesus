@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\atendimentosController;
+use App\Http\Controllers\eventosController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\parametrosInicioController;
+use App\Http\Controllers\prestacaoDeContasController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +24,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $parametros_inicio = DB::table(('parametros_inicio'))->get();
-    return view('site/inicio', compact('parametros_inicio'));
+    $eventos = DB::table('eventos')->where('situacao', '=', '1')->get();
+    return view('site/inicio', compact('parametros_inicio', 'eventos'));
 });
 
 Route::get('/colaboradores', function () {
@@ -133,20 +136,36 @@ Route::middleware(['autenticacao'])->group(function () {
 
     //Eventos
     Route::get('/painel/eventos', function () {
-        return view('painel/eventos/eventos');
-    });
+        $eventos = DB::table('eventos')->orderByDesc('data')->get();
+        return view('painel/eventos/eventos', compact('eventos'));
+    })->name('eventos');
 
     Route::get('/painel/eventos/inserir', function () {
         return view('painel/eventos/inserir');
     });
+
+    Route::post('/painel/eventos/inserir', [eventosController::class, 'inserir'])->name('eventos_inserir');
 
     Route::get('/painel/eventos/visualizar', function () {
         return view('painel/eventos/visualizar');
     });
 
     Route::get('/painel/eventos/alterar', function () {
-        return view('painel/eventos/alterar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('eventos')->where('id_evento', '=', $_GET['id'])->count()) > 0) {
+                $eventos = DB::table('eventos')->where('id_evento', '=', $_GET['id'])->get();
+                return view('painel/eventos/alterar', compact('eventos'));
+            } else {
+                return redirect()->route('eventos');
+            }
+        } else {
+            return redirect()->route('eventos');
+        }
     });
+
+    Route::post('/painel/eventos/alterar', [eventosController::class, 'alterar'])->name('eventos_alterar');
+
+    Route::post('/painel/eventos/remover', [eventosController::class, 'remover'])->name('eventos_remover');
 
     //Galeria
     Route::get('/painel/galeria', function () {
@@ -227,17 +246,42 @@ Route::middleware(['autenticacao'])->group(function () {
         return view('painel/prestacao-de-contas/inserir');
     });
 
+    Route::post('/painel/prestacao-de-contas/inserir', [prestacaoDeContasController::class, 'inserir'])->name('prestacao_inserir');
+
     Route::get('/painel/prestacao-de-contas', function () {
-        return view('painel/prestacao-de-contas/prestacao-de-contas');
-    });
+        $prestacoes = DB::table('prestacoes_de_contas')->orderByDesc('data')->get();
+        return view('painel/prestacao-de-contas/prestacao-de-contas', compact('prestacoes'));
+    })->name('prestacoes');
 
     Route::get('/painel/prestacao-de-contas/visualizar', function () {
-        return view('painel/prestacao-de-contas/visualizar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
+                $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
+                return view('painel/prestacao-de-contas/visualizar', compact('prestacoes'));
+            } else {
+                return redirect()->route('prestacoes');
+            }
+        } else {
+            return redirect()->route('prestacoes');
+        }
     });
 
     Route::get('/painel/prestacao-de-contas/alterar', function () {
-        return view('painel/prestacao-de-contas/alterar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
+                $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
+                return view('painel/prestacao-de-contas/alterar', compact('prestacoes'));
+            } else {
+                return redirect()->route('prestacoes');
+            }
+        } else {
+            return redirect()->route('prestacoes');
+        }
     });
+
+    Route::post('/painel/prestacao-de-contas/alterar', [prestacaoDeContasController::class, 'alterar'])->name('prestacao_alterar');
+
+    Route::post('/painel/prestacao-de-contas/remover', [prestacaoDeContasController::class, 'remover'])->name('prestacao_remover');
 
     //Usuarios
     Route::get('/painel/usuarios/inserir', function () {

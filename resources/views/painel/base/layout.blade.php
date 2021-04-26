@@ -353,6 +353,10 @@
     <script src="/template_painel/vendor/list.min.js"></script>
     <script src="/template_painel/js/list.js"></script>
 
+    <!-- Editor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/translations/pt-br.js"></script>
+
     @yield('footer_layout')
 
     <div id="modal-sair" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-center-title" aria-hidden="true" data-backdrop="static">

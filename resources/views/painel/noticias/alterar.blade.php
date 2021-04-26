@@ -41,9 +41,7 @@
                         <img src="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" alt="" class="card-img">
                     </div>
                 </div>
-                <div style="height: 400px;" id="editor-container"></div>
-
-                <input type="hidden" id="noticia" name="noticia" value="">
+                <textarea name="noticia" id="editor">{{$noticia->noticia}}</textarea>
                 <br>
                 <div class="form-group text-right">
                     <a href="/painel/noticias" class="btn btn-secondary">Voltar</a>
@@ -55,7 +53,7 @@
 </div>
 @endforeach
 <script src="/public/template_painel/functionsJs/noticias.js" defer></script>
-<script src="/public/template_painel/functionsJs/quill.js" defer></script>
+<script src="/public/template_painel/functionsJs/editor.js" defer></script>
 
 @stop
 

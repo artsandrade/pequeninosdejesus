@@ -10,9 +10,6 @@ $(document).ready(function (e) {
         var texto_resposta = document.getElementById('texto-resposta');
         texto_resposta.innerHTML = "";
 
-        console.log(quill.root.innerHTML);
-        var noticia = document.getElementById('noticia');
-        noticia.value = quill.root.innerHTML;
         var form = new FormData(this);
 
         if (document.getElementById('capa').value.length > 0) {
@@ -75,9 +72,6 @@ $(document).ready(function (e) {
         var texto_resposta = document.getElementById('texto-resposta');
         texto_resposta.innerHTML = "";
 
-        console.log(quill.root.innerHTML);
-        var noticia = document.getElementById('noticia');
-        noticia.value = quill.root.innerHTML;
         var form = new FormData(this);
 
         $('#btn-alterar').html('Alterando...');

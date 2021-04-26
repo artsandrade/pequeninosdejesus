@@ -20,7 +20,7 @@
                 <input type="hidden" name="url_form" id="url_form" value="{{route('perfil_alterar_senha')}}">
 
                 <div class="avatar avatar-xxl" data-toggle="tooltip" data-placement="top" title="{{session('usuario_nome')}}">
-                    <img src="{{session('usuario_avatar')}}" alt="Avatar" class="avatar-img rounded-circle">
+                    <img src="data:image/jpeg;base64, {{base64_encode( session('usuario_avatar') )}}" alt="Avatar" class="avatar-img rounded-circle">
                 </div>
                 <br>
                 <br>

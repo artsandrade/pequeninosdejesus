@@ -104,7 +104,7 @@ class noticiasModel extends Model
     public function alterar()
     {
         if (!empty($this->getId_noticia()) && !empty($this->getTitulo()) && !empty($this->getNoticia())) {
-            if (!empty(!empty($this->getCapa()))) {
+            if ($this->getCapa()['error'] != 4) {
                 $imagem_capa = file_get_contents($this->getCapa()['tmp_name']);
                 DB::table('noticias')->where('id_noticia', '=', $this->getId_noticia())->update([
                     'titulo' => $this->getTitulo(),
