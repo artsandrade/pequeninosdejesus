@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class usuariosModel extends Model
 {
@@ -139,15 +140,69 @@ class usuariosModel extends Model
         return $this;
     }
 
-    public function alterar(){
+    public function alterar()
+    {
+        if (!empty($this->getId_usuario()) && !empty($this->getNome()) && !empty($this->getTipo_usuario()) && !empty($this->getEmail())) {
+            $valida_email = DB::table('usuarios')->where('email', '=', $this->getEmail());
+            if ($valida_email->get()->contains('id_usuario', $this->getId_usuario()) || $valida_email->count() <= 0) {
+                DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->update([
+                    'nome' => $this->getNome(),
+                    'email' => $this->getEmail(),
+                    'tipo_usuario' => $this->getTipo_usuario(),
+                    'situacao' => $this->getSituacao(),
+                ]);
+                if ($this->getAvatar()['error'] != 4) {
+                    $img_avatar = file_get_contents($this->getAvatar()['tmp_name']);
+                    DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->update([
+                        'avatar' => $img_avatar,
+                    ]);
+                }
 
+                if (!empty($this->getSenha())) {
+                    DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->update([
+                        'senha' => $this->getSenha(),
+                    ]);
+                }
+
+                $this->setResposta('alterado');
+            } else {
+                $this->setResposta('email_cadastrado');
+            }
+        } else {
+            $this->setResposta('vazio');
+        }
     }
 
-    public function inserir(){
-
+    public function inserir()
+    {
+        if (!empty($this->getNome()) && !empty($this->getTipo_usuario()) && !empty($this->getEmail()) && !empty($this->getSenha()) && $this->getAvatar()['error'] != 4) {
+            $valida_email = DB::table('usuarios')->where('email', '=', $this->getEmail())->count();
+            if ($valida_email <= 0) {
+                $img_avatar = file_get_contents($this->getAvatar()['tmp_name']);
+                DB::table('usuarios')->insert([
+                    'nome' => $this->getNome(),
+                    'email' => $this->getEmail(),
+                    'senha' => $this->getSenha(),
+                    'tipo_usuario' => $this->getTipo_usuario(),
+                    'avatar' => $img_avatar,
+                    'situacao' => $this->getSituacao(),
+                ]);
+                $this->setResposta('inserido');
+            } else {
+                $this->setResposta('email_cadastrado');
+            }
+        } else {
+            $this->setResposta('vazio');
+        }
     }
 
-    public function remover(){
-        
+    public function remover()
+    {
+        if (!empty($this->getId_usuario())) {
+            DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->delete();
+            $this->setResposta('removido');
+        } else {
+            $this->setResposta('vazio');
+        }
     }
 }

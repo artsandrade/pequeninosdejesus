@@ -12,7 +12,7 @@ $(document).ready(function (e) {
 
     var form = new FormData(this);
 
-    if (document.getElementById('avatar').value.length > 0) {
+    if (document.getElementById('foto').value.length > 0) {
       $('#btn-inserir').html('Inserindo...');
       var url_atual = document.getElementById('url_form').value;
       $.ajax({
@@ -25,7 +25,7 @@ $(document).ready(function (e) {
         success: function (response) {
 
           if (response.resposta == 'inserido') {
-            texto_resposta.innerHTML = "Usuário inserido com sucesso!";
+            texto_resposta.innerHTML = "Colaborador inserido com sucesso!";
             $('#modal-resposta').modal({
               show: true
             });
@@ -38,15 +38,6 @@ $(document).ready(function (e) {
                 show: true
               });
               $('#btn-inserir').html('Inserir');
-            }
-            else {
-              if (response.resposta == 'email_cadastrado') {
-                texto_resposta.innerHTML = "Desculpe, mas o e-mail informado já está sendo utilizado por um usuário!";
-                $('#modal-resposta').modal({
-                  show: true
-                });
-                $('#btn-inserir').html('Inserir');
-              }
             }
           }
         },
@@ -95,7 +86,7 @@ $(document).ready(function (e) {
       success: function (response) {
 
         if (response.resposta == 'alterado') {
-          texto_resposta.innerHTML = "Usuário alterado com sucesso!";
+          texto_resposta.innerHTML = "Colaborador alterado com sucesso!";
           $('#modal-resposta').modal({
             show: true
           });
@@ -108,15 +99,6 @@ $(document).ready(function (e) {
               show: true
             });
             $('#btn-alterar').html('Alterar');
-          }
-          else {
-            if (response.resposta == 'email_cadastrado') {
-              texto_resposta.innerHTML = "Desculpe, mas o e-mail informado já está sendo utilizado por um usuário!";
-              $('#modal-resposta').modal({
-                show: true
-              });
-              $('#btn-alterar').html('Alterar');
-            }
           }
         }
       },
@@ -132,7 +114,7 @@ $(document).ready(function (e) {
   });
 });
 
-function remover(id_usuario) {
+function remover(id_colaborador) {
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -145,16 +127,16 @@ function remover(id_usuario) {
   $('#modal-botao').html('Removendo...');
 
   $.ajax({
-    url: "/painel/usuarios/remover",
+    url: "/painel/colaboradores/remover",
     method: 'post',
     data: {
       '_token': _token,
-      'id_usuario': id_usuario
+      'id_colaborador': id_colaborador
     },
     success: function (response) {
 
       if (response.resposta == 'removido') {
-        window.location.href = "/painel/usuarios";
+        window.location.href = "/painel/colaboradores";
       }
     },
     error: function () {
@@ -167,12 +149,12 @@ function remover(id_usuario) {
   });
 }
 
-function modalRemover(nome, id_usuario) {
+function modalRemover(nome, id_colaborador) {
   var modal_texto = document.getElementById('modal-texto');
   var modal_botao = document.getElementById('modal-botao');
-
-  modal_texto.innerHTML = 'Você tem certeza que deseja remover o usuário <b>' + nome + '</b> ?';
-  modal_botao.setAttribute('onclick', 'remover(\'' + id_usuario + '\')');
+  
+  modal_texto.innerHTML = 'Você tem certeza que deseja remover o colaborador <b>' + nome + '</b> ?';
+  modal_botao.setAttribute('onclick', 'remover(\'' + id_colaborador + '\')');
   $('#modal-center').modal({
     show: true
   });

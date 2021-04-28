@@ -15,49 +15,50 @@
 <div class="card card-form">
     <div class="row no-gutters">
         <div class="col-lg-12 card-body">
-            <form>
+            <form id="form-inserir" method="POST" action="javascript:void(0)" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="url_form" id="url_form" value="{{route('galeria_inserir')}}">
                 <div class="form-group">
-                    <label for="album">Nome do álbum</label>
-                    <input type="text" class="form-control" id="album" name="album" placeholder="Insira o nome do álbum...">
+                    <label for="nome">Nome do álbum</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome do álbum...">
                 </div>
-                <div class="dropzone dropzone-multiple w-100" data-toggle="dropzone" data-dropzone-multiple data-dropzone-url="http://" data-dropzone-files='[]'>
-
-                    <div class="fallback">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFileUploadMultiple" multiple>
+                <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFileUploadMultiple" name="imagem" multiple>
                             <label class="custom-file-label" for="customFileUploadMultiple">Escolher</label>
                         </div>
-                    </div>
-
-                    <ul class="dz-preview dz-preview-multiple list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="form-row align-items-center">
-                                <div class="col-auto">
-                                    <div class="avatar">
-                                        <img src="/template_painel/images/avatar/blue.svg" class="avatar-img rounded" alt="..." data-dz-thumbnail>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="font-weight-bold" data-dz-name>...</div>
-                                    <p class="small text-muted mb-0" data-dz-size>...</p>
-                                </div>
-                                <div class="col-auto">
-                                    <a href="#" class="text-muted-light" data-dz-remove>
-                                        <i class="material-icons">close</i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-
-                </div>
                 <br>
                 <div class="form-group text-right">
                     <a href="/painel/galeria" class="btn btn-secondary">Voltar</a>
-                    <button type="submit" class="btn btn-primary">Inserir</button>
+                    <button type="submit" class="btn btn-primary" id="btn-inserir">Inserir</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<script src="/public/template_painel/functionsJs/galeria.js" defer></script>
+
+@stop
+
+@section('footer_layout')
+
+<div class="modal fade" id="modal-resposta" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="texto-resposta"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @stop

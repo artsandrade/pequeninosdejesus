@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\atendimentosController;
+use App\Http\Controllers\colaboradoresController;
 use App\Http\Controllers\eventosController;
+use App\Http\Controllers\galeriaController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\parametrosInicioController;
 use App\Http\Controllers\prestacaoDeContasController;
+use App\Http\Controllers\usuariosController;
+use App\Models\usuariosModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +33,8 @@ Route::get('/', function () {
 });
 
 Route::get('/colaboradores', function () {
-    return view('site/colaboradores');
+    $colaboradores = DB::table('colaboradores')->orderBy('nome')->where('situacao', '=', '1')->get();
+    return view('site/colaboradores', compact('colaboradores'));
 });
 
 Route::get('/fale-conosco', function () {
@@ -66,11 +71,22 @@ Route::get('/noticias/post', function () {
 });
 
 Route::get('/prestacao-de-contas', function () {
-    return view('site/prestacao-de-contas');
-});
+    $prestacoes = DB::table('prestacoes_de_contas')->where('situacao', '=', '1')->orderByDesc('data')->get();
+    return view('site/prestacao-de-contas', compact('prestacoes'));
+})->name('prestacoes_site');
 
 Route::get('/prestacao-de-contas/post', function () {
-    return view('site/prestacao-de-contas-post');
+    if (!empty($_GET['id'])) {
+        if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
+            $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
+            $ultimas_prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '!=', $_GET['id'])->limit(3)->orderByDesc('data')->get();
+            return view('site/prestacao-de-contas-post', compact('prestacoes', 'ultimas_prestacoes'));
+        } else {
+            return redirect()->route('prestacoes_site');
+        }
+    } else {
+        return redirect()->route('prestacoes_site');
+    }
 });
 
 Route::get('/sobre-nos', function () {
@@ -119,20 +135,45 @@ Route::middleware(['autenticacao'])->group(function () {
 
     //Colaboradores
     Route::get('/painel/colaboradores', function () {
-        return view('painel/colaboradores/colaboradores');
-    });
+        $colaboradores = DB::table('colaboradores')->orderBy('nome')->get();
+        return view('painel/colaboradores/colaboradores', compact('colaboradores'));
+    })->name('colaboradores');
 
     Route::get('/painel/colaboradores/inserir', function () {
         return view('painel/colaboradores/inserir');
     });
 
+    Route::post('/painel/colaboradores/inserir', [colaboradoresController::class, 'inserir'])->name('colaborador_inserir');
+
     Route::get('/painel/colaboradores/visualizar', function () {
-        return view('painel/colaboradores/visualizar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->count()) > 0) {
+                $colaboradores = DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->get();
+                return view('painel/colaboradores/visualizar', compact('colaboradores'));
+            } else {
+                return redirect()->route('colaboradores');
+            }
+        } else {
+            return redirect()->route('colaboradores');
+        }
     });
 
     Route::get('/painel/colaboradores/alterar', function () {
-        return view('painel/colaboradores/alterar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->count()) > 0) {
+                $colaboradores = DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->get();
+                return view('painel/colaboradores/alterar', compact('colaboradores'));
+            } else {
+                return redirect()->route('colaboradores');
+            }
+        } else {
+            return redirect()->route('colaboradores');
+        }
     });
+
+    Route::post('/painel/colaboradores/alterar', [colaboradoresController::class, 'alterar'])->name('colaborador_alterar');
+
+    Route::post('/painel/colaboradores/remover', [colaboradoresController::class, 'remover'])->name('colaborador_remover');
 
     //Eventos
     Route::get('/painel/eventos', function () {
@@ -176,6 +217,8 @@ Route::middleware(['autenticacao'])->group(function () {
         return view('painel/galeria/inserir');
     });
 
+    Route::post('/painel/galeria/inserir', [galeriaController::class, 'inserir'])->name('galeria_inserir');
+
     Route::get('/painel/galeria/visualizar', function () {
         return view('painel/galeria/visualizar');
     });
@@ -183,6 +226,10 @@ Route::middleware(['autenticacao'])->group(function () {
     Route::get('/painel/galeria/alterar', function () {
         return view('painel/galeria/alterar');
     });
+
+    Route::post('/painel/galeria/alterar', [galeriaController::class, 'alterar'])->name('galeria_alterar');
+
+    Route::post('/painel/galeria/remover', [galeriaController::class, 'remover'])->name('galeria_remover');
 
     //Login e perfil
     Route::get('/painel/meu-perfil', function () {
@@ -288,6 +335,8 @@ Route::middleware(['autenticacao'])->group(function () {
         return view('painel/usuarios/inserir');
     });
 
+    Route::post('/painel/usuarios/inserir', [usuariosController::class, 'inserir'])->name('usuario_inserir');
+
     Route::get('/painel/usuarios', function () {
         $usuarios = DB::table('usuarios')->orderBy('nome')->get();
         return view('painel/usuarios/usuarios', compact('usuarios'));
@@ -309,4 +358,8 @@ Route::middleware(['autenticacao'])->group(function () {
             return redirect()->route('usuarios');
         }
     });
+
+    Route::post('/painel/usuarios/alterar', [usuariosController::class, 'alterar'])->name('usuario_alterar');
+
+    Route::post('/painel/usuarios/remover', [usuariosController::class, 'remover'])->name('usuario_remover');
 });

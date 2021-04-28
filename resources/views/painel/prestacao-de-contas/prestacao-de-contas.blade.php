@@ -2,54 +2,48 @@
 
 @section('cabecalho')
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a href="/painel">Início</a></li>
-        <li class="breadcrumb-item" aria-current="page">Prestação de contas</li>
-    </ol>
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item"><a href="/painel">Início</a></li>
+    <li class="breadcrumb-item" aria-current="page">Prestação de contas</li>
+  </ol>
 </nav>
 <h1 class="m-0">Visualizar</h1>
 @stop
 
 @section('conteudo')
 <div class="card card-form">
-    <div class="row no-gutters">
-        <div class="col-lg-12 card-body">
-            <div class="table-responsive border-bottom" data-toggle="lists" data-lists-values='["js-lists-values-employee-name", "js-lists-values-data"]'>
-
-                <div class="search-form search-form--light m-3">
-                    <input type="text" class="form-control search" placeholder="Pesquisar">
-                    <button class="btn" type="button" role="button"><i class="material-icons">search</i></button>
-                </div>
-
-                <table class="table mb-0 thead-border-top-0">
-                    <thead>
-                        <tr>
-                            <th style="width: 80px;">Data</th>
-                            <th>Título</th>
-                            <th style="width: 125px;"></th>
-                        </tr>
-                    </thead>
-                    <tbody class="list" id="staff02">
-                        @foreach($prestacoes as $prestacao)
-                        <tr>
-                            <td>
-                                <span class="js-lists-values-employee-name">{{date('m/Y', strtotime($prestacao->data))}}</span>
-                            </td>
-                            <td><small class="text-muted js-lists-values-data">{{$prestacao->titulo}}</small></td>
-                            <td>
-                                <a href="/painel/prestacao-de-contas/visualizar?id={{$prestacao->id_prestacao}}" class="text-muted" title="Visualizar"><i class="material-icons">visibility</i></a>
-                                <a href="/painel/prestacao-de-contas/alterar?id={{$prestacao->id_prestacao}}" class="text-muted" title="Alterar"><i class="material-icons">create</i></a>
-                                <a href="#" class="text-muted" onclick="modalRemover('{{$prestacao->data}}','{{$prestacao->titulo}}', '{{$prestacao->id_prestacao}}')" title="Remover"><i class="material-icons">delete</i></a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <div class="row no-gutters">
+    <div class="col-lg-12 card-body">
+      <table class="table table-striped table-bordered" id="myTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th style="width: 80px;">Data</th>
+            <th>Título</th>
+            <th style="width: 85px;"></th>
+          </tr>
+        </thead>
+        <tbody class="list" id="staff02">
+          @foreach($prestacoes as $prestacao)
+          <tr>
+            <td>
+              <span class="js-lists-values-employee-name">{{date('m/Y', strtotime($prestacao->data))}}</span>
+            </td>
+            <td><small class="text-muted js-lists-values-data">{{$prestacao->titulo}}</small></td>
+            <td>
+              <a href="/painel/prestacao-de-contas/visualizar?id={{$prestacao->id_prestacao}}" class="text-muted" title="Visualizar"><i class="material-icons">visibility</i></a>
+              <a href="/painel/prestacao-de-contas/alterar?id={{$prestacao->id_prestacao}}" class="text-muted" title="Alterar"><i class="material-icons">create</i></a>
+              <a href="#" class="text-muted" onclick="modalRemover('{{$prestacao->data}}','{{$prestacao->titulo}}', '{{$prestacao->id_prestacao}}')" title="Remover"><i class="material-icons">delete</i></a>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
 <script src="/public/template_painel/functionsJs/prestacao_de_contas.js" defer></script>
+<script src="/public/template_painel/functionsJs/datatables.js" defer></script>
+
 @stop
 
 @section('footer_layout')

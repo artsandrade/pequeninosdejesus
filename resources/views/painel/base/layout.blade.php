@@ -43,6 +43,9 @@
     <!-- Vector Maps -->
     <link type="text/css" href="/template_painel/vendor/jqvmap/jqvmap.min.css" rel="stylesheet">
 
+    <!-- Datatables -->
+    <link type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
+
 </head>
 
 <body class="layout-default">
@@ -356,6 +359,9 @@
     <!-- Editor -->
     <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/translations/pt-br.js"></script>
+
+    <!-- Editor -->
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
     @yield('footer_layout')
 

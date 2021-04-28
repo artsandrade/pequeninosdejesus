@@ -443,6 +443,19 @@
 					</div>
 				</div>
 
+				@foreach($colaboradores as $colaborador)
+				<div class="col-sm-12 col-md-6 col-lg-4">
+					<div class="rs-team-1">
+						<div class="media-box"><img src="data:image/jpeg;base64, {{base64_encode($colaborador->foto)}}" style="width: 400px; height: 400px" title="{{$colaborador->nome}}" alt="" class="img-fluid"></div>
+						<div class="body">
+							<div class="title" style="color: #3f4095;">{{$colaborador->nome}}</div>
+							<div class="position mb-0">{{$colaborador->funcao}} (Desde {{$colaborador->desde}})</div>
+							<br>
+							<!--<p class="p-3 text-jutify"></p>-->
+						</div>
+					</div>
+				</div>
+				@endforeach
 
 			</div>
 		</div>

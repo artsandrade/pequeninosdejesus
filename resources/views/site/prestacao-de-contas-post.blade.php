@@ -2,19 +2,19 @@
 
 @section('conteudo')
 
-
+@foreach($prestacoes as $prestacao)
 <!-- BANNER -->
 <div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
-			<div class="title-page">Prestação de contas janeiro/2021</div>
+			<div class="title-page">{{$prestacao->titulo}}</div>
 		</div>
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb ">
 					<li class="breadcrumb-item"><a href="/">Início</a></li>
 					<li class="breadcrumb-item"><a href="/prestacao-de-contas">Prestação de contas</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Prestação de contas janeiro/2021</li>
+					<li class="breadcrumb-item active" aria-current="page">{{$prestacao->titulo}}</li>
 				</ol>
 			</nav>
 		</div>
@@ -31,13 +31,9 @@
 				<div class="col-sm-12 col-md-12 col-lg-9">
 
 					<div class="single-news">
-						<h2 class="title">Prestação de contas janeiro/2021</h2>
-						<div class="meta-date">01 de janeiro de 2021</div>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<h2 class="title">{{$prestacao->titulo}}</h2>
+						<div class="meta-date">{{date('m/Y', strtotime($prestacao->data))}}</div>
+						{!! $prestacao->prestacao !!}
 					</div>
 					<!-- end single blog -->
 
@@ -62,19 +58,20 @@
 					<div class="widget-title">
 						Últimas prestações de conta
 					</div>
+					@foreach($ultimas_prestacoes as $ultima)
 					<div class="rs-news-1">
 						<div class="media-box">
 							<a href="/prestacao-de-contas/post"><img src="/template_site/images/prestacao-de-contas.png" alt="" class="img-fluid"></a>
 						</div>
 						<div class="body-box">
 							<div class="title">
-								<a href="/prestacao-de-contas/post">Fevereiro/2021</a>
+								<a href="/prestacao-de-contas/post?id={{$ultima->id_prestacao}}">{{$ultima->titulo}}</a>
 							</div>
-							<div class="meta-date">01 de fevereiro de 2021</div>
-							<p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+							<div class="meta-date">{{date('m/Y', strtotime($ultima->data))}}</div>
 						</div>
 					</div>
-
+					<br>
+					@endforeach
 				</div>
 				<!-- end sidebar -->
 
@@ -83,7 +80,7 @@
 		</div>
 	</div>
 </div>
-
+@endforeach
 <!-- CTA -->
 <div class="section" style="background-color: #3f4095;">
 	<div class="content-wrap py-5">

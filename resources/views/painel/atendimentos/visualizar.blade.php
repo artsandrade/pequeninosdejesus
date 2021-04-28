@@ -14,47 +14,41 @@
 <div class="card card-form">
     <div class="row no-gutters">
         <div class="col-lg-12 card-body">
-            <div class="table-responsive border-bottom" data-toggle="lists" data-lists-values='["js-lists-values-employee-name", "js-lists-values-status"]'>
-
-                <div class="search-form search-form--light m-3">
-                    <input type="text" class="form-control search" placeholder="Pesquisar">
-                    <button class="btn" type="button" role="button"><i class="material-icons">search</i></button>
-                </div>
-
-                <table class="table mb-0 thead-border-top-0">
-                    <thead>
-                        <tr>
-                            <th>Solicitante</th>
-                            <th style="width: 37px;">Situação</th>
-                            <th style="width: 130px;">Data solicitação</th>
-                            <th style="width: 24px;"></th>
-                        </tr>
-                    </thead>
-                    <tbody class="list" id="staff02">
-                        @foreach($atendimentos as $atendimento)
-                        <tr>
-                            <td>
-                                <span class="js-lists-values-employee-name">{{$atendimento->nome}}</span>
-                            </td>
-                            @if($atendimento->situacao=='1')
-                            <td><span class="badge badge-success js-lists-values-status">CONCLUÍDO</span></td>
-                            @elseif($atendimento->situacao=='2')
-                            <td><span class="badge badge-warning js-lists-values-status">EM ANDAMENTO</span></td>
-                            @else
-                            <td><span class="badge badge-danger js-lists-values-status">PENDENTE</span></td>
-                            @endif
-                            <td><small class="text-muted">{{date('d/m/Y', strtotime($atendimento->dt_criacao))}}</small></td>
-                            <td><a href="#" class="text-muted" title="Alterar" onclick="visualizaAtendimento('{{$atendimento->id_atendimento}}', '{{$atendimento->nome}}', '{{$atendimento->nome_aluno}}', '{{$atendimento->cpf_aluno}}', '{{$atendimento->email}}', '{{$atendimento->telefone}}', '{{$atendimento->celular}}', '{{$atendimento->assunto}}', '{{$atendimento->mensagem}}', '{{$atendimento->situacao}}')"><i class="material-icons">create</i></a></td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+            <table class="table table-striped table-bordered" id="myTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Solicitante</th>
+                        <th style="width: 37px;">Situação</th>
+                        <th style="width: 130px;">Data solicitação</th>
+                        <th style="width: 24px;"></th>
+                    </tr>
+                </thead>
+                <tbody class="list" id="staff02">
+                    @foreach($atendimentos as $atendimento)
+                    <tr>
+                        <td>
+                            <span class="js-lists-values-employee-name">{{$atendimento->nome}}</span>
+                        </td>
+                        @if($atendimento->situacao=='1')
+                        <td><span class="badge badge-success js-lists-values-status">CONCLUÍDO</span></td>
+                        @elseif($atendimento->situacao=='2')
+                        <td><span class="badge badge-warning js-lists-values-status">EM ANDAMENTO</span></td>
+                        @else
+                        <td><span class="badge badge-danger js-lists-values-status">PENDENTE</span></td>
+                        @endif
+                        <td><small class="text-muted">{{date('d/m/Y', strtotime($atendimento->dt_criacao))}}</small></td>
+                        <td><a href="#" class="text-muted" title="Alterar" onclick="visualizaAtendimento('{{$atendimento->id_atendimento}}', '{{$atendimento->nome}}', '{{$atendimento->nome_aluno}}', '{{$atendimento->cpf_aluno}}', '{{$atendimento->email}}', '{{$atendimento->telefone}}', '{{$atendimento->celular}}', '{{$atendimento->assunto}}', '{{$atendimento->mensagem}}', '{{$atendimento->situacao}}')"><i class="material-icons">create</i></a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
 <script src="/public/template_painel/functionsJs/atendimentos.js" defer></script>
+<script src="/public/template_painel/functionsJs/datatables.js" defer></script>
+
 @stop
 
 @section('footer_layout')

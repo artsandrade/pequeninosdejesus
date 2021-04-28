@@ -12,8 +12,7 @@ $(document).ready(function (e) {
 
     var form = new FormData(this);
 
-    if (document.getElementById('avatar').value.length > 0) {
-      $('#btn-inserir').html('Inserindo...');
+    $('#btn-inserir').html('Inserindo...');
       var url_atual = document.getElementById('url_form').value;
       $.ajax({
         url: "" + url_atual + "",
@@ -58,13 +57,6 @@ $(document).ready(function (e) {
           $('#btn-inserir').html('Inserir');
         }
       });
-    }
-    else {
-      texto_resposta.innerHTML = "Desculpe, mas é necessário que todos os campos estejam preenchidos!";
-      $('#modal-resposta').modal({
-        show: true
-      });
-    }
 
   });
 });

@@ -15,7 +15,9 @@
 <div class="card card-form">
     <div class="row no-gutters">
         <div class="col-lg-12 card-body">
-            <form id="form-inserir" action="javascript:void(0)" method="POST">
+            <form id="form-inserir" action="javascript:void(0)" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="url_form" id="url_form" value="{{route('usuario_inserir')}}">
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-10">
                         <label for="nome">Nome</label>
@@ -49,25 +51,42 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Avatar</label>
-                    <div class="dz-clickable media align-items-center" data-toggle="dropzone" data-dropzone-url="http://" data-dropzone-clickable=".dz-clickable" data-dropzone-files='["/template_painel/images/account-add-photo.svg"]'>
-                        <div class="dz-preview dz-file-preview dz-clickable mr-3">
-                            <div class="avatar" style="width: 80px; height: 80px;">
-                                <img src="/template_painel/images/account-add-photo.svg" class="avatar-img rounded" alt="..." data-dz-thumbnail>
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <button class="btn btn-sm btn-primary dz-clickable">Escolher foto</button>
-                        </div>
-                    </div>
+                    <label for="avatar">Avatar</label>
+                    <input type="file" class="form-control-file" accept=".jpeg, .jpg, .gif, .png" id="avatar" name="avatar">
                 </div>
                 <br>
                 <div class="form-group text-right">
                     <a href="/painel/usuarios" class="btn btn-secondary">Voltar</a>
-                    <button type="submit" class="btn btn-primary">Inserir</button>
+                    <button type="submit" class="btn btn-primary" id="btn-inserir">Inserir</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<script src="/public/template_painel/functionsJs/usuarios.js" defer></script>
+
+@stop
+
+@section('footer_layout')
+
+<div class="modal fade" id="modal-resposta" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="texto-resposta"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @stop

@@ -26,37 +26,21 @@
 
 			<div class="row mt-4">
 
-				<!-- Item 1 -->
+				@foreach($prestacoes as $prestacao)
 				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
 					<div class="rs-news-1">
 						<div class="media-box">
-							<a href="/prestacao-de-contas/post"><img src="/template_site/images/prestacao-de-contas.png" alt="" class="img-fluid"></a>
+							<a href="/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}"><img src="/template_site/images/prestacao-de-contas.png" alt="" class="img-fluid"></a>
 						</div>
 						<div class="body-box">
 							<div class="title">
-								<a href="/prestacao-de-contas/post">Fevereiro/2021</a>
+								<a href="/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}">{{$prestacao->titulo}}</a>
 							</div>
-							<div class="meta-date">01 de fevereiro de 2021</div>
-							<p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+							<div class="meta-date">{{date('m/Y', strtotime($prestacao->data))}}</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- Item 1 -->
-				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-					<div class="rs-news-1">
-						<div class="media-box">
-							<a href="/prestacao-de-contas/post"><img src="/template_site/images/prestacao-de-contas.png" alt="" class="img-fluid"></a>
-						</div>
-						<div class="body-box">
-							<div class="title">
-								<a href="/prestacao-de-contas/post">Janeiro/2021</a>
-							</div>
-							<div class="meta-date">01 de janeiro de 2021</div>
-							<p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-						</div>
-					</div>
-				</div>
+				@endforeach
 
 			</div>
 
