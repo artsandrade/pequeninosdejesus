@@ -15,17 +15,19 @@
 <div class="card card-form">
     <div class="row no-gutters">
         <div class="col-lg-12 card-body">
-            <form id="form-inserir" method="POST" action="javascript:void(0)" enctype="multipart/form-data">
+            <form id="form-inserir" method="POST" action="javascript:void(0)" enctype="multipart/form-data" accept-charset="UTF-8">
                 @csrf
                 <input type="hidden" name="url_form" id="url_form" value="{{route('galeria_inserir')}}">
                 <div class="form-group">
                     <label for="nome">Nome do álbum</label>
                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome do álbum...">
                 </div>
-                <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFileUploadMultiple" name="imagem" multiple>
-                            <label class="custom-file-label" for="customFileUploadMultiple">Escolher</label>
-                        </div>
+                <div class="form-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile" accept=".jpg, .JPG, .gif, .GIF, .png, .PNG, .jpeg, .JPEG" name="imagem[]" multiple>
+                        <label class="custom-file-label" for="customFile">Escolher imagens</label>
+                    </div>
+                </div>
                 <br>
                 <div class="form-group text-right">
                     <a href="/painel/galeria" class="btn btn-secondary">Voltar</a>

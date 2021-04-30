@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+
 
 class galeriaModel extends Model
 {
     use HasFactory;
     private $id_album;
     private $nome;
+    private $capa;
     private $situacao;
     private $id_imagem;
     private $imagem;
@@ -36,6 +39,18 @@ class galeriaModel extends Model
     public function setNome($nome)
     {
         $this->nome = $nome;
+
+        return $this;
+    }
+
+    public function getCapa()
+    {
+        return $this->capa;
+    }
+
+    public function setCapa($capa)
+    {
+        $this->capa = $capa;
 
         return $this;
     }
@@ -99,11 +114,25 @@ class galeriaModel extends Model
                 'nome' => $this->getNome(),
                 'situacao' => '1'
             ]));
-            $img = file_get_contents($this->getImagem()['tmp_name']);
-            DB::table('imagens_albuns')->insert([
-                'imagem' => $img,
-                'album_id' => $this->getId_album()
-            ]);
+
+            foreach ($this->getImagem()['tmp_name'] as $key => $imagem) {
+                $diretorio = public_path('template_site/images/galeria/');
+                $ext = strtolower(substr($this->getImagem()['name'][$key], -4));
+                $nome = date('d_m_Y_H_i_s') . $key . $ext;
+                $arquivo = $diretorio . $nome;
+                DB::table('imagens_albuns')->insert([
+                    'imagem' => $nome,
+                    'album_id' => $this->getId_album()
+                ]);
+                move_uploaded_file($this->getImagem()['tmp_name'][$key], $arquivo);
+
+                if ($key == 0) {
+                    DB::table('albuns')->where('id_album', $this->getId_album())->update([
+                        'capa' => $nome
+                    ]);
+                }
+            }
+
             $this->setResposta('inserido');
         } else {
             $this->setResposta('vazio');

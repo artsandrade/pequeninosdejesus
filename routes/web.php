@@ -44,11 +44,23 @@ Route::get('/fale-conosco', function () {
 Route::post('/fale-conosco', [atendimentosController::class, 'inserir'])->name('atendimentos_inserir');
 
 Route::get('/galeria', function () {
-    return view('site/galeria');
-});
+    $galerias = DB::table('albuns')->where('situacao', '=', '1')->orderBy('nome')->get();
+    return view('site/galeria', compact('galerias'));
+})->name('galerias_site');
 
 Route::get('/galeria/post', function () {
-    return view('site/galeria-post');
+    if (!empty($_GET['id'])) {
+        if ((DB::table('albuns')->where('id_album', '=', $_GET['id'])->count()) > 0) {
+            $galerias = DB::table('albuns')->where('id_album', '=', $_GET['id'])->get();
+            $imagens = DB::table('imagens_albuns')->where('album_id', '=', $_GET['id'])->get();
+            //$ultimas_noticias = DB::table('noticias')->where('id_noticia', '!=', $_GET['id'])->limit(3)->orderByDesc('dt_criacao')->get();
+            return view('site/galeria-post', compact('galerias', 'imagens'));
+        } else {
+            return redirect()->route('galerias_site');
+        }
+    } else {
+        return redirect()->route('galerias_site');
+    }
 });
 
 Route::get('/noticias', function () {
@@ -210,7 +222,8 @@ Route::middleware(['autenticacao'])->group(function () {
 
     //Galeria
     Route::get('/painel/galeria', function () {
-        return view('painel/galeria/galeria');
+        $galerias = DB::table('albuns')->where('situacao', '1')->get();
+        return view('painel/galeria/galeria', compact('galerias'));
     });
 
     Route::get('/painel/galeria/inserir', function () {

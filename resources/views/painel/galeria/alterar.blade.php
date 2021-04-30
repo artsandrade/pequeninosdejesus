@@ -20,7 +20,7 @@
                     <label for="album">Nome do álbum</label>
                     <input type="text" class="form-control" id="album" name="album" placeholder="Insira o nome do álbum...">
                 </div>
-                <div class="dropzone dropzone-multiple w-100" data-toggle="dropzone" data-dropzone-multiple data-dropzone-url="http://" data-dropzone-files='["/template_painel/images/avatar/blue.svg", "/template_painel/images/avatar/demi.png", "/template_painel/images/avatar/green.svg"]'>
+                <div class="dropzone dropzone-multiple w-100" data-toggle="dropzone" data-dropzone-multiple data-dropzone-url="http://" data-dropzone-files='["/template_site/images/galeria/30_04_2021_14_39_250.jpg", "/template_painel/images/avatar/demi.png", "/template_painel/images/avatar/green.svg"]'>
 
                     <div class="fallback">
                         <div class="custom-file">
@@ -39,7 +39,6 @@
                                 </div>
                                 <div class="col">
                                     <div class="font-weight-bold" data-dz-name>...</div>
-                                    <p class="small text-muted mb-0" data-dz-size>...</p>
                                 </div>
                                 <div class="col-auto">
                                     <a href="#" class="text-muted-light" data-dz-remove>

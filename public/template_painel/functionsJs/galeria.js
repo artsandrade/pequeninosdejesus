@@ -24,7 +24,7 @@ $(document).ready(function (e) {
         success: function (response) {
 
           if (response.resposta == 'inserido') {
-            texto_resposta.innerHTML = "Usuário inserido com sucesso!";
+            texto_resposta.innerHTML = "Imagens inseridas na galeria com sucesso!";
             $('#modal-resposta').modal({
               show: true
             });
@@ -87,7 +87,7 @@ $(document).ready(function (e) {
       success: function (response) {
 
         if (response.resposta == 'alterado') {
-          texto_resposta.innerHTML = "Usuário alterado com sucesso!";
+          texto_resposta.innerHTML = "Imagens alteradas na galeria com sucesso!";
           $('#modal-resposta').modal({
             show: true
           });
@@ -124,11 +124,11 @@ $(document).ready(function (e) {
   });
 });
 
-function remover(id_usuario) {
+function remover(id_album) {
   $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
   });
 
   var texto_resposta = document.getElementById('texto-resposta');
@@ -137,35 +137,36 @@ function remover(id_usuario) {
   $('#modal-botao').html('Removendo...');
 
   $.ajax({
-    url: "/painel/usuarios/remover",
-    method: 'post',
-    data: {
-      '_token': _token,
-      'id_usuario': id_usuario
-    },
-    success: function (response) {
+      url: "/painel/galeria/remover",
+      method: 'post',
+      data: {
+          '_token': _token,
+          'id_album': id_album
+      },
+      success: function (response) {
 
-      if (response.resposta == 'removido') {
-        window.location.href = "/painel/usuarios";
+          if (response.resposta == 'removido') {
+              window.location.href = "/painel/galeria";
+              $('#modal-botao').html('Remover');
+          }
+      },
+      error: function () {
+          texto_resposta.innerHTML = "Desculpe, mas tivemos um erro durante essa solicitação. Entre em contato com o suporte ou tente novamente mais tarde!";
+          $('#modal-resposta').modal({
+              show: true
+          });
+          $('#modal-botao').html('Remover');
       }
-    },
-    error: function () {
-      texto_resposta.innerHTML = "Desculpe, mas tivemos um erro durante essa solicitação. Entre em contato com o suporte ou tente novamente mais tarde!";
-      $('#modal-resposta').modal({
-        show: true
-      });
-      $('#modal-botao').html('Remover');
-    }
   });
 }
 
-function modalRemover(nome, id_usuario) {
+function modalRemover(nome, id_album) {
   var modal_texto = document.getElementById('modal-texto');
   var modal_botao = document.getElementById('modal-botao');
 
-  modal_texto.innerHTML = 'Você tem certeza que deseja remover o usuário <b>' + nome + '</b> ?';
-  modal_botao.setAttribute('onclick', 'remover(\'' + id_usuario + '\')');
+  modal_texto.innerHTML = 'Você tem certeza que deseja remover o álbum <b>' + nome + '</b>?';
+  modal_botao.setAttribute('onclick', 'remover(\'' + id_album + '\')');
   $('#modal-center').modal({
-    show: true
+      show: true
   });
 }

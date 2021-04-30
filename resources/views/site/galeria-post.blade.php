@@ -1,18 +1,19 @@
 @extends('site/layout')
 
 @section('conteudo')
+@foreach($galerias as $galeria)
 <!-- BANNER -->
 <div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
 		<div class="d-flex justify-content-center bd-highlight mb-3">
-			<div class="title-page">Inauguração da quadra</div>
+			<div class="title-page">{{$galeria->nome}}</div>
 		</div>
 		<div class="d-flex justify-content-center bd-highlight mb-3">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb ">
 					<li class="breadcrumb-item"><a href="/">Início</a></li>
 					<li class="breadcrumb-item"><a href="/galeria">Galeria</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Inauguração da quadra</li>
+					<li class="breadcrumb-item active" aria-current="page">{{$galeria->nome}}</li>
 				</ol>
 			</nav>
 		</div>
@@ -25,11 +26,12 @@
 		<div class="container">
 
 			<div class="row popup-gallery gutter-5">
+				@foreach($imagens as $imagem)
 				<!-- Item 1 -->
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="/template_site/images/quadra/img1.png" title="Inauguração da quadra">
-							<img src="/template_site/images/quadra/img1.png" alt="" class="img-fluid">
+						<a href="/template_site/images/galeria/{{$imagem->imagem}}" title="Imagem">
+							<img src="/template_site/images/galeria/{{$imagem->imagem}}" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -38,77 +40,13 @@
 						</a>
 					</div>
 				</div>
-				<!-- Item 1 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/quadra/img2.png" title="Inauguração da quadra">
-							<img src="/template_site/images/quadra/img2.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 1 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/quadra/img3.png" title="Inauguração da quadra">
-							<img src="/template_site/images/quadra/img3.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 2 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/quadra/img4.png" title="Inauguração da quadra">
-							<img src="/template_site/images/quadra/img4.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 3 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/quadra/img5.png" title="Inauguração da quadra">
-							<img src="/template_site/images/quadra/img5.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 4 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="/template_site/images/quadra/img6.png" title="Inauguração da quadra">
-							<img src="/template_site/images/quadra/img6.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
+				@endforeach
 			</div>
 
 		</div>
 	</div>
 </div>
-
+@endforeach
 <!-- CTA -->
 <div class="section" style="background-color: #3f4095;">
 	<div class="content-wrap py-5">

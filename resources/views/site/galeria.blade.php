@@ -22,21 +22,23 @@
 <div class="">
 	<div class="content-wrap">
 		<div class="container">
-
-			<!-- Item 1 -->
-			<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-				<div class="rs-news-1">
-					<div class="media-box">
-						<a href="/galeria/post"><img src="/template_site/images/quadra/img2.png" alt="" class="img-fluid"></a>
-					</div>
-					<div class="body-box">
-						<div class="title">
-							<a href="/galeria/post">Inauguração da quadra</a>
+			<div class="row">
+				@foreach($galerias as $galeria)
+				<!-- Item 1 -->
+				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
+					<div class="rs-news-1">
+						<div class="media-box">
+							<a href="/galeria/post?id={{$galeria->id_album}}"><img src="/template_site/images/galeria/{{$galeria->capa}}" alt="" class="img-fluid"></a>
+						</div>
+						<div class="body-box">
+							<div class="title">
+								<a href="/galeria/post?id={{$galeria->id_album}}">{{$galeria->nome}}</a>
+							</div>
 						</div>
 					</div>
 				</div>
+				@endforeach
 			</div>
-
 		</div>
 	</div>
 </div>
