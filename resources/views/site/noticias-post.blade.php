@@ -54,7 +54,7 @@
 						<div class="sosmed-icon d-inline-flex">
 							<a href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" class="fb" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
 						</div>
-						<div class="fb-share-button" data-href="http://{{$_SERVER['HTTP_HOST']}}/noticia/post?id={{$noticia->id_noticia}}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}};src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+						<div class="fb-share-button" data-href="http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}};src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
 						
 						<!-- 
 						<div class="sosmed-icon d-inline-flex">
