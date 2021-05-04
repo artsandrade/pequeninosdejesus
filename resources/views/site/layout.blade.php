@@ -8,8 +8,8 @@
 	<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pequeninos de Jesus</title>
-	<meta name="description" content="KIDS is a clean, modern, and fully responsive Html Template. Take your Startup business website to the next level. It is designed for kindergarten, childcare, homeschooling, school, learning, playground businesses or any type of person or business who wants to showcase their work, services and professional way.">
-	<meta name="keywords" content="business, care, childcare, children, clean, corporate, happykids, homeschool, kids, kindergarten, playground, responsive, school, learning">
+	<meta name="description" content="O Instituto Educacional Pequeninos de Jesus entidade sem fins lucrativos e de caráter filantrópico foi fundado por Deusmanda Ferreira de Oliveira, juntamente com 53pessoas amigas de ideal, em 02 de junho de 1991.">
+	<meta name="keywords" content="pequeninos de jesus, frutal mg, instituto pequeninos de jesus frutal mg, ensino em frutal, instituto educacional em frutal mg">
 	<meta name="author" content="Nucleo de Praticas em Sistemas de Informacao - Universidade do Estado de Minas Gerais">
 
 	<!-- ==============================================
