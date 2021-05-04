@@ -10,6 +10,9 @@
 <meta property="og:title" content="Pequeninos de Jesus" />
 <meta property="og:description" content="{{$prestacao->titulo}}" />
 <meta property="og:image" content="http://{{$_SERVER['HTTP_HOST']}}/template_site/images/prestacao-de-contas.png" />
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0" nonce="5T6jYPAu"></script>
 @stop
 
 <!-- BANNER -->
@@ -51,6 +54,8 @@
 						<div class="sosmed-icon d-inline-flex">
 							<a href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}" class="fb" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
 						</div>
+						<div class="fb-share-button" data-href="http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}" data-layout="button" data-size="large"><a target="_blank" href="http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook"></i> Compartilhar</a></div>
+
 						<!-- 
 						<div class="sosmed-icon d-inline-flex">
 							<a href="#" class="tw" title="Twitter"><i class="fa fa-twitter"></i></a>
