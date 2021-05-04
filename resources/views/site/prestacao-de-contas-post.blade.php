@@ -51,7 +51,7 @@
 						<div class="sosmed-icon d-inline-flex">
 							<a href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}" class="fb" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
 						</div>
-						<div class="fb-share-button" data-href="http://www.pequeninosdejesus.com.br/prestacao-de-contas/post?id=1" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.pequeninosdejesus.com.br%2Fprestacao-de-contas%2Fpost%3Fid%3D1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+						<div class="fb-share-button" data-href="http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}};src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
 
 						<!-- 
 						<div class="sosmed-icon d-inline-flex">
