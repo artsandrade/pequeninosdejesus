@@ -8,9 +8,10 @@
 	<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pequeninos de Jesus</title>
-	<meta name="description" content="O Instituto Educacional Pequeninos de Jesus entidade sem fins lucrativos e de caráter filantrópico foi fundado por Deusmanda Ferreira de Oliveira, juntamente com 53pessoas amigas de ideal, em 02 de junho de 1991.">
+	<meta name="description" content="O Instituto Educacional Pequeninos de Jesus entidade sem fins lucrativos e de caráter filantrópico foi fundado por Deusmanda Ferreira de Oliveira, juntamente com 53 pessoas amigas de ideal, em 02 de junho de 1991.">
 	<meta name="keywords" content="pequeninos de jesus, frutal mg, instituto pequeninos de jesus frutal mg, ensino em frutal, instituto educacional em frutal mg">
 	<meta name="author" content="Nucleo de Praticas em Sistemas de Informacao - Universidade do Estado de Minas Gerais">
+	@yield('meta')
 
 	<!-- ==============================================
 	Favicons

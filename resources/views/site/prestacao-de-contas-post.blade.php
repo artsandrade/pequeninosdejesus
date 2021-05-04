@@ -3,6 +3,15 @@
 @section('conteudo')
 
 @foreach($prestacoes as $prestacao)
+
+@section('meta')
+<meta property="og:url" content="http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Pequeninos de Jesus" />
+<meta property="og:description" content="{{$prestacao->titulo}}" />
+<meta property="og:image" content="http://{{$_SERVER['HTTP_HOST']}}/template_site/images/prestacao-de-contas.png" />
+@stop
+
 <!-- BANNER -->
 <div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
@@ -40,13 +49,15 @@
 					<div class="author-box">
 						<h4>Compartilhe essa prestação de contas nas redes sociais</h4>
 						<div class="sosmed-icon d-inline-flex">
-							<a href="#" class="fb" title="Facebook"><i class="fa fa-facebook"></i></a>
+							<a href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}}" class="fb" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
 						</div>
+						<!-- 
 						<div class="sosmed-icon d-inline-flex">
 							<a href="#" class="tw" title="Twitter"><i class="fa fa-twitter"></i></a>
 						</div>
+						-->
 						<div class="sosmed-icon d-inline-flex">
-							<a href="#" class="wpp" title="WhatsApp"><i class="fa fa-phone"></i></a>
+							<a href="https://api.whatsapp.com/send?text=Olá, confira a prestação de contas da Pequeninos de Jesus *{{$prestacao->titulo}}* através do link (http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}})." class="wpp" title="WhatsApp" target="_blank"><i class="fa fa-phone"></i></a>
 						</div>
 					</div>
 					<!-- end author box -->

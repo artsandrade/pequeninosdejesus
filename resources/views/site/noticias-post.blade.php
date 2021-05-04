@@ -3,6 +3,14 @@
 @section('conteudo')
 
 @foreach($noticias as $noticia)
+
+@section('meta')
+<meta property="og:url" content="http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Pequeninos de Jesus" />
+<meta property="og:description" content="{{$noticia->titulo}}" />
+<meta property="og:image" content="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" />
+@stop
 <!-- BANNER -->
 <div class="section banner-page" style="background-color: #3f4095;">
 	<div class="content-wrap pos-relative">
@@ -29,7 +37,7 @@
 			<div class="row">
 
 				<div class="col-sm-12 col-md-12 col-lg-9">
-					
+
 					<div class="single-news">
 						<div class="media">
 							<img src="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" alt="" class="rounded img-fluid">
@@ -44,13 +52,15 @@
 					<div class="author-box">
 						<h4>Compartilhe essa notícia nas redes sociais</h4>
 						<div class="sosmed-icon d-inline-flex">
-							<a href="#" class="fb" title="Facebook"><i class="fa fa-facebook"></i></a>
+							<a href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" class="fb" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
 						</div>
+						<!-- 
 						<div class="sosmed-icon d-inline-flex">
 							<a href="#" class="tw" title="Twitter"><i class="fa fa-twitter"></i></a>
 						</div>
+						-->
 						<div class="sosmed-icon d-inline-flex">
-							<a href="#" class="wpp" title="WhatsApp"><i class="fa fa-phone"></i></a>
+							<a href="https://api.whatsapp.com/send?text=Olá, confira a notícia da Pequeninos de Jesus *{{$noticia->titulo}}* através do link (http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}})." class="wpp" title="WhatsApp" target="_blank"><i class="fa fa-phone"></i></a>
 						</div>
 					</div>
 					<!-- end author box -->
