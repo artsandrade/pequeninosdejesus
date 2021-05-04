@@ -18,7 +18,7 @@
 
             <div class="card-body d-flex flex-column">
                 <div class="text-center">
-                    <img src="/template_site/images/galeria/{{$galeria->capa}}" alt="" class="card-img">
+                    <img src="/template_site/images/galeria/{{$galeria->capa}}" style="min-height: 300px; max-height: 300px; min-width: 300px; max-width: 300px" alt="" class="card-img">
                     <h4 class="pricing__title mt-1 mb-0">{{$galeria->nome}}</h4>
                 </div>
                 <div class="card-body mt-0 mb-0 pb-0">

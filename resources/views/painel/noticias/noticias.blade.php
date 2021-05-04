@@ -18,7 +18,7 @@
 
             <div class="card-body d-flex flex-column">
                 <div class="text-center">
-                    <img src="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" alt="" class="card-img">
+                    <img src="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" style="min-height: 300px; max-height: 300px; min-width: 300px; max-width: 300px" alt="" class="card-img">
                     <h4 class="pricing__title mt-1 mb-0">{{$noticia->titulo}}</h4>
                     <h6>Publicado em: <em>{{date('d/m/Y', strtotime($noticia->dt_criacao))}}</em></h6>
                 </div>

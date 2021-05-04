@@ -31,7 +31,7 @@
 				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
 					<div class="rs-news-1">
 						<div class="media-box">
-							<a href="/noticias/post?id={{$noticia->id_noticia}}"><img src="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" alt="" class="img-fluid"></a>
+							<a href="/noticias/post?id={{$noticia->id_noticia}}"><img src="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" style="min-height: 400px; max-height: 400px; min-width: 400px; max-width: 400px" alt="" class="img-fluid"></a>
 						</div>
 						<div class="body-box">
 							<div class="title">

@@ -42,7 +42,7 @@
         <div class="col-md-6 col-lg-4 card-group-row__col">
             <div class="card-body d-flex flex-column">
                 <div class="text-center">
-                    <img src="/template_site/images/galeria/{{$imagem->imagem}}" alt="" class="card-img">
+                    <img src="/template_site/images/galeria/{{$imagem->imagem}}" style="min-height: 300px; max-height: 300px; min-width: 300px; max-width: 300px" alt="" class="card-img">
                     <br>
                     <br>
                     <a href="#" class="btn btn-danger btn-lg btn-block" onclick="modalRemoverImagem('{{$imagem->id_imagem}}', '{{$imagem->imagem}}', '{{$imagem->album_id}}')"><i class="material-icons">delete</i></a>

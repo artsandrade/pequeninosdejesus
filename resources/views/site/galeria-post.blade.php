@@ -31,7 +31,7 @@
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
 						<a href="/template_site/images/galeria/{{$imagem->imagem}}" title="Imagem">
-							<img src="/template_site/images/galeria/{{$imagem->imagem}}" alt="" class="img-fluid">
+							<img src="/template_site/images/galeria/{{$imagem->imagem}}" style="min-height: 400px; max-height: 400px; min-width: 400px; max-width: 400px" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>

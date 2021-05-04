@@ -63,7 +63,7 @@
 		<div class="topbar">
 			<div class="container">
 				<div class="row align-items-center">
-					<div class="col-sm-8 col-md-6">
+					<div class="col-sm-8 col-md-8">
 						<div class="info">
 							<div class="info-item">
 								<i class="fa fa-phone"></i> (34) 3423-5608
@@ -71,9 +71,12 @@
 							<div class="info-item">
 								<i class="fa fa-envelope-o"></i> <a href="mailto:contato@pequeninosdejesus.com.br" title="">contato@pequeninosdejesus.com.br</a>
 							</div>
+							<div class="info-item">
+								<i class="fa fa-wrench"></i> <a href="/login" title="">Intranet</a>
+							</div>
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-6">
+					<div class="col-sm-4 col-md-4">
 						<div class="sosmed-icon pull-right d-inline-flex">
 							<a href="https://www.facebook.com/InstitutoPequeninosdeJesus/" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
 							<a href="https://www.instagram.com/pequeninos_dejesus/" target="_blank" class="ig"><i class="fa fa-instagram"></i></a>

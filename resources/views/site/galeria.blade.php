@@ -28,7 +28,7 @@
 				<div class="col-sm-12 col-md-6 col-lg-4 mb-5">
 					<div class="rs-news-1">
 						<div class="media-box">
-							<a href="/galeria/post?id={{$galeria->id_album}}"><img src="/template_site/images/galeria/{{$galeria->capa}}" alt="" class="img-fluid"></a>
+							<a href="/galeria/post?id={{$galeria->id_album}}"><img src="/template_site/images/galeria/{{$galeria->capa}}" style="min-height: 400px; max-height: 400px; min-width: 400px; max-width: 400px" alt="" class="img-fluid"></a>
 						</div>
 						<div class="body-box">
 							<div class="title">
