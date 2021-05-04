@@ -13,7 +13,7 @@ class galeriaController extends Controller
         $galeria->setId_album($_POST['id_album']);
         $galeria->setNome($_POST['nome']);
         $galeria->setImagem($_FILES['imagem']);
-        $galeria->inserir();
+        $galeria->alterar();
         return response()->json([
             'resposta' => $galeria->getResposta()
         ]);
@@ -35,6 +35,18 @@ class galeriaController extends Controller
         $galeria = new galeriaModel();
         $galeria->setId_album($_POST['id_album']);
         $galeria->remover();
+        return response()->json([
+            'resposta' => $galeria->getResposta()
+        ]);
+    }
+
+    public function remover_imagem()
+    {
+        $galeria = new galeriaModel();
+        $galeria->setId_imagem($_POST['id_imagem']);
+        $galeria->setId_album($_POST['album_id']);
+        $galeria->setImagem($_POST['imagem']);
+        $galeria->remover_imagem();
         return response()->json([
             'resposta' => $galeria->getResposta()
         ]);

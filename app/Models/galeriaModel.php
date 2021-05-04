@@ -105,6 +105,26 @@ class galeriaModel extends Model
 
     public function alterar()
     {
+        if (!empty($this->getId_album()) && !empty($this->getNome())) {
+            DB::table('albuns')->where('id_album', $this->getId_album())->update([
+                'nome' => $this->getNome()
+            ]);
+
+            foreach ($this->getImagem()['tmp_name'] as $key => $imagem) {
+                $diretorio = public_path('template_site/images/galeria/');
+                $ext = strtolower(substr($this->getImagem()['name'][$key], -4));
+                $nome = date('d_m_Y_H_i_s') . $key . $ext;
+                $arquivo = $diretorio . $nome;
+                DB::table('imagens_albuns')->insert([
+                    'imagem' => $nome,
+                    'album_id' => $this->getId_album()
+                ]);
+                move_uploaded_file($this->getImagem()['tmp_name'][$key], $arquivo);
+            }
+            $this->setResposta('alterado');
+        } else {
+            $this->setResposta('vazio');
+        }
     }
 
     public function inserir()
@@ -132,7 +152,6 @@ class galeriaModel extends Model
                     ]);
                 }
             }
-
             $this->setResposta('inserido');
         } else {
             $this->setResposta('vazio');
@@ -142,8 +161,30 @@ class galeriaModel extends Model
     public function remover()
     {
         if (!empty($this->getId_album())) {
+            $imagens = DB::table('imagens_albuns')->where('album_id', '=', $this->getId_album())->get();
+            foreach ($imagens as $imagem) {
+                unlink(public_path('template_site/images/galeria/' . $imagem->imagem));
+            }
             DB::table('imagens_albuns')->where('album_id', '=', $this->getId_album())->delete();
             DB::table('albuns')->where('id_album', '=', $this->getId_album())->delete();
+            $this->setResposta('removido');
+        } else {
+            $this->setResposta('vazio');
+        }
+    }
+
+    public function remover_imagem()
+    {
+        if (!empty($this->getId_imagem())) {
+            unlink(public_path('template_site/images/galeria/' . $this->getImagem()));
+            $valida_capa = DB::table('albuns')->where('id_album', '=', $this->getId_album())->where('capa', $this->getImagem())->count();
+            DB::table('imagens_albuns')->where('id_imagem', '=', $this->getId_imagem())->delete();
+            if ($valida_capa > 0) {
+                $capa = DB::table('imagens_albuns')->where('album_id', '=', $this->getId_album())->first();
+                DB::table('albuns')->where('id_album', '=', $this->getId_album())->update([
+                    'capa' => $capa->imagem
+                ]);
+            }
             $this->setResposta('removido');
         } else {
             $this->setResposta('vazio');

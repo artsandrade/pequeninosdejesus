@@ -1,3 +1,9 @@
+$("#imagem").fileinput({
+  'showUpload': false,
+  'previewFileType': 'any',
+  'language': 'pt-BR'
+});
+
 $(document).ready(function (e) {
   $.ajaxSetup({
     headers: {
@@ -9,10 +15,9 @@ $(document).ready(function (e) {
 
     var texto_resposta = document.getElementById('texto-resposta');
     texto_resposta.innerHTML = "";
-
     var form = new FormData(this);
-
-    $('#btn-inserir').html('Inserindo...');
+    if (document.getElementById('imagem').value.length > 0) {
+      $('#btn-inserir').html('Inserindo...');
       var url_atual = document.getElementById('url_form').value;
       $.ajax({
         url: "" + url_atual + "",
@@ -57,6 +62,13 @@ $(document).ready(function (e) {
           $('#btn-inserir').html('Inserir');
         }
       });
+    }
+    else {
+      texto_resposta.innerHTML = "Desculpe, mas é necessário que todos os campos estejam preenchidos!";
+      $('#modal-resposta').modal({
+        show: true
+      });
+    }
 
   });
 });
@@ -126,9 +138,9 @@ $(document).ready(function (e) {
 
 function remover(id_album) {
   $.ajaxSetup({
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
   });
 
   var texto_resposta = document.getElementById('texto-resposta');
@@ -137,26 +149,64 @@ function remover(id_album) {
   $('#modal-botao').html('Removendo...');
 
   $.ajax({
-      url: "/painel/galeria/remover",
-      method: 'post',
-      data: {
-          '_token': _token,
-          'id_album': id_album
-      },
-      success: function (response) {
+    url: "/painel/galeria/remover",
+    method: 'post',
+    data: {
+      '_token': _token,
+      'id_album': id_album
+    },
+    success: function (response) {
 
-          if (response.resposta == 'removido') {
-              window.location.href = "/painel/galeria";
-              $('#modal-botao').html('Remover');
-          }
-      },
-      error: function () {
-          texto_resposta.innerHTML = "Desculpe, mas tivemos um erro durante essa solicitação. Entre em contato com o suporte ou tente novamente mais tarde!";
-          $('#modal-resposta').modal({
-              show: true
-          });
-          $('#modal-botao').html('Remover');
+      if (response.resposta == 'removido') {
+        window.location.href = "/painel/galeria";
+        $('#modal-botao').html('Remover');
       }
+    },
+    error: function () {
+      texto_resposta.innerHTML = "Desculpe, mas tivemos um erro durante essa solicitação. Entre em contato com o suporte ou tente novamente mais tarde!";
+      $('#modal-resposta').modal({
+        show: true
+      });
+      $('#modal-botao').html('Remover');
+    }
+  });
+}
+
+function removerImagem(id_imagem, imagem, album_id) {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+  var texto_resposta = document.getElementById('texto-resposta');
+  texto_resposta.innerHTML = "";
+  var _token = document.getElementsByName('_token')[0].value;
+  $('#modal-botao').html('Removendo...');
+
+  $.ajax({
+    url: "/painel/galeria/remover_imagem",
+    method: 'post',
+    data: {
+      '_token': _token,
+      'id_imagem': id_imagem,
+      'imagem': imagem,
+      'album_id': album_id,
+    },
+    success: function (response) {
+
+      if (response.resposta == 'removido') {
+        location.reload();
+        $('#modal-botao').html('Remover');
+      }
+    },
+    error: function () {
+      texto_resposta.innerHTML = "Desculpe, mas tivemos um erro durante essa solicitação. Entre em contato com o suporte ou tente novamente mais tarde!";
+      $('#modal-resposta').modal({
+        show: true
+      });
+      $('#modal-botao').html('Remover');
+    }
   });
 }
 
@@ -167,6 +217,15 @@ function modalRemover(nome, id_album) {
   modal_texto.innerHTML = 'Você tem certeza que deseja remover o álbum <b>' + nome + '</b>?';
   modal_botao.setAttribute('onclick', 'remover(\'' + id_album + '\')');
   $('#modal-center').modal({
-      show: true
+    show: true
+  });
+}
+
+function modalRemoverImagem(id_imagem, imagem, album_id) {
+  var modal_botao = document.getElementById('modal-botao');
+
+  modal_botao.setAttribute('onclick', 'removerImagem(\'' + id_imagem + '\', \'' + imagem + '\', \'' + album_id + '\')');
+  $('#modal-center').modal({
+    show: true
   });
 }

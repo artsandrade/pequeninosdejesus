@@ -224,7 +224,7 @@ Route::middleware(['autenticacao'])->group(function () {
     Route::get('/painel/galeria', function () {
         $galerias = DB::table('albuns')->where('situacao', '1')->get();
         return view('painel/galeria/galeria', compact('galerias'));
-    });
+    })->name('galerias');
 
     Route::get('/painel/galeria/inserir', function () {
         return view('painel/galeria/inserir');
@@ -233,16 +233,38 @@ Route::middleware(['autenticacao'])->group(function () {
     Route::post('/painel/galeria/inserir', [galeriaController::class, 'inserir'])->name('galeria_inserir');
 
     Route::get('/painel/galeria/visualizar', function () {
-        return view('painel/galeria/visualizar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('albuns')->where('id_album', '=', $_GET['id'])->count()) > 0) {
+                $albuns = DB::table('albuns')->where('id_album', '=', $_GET['id'])->get();
+                $imagens = DB::table('imagens_albuns')->where('album_id', '=', $_GET['id'])->get();
+                return view('painel/galeria/visualizar', compact('albuns', 'imagens'));
+            } else {
+                return redirect()->route('galerias');
+            }
+        } else {
+            return redirect()->route('galerias');
+        }
     });
 
     Route::get('/painel/galeria/alterar', function () {
-        return view('painel/galeria/alterar');
+        if (!empty($_GET['id'])) {
+            if ((DB::table('albuns')->where('id_album', '=', $_GET['id'])->count()) > 0) {
+                $albuns = DB::table('albuns')->where('id_album', '=', $_GET['id'])->get();
+                $imagens = DB::table('imagens_albuns')->where('album_id', '=', $_GET['id'])->get();
+                return view('painel/galeria/alterar', compact('albuns', 'imagens'));
+            } else {
+                return redirect()->route('galerias');
+            }
+        } else {
+            return redirect()->route('galerias');
+        }
     });
 
     Route::post('/painel/galeria/alterar', [galeriaController::class, 'alterar'])->name('galeria_alterar');
 
     Route::post('/painel/galeria/remover', [galeriaController::class, 'remover'])->name('galeria_remover');
+
+    Route::post('/painel/galeria/remover_imagem', [galeriaController::class, 'remover_imagem'])->name('galeria_remover_imagem');
 
     //Login e perfil
     Route::get('/painel/meu-perfil', function () {

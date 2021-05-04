@@ -34,9 +34,8 @@
     <link type="text/css" href="/template_painel/css/vendor-flatpickr-airbnb.rtl.css" rel="stylesheet">
 
     <!-- Dropzone -->
-    <link type="text/css" href="/template_painel/css/vendor-dropzone.css" rel="stylesheet">
-    <link type="text/css" href="/template_painel/css/vendor-dropzone.rtl.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.5/css/fileinput.min.css" integrity="sha512-A/XiYKl0I56Nxg43kogQlAnLUbGRVGcT3J2Ni9b73+blF89rmMJ6qL9iHhPR/vDOsjcylhEoiQfzHzGHS+K/lQ==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.5/themes/explorer-fa/theme.min.css" integrity="sha512-i77c8D4vLkvEhQeXQnxDnGNXxNwDfT/tkJW/N5uycy3955czX+LkOLuWCfud42f9GAaSEehPNgS3yc3sUcuRlA==" crossorigin="anonymous" />
     <!-- Quill Theme -->
     <link type="text/css" href="/template_painel/css/vendor-quill.css" rel="stylesheet">
     <link type="text/css" href="/template_painel/css/vendor-quill.rtl.css" rel="stylesheet">
@@ -341,9 +340,9 @@
     <script src="/template_painel/js/page.dashboard.js"></script>
 
     <!-- Dropzone -->
-    <script src="/template_painel/vendor/dropzone.min.js"></script>
-    <script src="/template_painel/js/dropzone.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.5/js/fileinput.min.js" integrity="sha512-1FvXwt9wkKd29ilILHy0zei6ScE5vdEKqZ6BSW+gmM7mfqC4T4256OmUfFzl1FkaNS3FUQ/Kdzrrs8SD83bCZA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.5/js/locales/pt-BR.min.js" integrity="sha512-Cpx57sl+l6IQEV+QXTm2mOCSQW04rlH7Bid1PzoHvJw2rH1vwJgVDWIpOOzi7KhszYPFpK7GiXuOSg1EKDOjtA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.5/themes/explorer-fa/theme.min.js" integrity="sha512-GIar09IA3mug1lRQk9WNNf8k5Qee4zYPXlu70pj63kvYUAGitsRXJc3bUmUt/+57EBYgrHcTvI6MwMkLU0b48w==" crossorigin="anonymous"></script>
     <!-- Quill -->
     <script src="/template_painel/vendor/quill.min.js"></script>
     <script src="/template_painel/js/quill.js"></script>
@@ -361,7 +360,7 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/translations/pt-br.js"></script>
 
-    <!-- Editor -->
+    <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
     @yield('footer_layout')

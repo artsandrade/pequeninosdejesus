@@ -22,10 +22,10 @@
                     <label for="nome">Nome do álbum</label>
                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome do álbum...">
                 </div>
-                <div class="form-group">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" accept=".jpg, .JPG, .gif, .GIF, .png, .PNG, .jpeg, .JPEG" name="imagem[]" multiple>
-                        <label class="custom-file-label" for="customFile">Escolher imagens</label>
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <label for="imagem">Insira as imagens</label>
+                        <input id="imagem" name="imagem[]" type="file" class="file" accept=".jpeg, .jpg, .gif, .png, .JPEG, .JPG, .GIF, .PNG" multiple>
                     </div>
                 </div>
                 <br>
@@ -38,7 +38,6 @@
     </div>
 </div>
 <script src="/public/template_painel/functionsJs/galeria.js" defer></script>
-
 @stop
 
 @section('footer_layout')
@@ -61,6 +60,5 @@
         </div>
     </div>
 </div>
-
 
 @stop
