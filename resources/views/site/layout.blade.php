@@ -54,6 +54,9 @@
 		<div class="loader"></div>
 	</div>
 
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0&appId=580585701990614&autoLogAppEvents=1" nonce="c9ums6m7"></script>
+
 	<!-- BACK TO TOP SECTION -->
 	<!-- <a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a> -->
 
