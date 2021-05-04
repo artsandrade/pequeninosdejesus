@@ -10,6 +10,9 @@
 <meta property="og:title" content="Pequeninos de Jesus" />
 <meta property="og:description" content="{{$noticia->titulo}}" />
 <meta property="og:image" content="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" />
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0" nonce="5T6jYPAu"></script>
 @stop
 <!-- BANNER -->
 <div class="section banner-page" style="background-color: #3f4095;">
@@ -54,13 +57,14 @@
 						<div class="sosmed-icon d-inline-flex">
 							<a href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" class="fb" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
 						</div>
+						<div class="fb-share-button" data-href="http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" data-layout="button" data-size="large"><a target="_blank" href="http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook"></i> Compartilhar</a></div>
 						<!-- 
 						<div class="sosmed-icon d-inline-flex">
 							<a href="#" class="tw" title="Twitter"><i class="fa fa-twitter"></i></a>
 						</div>
 						-->
 						<div class="sosmed-icon d-inline-flex">
-							<a href="https://api.whatsapp.com/send?text=Olá, confira a notícia da Pequeninos de Jesus *{{$noticia->titulo}}* através do link (http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}})." class="wpp" title="WhatsApp" target="_blank"><i class="fa fa-phone"></i></a>
+							<a href="https://api.whatsapp.com/send?text=Olá, confira a notícia da Pequeninos de Jesus - *{{$noticia->titulo}}* - através do link (http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}})." class="wpp" title="WhatsApp" target="_blank"><i class="fa fa-phone"></i></a>
 						</div>
 					</div>
 					<!-- end author box -->

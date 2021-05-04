@@ -57,7 +57,7 @@
 						</div>
 						-->
 						<div class="sosmed-icon d-inline-flex">
-							<a href="https://api.whatsapp.com/send?text=Olá, confira a prestação de contas da Pequeninos de Jesus *{{$prestacao->titulo}}* através do link (http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}})." class="wpp" title="WhatsApp" target="_blank"><i class="fa fa-phone"></i></a>
+							<a href="https://api.whatsapp.com/send?text=Olá, confira a prestação de contas da Pequeninos de Jesus - *{{$prestacao->titulo}}* - através do link (http://{{$_SERVER['HTTP_HOST']}}/prestacao-de-contas/post?id={{$prestacao->id_prestacao}})." class="wpp" title="WhatsApp" target="_blank"><i class="fa fa-phone"></i></a>
 						</div>
 					</div>
 					<!-- end author box -->
