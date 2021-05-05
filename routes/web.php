@@ -44,7 +44,7 @@ Route::get('/fale-conosco', function () {
 Route::post('/fale-conosco', [atendimentosController::class, 'inserir'])->name('atendimentos_inserir');
 
 Route::get('/galeria', function () {
-    $galerias = DB::table('albuns')->where('situacao', '=', '1')->orderBy('nome')->get();
+    $galerias = DB::table('albuns')->where('situacao', '=', '1')->orderBy('nome')->paginate(6);
     return view('site/galeria', compact('galerias'));
 })->name('galerias_site');
 
@@ -64,7 +64,7 @@ Route::get('/galeria/post', function () {
 });
 
 Route::get('/noticias', function () {
-    $noticias = DB::table('noticias')->orderByDesc('dt_criacao')->get();
+    $noticias = DB::table('noticias')->orderByDesc('dt_criacao')->paginate(6);
     return view('site/noticias', compact('noticias'));
 })->name('noticias_site');
 
@@ -83,7 +83,7 @@ Route::get('/noticias/post', function () {
 });
 
 Route::get('/prestacao-de-contas', function () {
-    $prestacoes = DB::table('prestacoes_de_contas')->where('situacao', '=', '1')->orderByDesc('data')->get();
+    $prestacoes = DB::table('prestacoes_de_contas')->where('situacao', '=', '1')->orderByDesc('data')->paginate(6);
     return view('site/prestacao-de-contas', compact('prestacoes'));
 })->name('prestacoes_site');
 
@@ -222,7 +222,7 @@ Route::middleware(['autenticacao'])->group(function () {
 
     //Galeria
     Route::get('/painel/galeria', function () {
-        $galerias = DB::table('albuns')->where('situacao', '1')->get();
+        $galerias = DB::table('albuns')->paginate(6);
         return view('painel/galeria/galeria', compact('galerias'));
     })->name('galerias');
 
@@ -275,7 +275,7 @@ Route::middleware(['autenticacao'])->group(function () {
 
     //Noticias
     Route::get('/painel/noticias', function () {
-        $noticias = DB::table('noticias')->orderByDesc('dt_criacao')->get();
+        $noticias = DB::table('noticias')->orderByDesc('dt_criacao')->paginate(6);
         return view('painel/noticias/noticias', compact('noticias'));
     })->name('noticias');
 

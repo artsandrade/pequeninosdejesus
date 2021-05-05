@@ -43,7 +43,11 @@
 				@endforeach
 
 			</div>
-
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					{{$prestacoes->links('vendor.pagination.bootstrap-4')}}
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

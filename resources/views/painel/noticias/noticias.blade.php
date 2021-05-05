@@ -40,6 +40,11 @@
     </div>
     @endforeach
 </div>
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        {{$noticias->links('vendor.pagination.bootstrap-4')}}
+    </div>
+</div>
 
 <script src="/public/template_painel/functionsJs/noticias.js" defer></script>
 @stop
