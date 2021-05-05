@@ -9,7 +9,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Pequeninos de Jesus" />
 <meta property="og:description" content="{{$noticia->titulo}}" />
-<meta property="og:image" content="data:image/jpeg;base64, {{base64_encode( $noticia->capa )}}" />
+<meta property="og:image" content="http://{{$_SERVER['HTTP_HOST']}}/template_site/images/noticias/{{$noticia->capa_caminho}}" />
 @stop
 <!-- BANNER -->
 <div class="section banner-page" style="background-color: #3f4095;">
@@ -52,9 +52,9 @@
 					<div class="author-box">
 						<h4>Compartilhe essa notícia nas redes sociais</h4>
 						<div class="sosmed-icon d-inline-flex">
-							<a href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" class="fb" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}};src=sdkpreparse" class="fb" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
 						</div>
-						<div class="fb-share-button" data-href="http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}};src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+						<div class="fb-share-button" data-href="http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}}" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://{{$_SERVER['HTTP_HOST']}}/noticias/post?id={{$noticia->id_noticia}};src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar no Facebook</a></div>
 						
 						<!-- 
 						<div class="sosmed-icon d-inline-flex">
