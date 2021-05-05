@@ -118,7 +118,7 @@ class noticiasModel extends Model
                 DB::table('noticias')->where('id_noticia', '=', $this->getId_noticia())->update([
                     'titulo' => $this->getTitulo(),
                     'capa' => $imagem_capa,
-                    'capa_caminho' => $arquivo,
+                    'capa_caminho' => $nome,
                     'noticia' => $this->getNoticia(),
                     'situacao' => $this->getSituacao()
                 ]);
@@ -150,7 +150,7 @@ class noticiasModel extends Model
             DB::table('noticias')->insert([
                 'titulo' => $this->getTitulo(),
                 'capa' => $imagem_capa,
-                'capa_caminho' => $arquivo,
+                'capa_caminho' => $nome,
                 'noticia' => $this->getNoticia(),
                 'dt_criacao' => $this->getDt_criacao(),
                 'situacao' => $this->getSituacao()
