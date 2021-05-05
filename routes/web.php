@@ -29,7 +29,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $parametros_inicio = DB::table(('parametros_inicio'))->get();
     $eventos = DB::table('eventos')->where('situacao', '=', '1')->get();
-    return view('site/inicio', compact('parametros_inicio', 'eventos'));
+    $fotos = DB::table('imagens_albuns')->orderByRaw('RAND()')->limit(6)->get();
+    return view('site/inicio', compact('parametros_inicio', 'eventos', 'fotos'));
 });
 
 Route::get('/colaboradores', function () {

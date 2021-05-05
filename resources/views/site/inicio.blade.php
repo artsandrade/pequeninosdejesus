@@ -322,10 +322,11 @@
 
 			<div class="row popup-gallery gutter-5">
 				<!-- Item 1 -->
+				@foreach($fotos as $foto)
 				<div class="col-xs-12 col-md-6 col-lg-4">
 					<div class="box-gallery">
-						<a href="template_site/images/quadra/img1.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img1.png" alt="" class="img-fluid">
+						<a href="/template_site/images/galeria/{{$foto->imagem}}" title="Imagem da galeria">
+							<img src="/template_site/images/galeria/{{$foto->imagem}}" style="min-height: 240px; max-height: 240px; min-width: 360px; max-width: 360px" alt="" class="img-fluid">
 							<div class="project-info">
 								<div class="project-icon">
 									<span class="fa fa-search"></span>
@@ -334,72 +335,7 @@
 						</a>
 					</div>
 				</div>
-				<!-- Item 1 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img2.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img2.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 1 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img3.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img3.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 2 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img4.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img4.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 3 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img5.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img5.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!-- Item 4 -->
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<div class="box-gallery">
-						<a href="template_site/images/quadra/img6.png" title="Inauguração da quadra">
-							<img src="template_site/images/quadra/img6.png" alt="" class="img-fluid">
-							<div class="project-info">
-								<div class="project-icon">
-									<span class="fa fa-search"></span>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
+				@endforeach
 			</div>
 
 		</div>
