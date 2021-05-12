@@ -5,6 +5,7 @@
 <!-- BANNER -->
 <div id="oc-fullslider" class="banner">
 	<div class="owl-carousel owl-theme full-screen">
+		<!--
 		<div class="item">
 			<img src="template_site/images/slides/matriculas.png" alt="Slider">
 			<div class="overlay-bg"></div>
@@ -17,6 +18,7 @@
 				</div>
 			</div>
 		</div>
+		-->
 		<div class="item">
 			<img src="template_site/images/slides/noticias.png" alt="Slider">
 			<div class="overlay-bg"></div>
