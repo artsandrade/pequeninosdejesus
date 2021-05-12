@@ -106,15 +106,15 @@ class noticiasModel extends Model
         if (!empty($this->getId_noticia()) && !empty($this->getTitulo()) && !empty($this->getNoticia())) {
             if ($this->getCapa()['error'] != 4) {
                 $imagem_capa = file_get_contents($this->getCapa()['tmp_name']);
-                
-                $nome_capa = DB::table('noticias')->where('id_noticia', $this->getId_noticia())->select('capa_caminho')->get();
+
+                $nome_capa = DB::table('noticias')->where('id_noticia', $this->getId_noticia())->select('capa_caminho')->first();
                 unlink(public_path('template_site/images/noticias/' . $nome_capa->capa_caminho));
                 $diretorio = public_path('template_site/images/noticias/');
-                $ext = strtolower(substr($this->getCapa()['name'], -4));
-                $nome = date('d_m_Y_H_i_s') . $ext;
+                $ext = pathinfo($this->getCapa()['name'], PATHINFO_EXTENSION);
+                $nome = date('d_m_Y_H_i_s') . '.' . $ext;
                 $arquivo = $diretorio . $nome;
                 move_uploaded_file($this->getCapa()['tmp_name'], $arquivo);
-                
+
                 DB::table('noticias')->where('id_noticia', '=', $this->getId_noticia())->update([
                     'titulo' => $this->getTitulo(),
                     'capa' => $imagem_capa,
@@ -140,10 +140,10 @@ class noticiasModel extends Model
     {
         if (!empty($this->getTitulo()) && !empty($this->getCapa()) && !empty($this->getNoticia())) {
             $imagem_capa = file_get_contents($this->getCapa()['tmp_name']);
-            
+
             $diretorio = public_path('template_site/images/noticias/');
-            $ext = strtolower(substr($this->getCapa()['name'], -4));
-            $nome = date('d_m_Y_H_i_s') . $ext;
+            $ext = pathinfo($this->getCapa()['name'], PATHINFO_EXTENSION);
+            $nome = date('d_m_Y_H_i_s') . '.' . $ext;
             $arquivo = $diretorio . $nome;
             move_uploaded_file($this->getCapa()['tmp_name'], $arquivo);
 

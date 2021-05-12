@@ -12,6 +12,7 @@
 
 @section('conteudo')
 <div class="row card-group-row">
+    @if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='4')
     <div class="col-lg-4 col-md-6 card-group-row__col">
         <div class="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
             <div class="flex">
@@ -21,6 +22,8 @@
             <div><i class="icon-muted icon-40pt fas fa-phone ml-3"></i></div>
         </div>
     </div>
+    @endif
+    @if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='2')
     <div class="col-lg-4 col-md-6 card-group-row__col">
         <div class="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
             <div class="flex">
@@ -30,6 +33,8 @@
             <div><i class="icon-muted icon-40pt fas fa-newspaper ml-3"></i></div>
         </div>
     </div>
+    @endif
+    @if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='3')
     <div class="col-lg-4 col-md-12 card-group-row__col">
         <div class="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
             <div class="flex">
@@ -39,7 +44,9 @@
             <div><i class="icon-muted icon-40pt fas fa-hand-holding-usd ml-3"></i></div>
         </div>
     </div>
+    @endif
 </div>
+@if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='4')
 <div class="row">
     <div class="col-lg">
         <div class="card">
@@ -80,4 +87,5 @@
         </div>
     </div>
 </div>
+@endif
 @stop

@@ -30,7 +30,7 @@ $(document).ready(function (e) {
                             show: true
                         });
                         $('#btn-inserir').html('Inserir');
-                        window.location.href = "/painel/noticias";
+                        window.location.reload();
                     } else {
                         if (response.resposta == 'vazio') {
                             texto_resposta.innerHTML = "Desculpe, mas é necessário que todos os campos estejam preenchidos!";

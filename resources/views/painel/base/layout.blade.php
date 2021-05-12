@@ -129,6 +129,7 @@
                         <div class="sidebar sidebar-light sidebar-left simplebar" data-simplebar>
                             <ul class="sidebar-menu">
                                 <br>
+                                @if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='4')
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#atendimentos_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-phone"></i>
@@ -143,6 +144,8 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endif
+                                @if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='2')
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#colaboradores_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-chalkboard-teacher"></i>
@@ -157,6 +160,25 @@
                                         </li>
                                         <li class="sidebar-menu-item">
                                             <a class="sidebar-menu-button" href="/painel/colaboradores">
+                                                <span class="sidebar-menu-text">Visualizar</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" data-toggle="collapse" href="#depoimentos_menu">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-book-reader"></i>
+                                        <span class="sidebar-menu-text">Depoimentos</span>
+                                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                    </a>
+                                    <ul class="sidebar-submenu collapse show " id="depoimentos_menu">
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/painel/depoimentos/inserir">
+                                                <span class="sidebar-menu-text">Inserir</span>
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/painel/depoimentos">
                                                 <span class="sidebar-menu-text">Visualizar</span>
                                             </a>
                                         </li>
@@ -219,6 +241,8 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endif
+                                @if(session('usuario_tipo_usuario')=='1')
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#parametros_inicio_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-tools"></i>
@@ -233,6 +257,8 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endif
+                                @if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='3')
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#prestacao_de_contas_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-hand-holding-usd"></i>
@@ -252,6 +278,8 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endif
+                                @if(session('usuario_tipo_usuario')=='1')
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#usuarios_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-users"></i>
@@ -271,6 +299,7 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endif
                                 <hr>
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" href="/">

@@ -30,6 +30,7 @@ $(document).ready(function (e) {
               show: true
             });
             $('#btn-inserir').html('Inserir');
+            document.getElementById('form-inserir').reset();
           }
           else {
             if (response.resposta == 'vazio') {

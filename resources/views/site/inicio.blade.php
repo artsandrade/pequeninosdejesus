@@ -184,65 +184,26 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
 					<h2 class="section-heading text-center mb-5">
-						Depoimentos dos pais/responsáveis
+						Depoimentos
 					</h2>
 				</div>
 			</div>
 
 			<div class="row">
-
+				@foreach($depoimentos as $depoimento)
 				<div class="col-sm-12 col-md-6 col-lg-6">
 					<div class="rs-testimonial-1">
 						<div class="media">
-							<img src="template_site/images/dummy-img-400x400.jpg" alt="" class="img-fluid">
+							<img src="data:image/jpeg;base64, {{base64_encode( $depoimento->foto )}}" style="min-height: 115px; max-height: 115px; min-width: 115px; max-width: 115px" alt="" title="{{$depoimento->nome}}" class="img-fluid">
 						</div>
 						<div class="body">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum has been. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Nulla interdum dapibus erat nec elementum. </p>
-							<div class="title">John Doel</div>
-							<div class="company">Businessman</div>
+							<p>{{$depoimento->depoimento}}</p>
+							<div class="title">{{$depoimento->nome}}</div>
+							<div class="company">{{$depoimento->tipo}}</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-sm-12 col-md-6 col-lg-6">
-					<div class="rs-testimonial-1">
-						<div class="media">
-							<img src="template_site/images/dummy-img-400x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum has been. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Nulla interdum dapibus erat nec elementum. </p>
-							<div class="title">Raisa Doel</div>
-							<div class="company">House Keeper</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-md-6 col-lg-6">
-					<div class="rs-testimonial-1">
-						<div class="media">
-							<img src="template_site/images/dummy-img-400x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum has been. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Nulla interdum dapibus erat nec elementum. </p>
-							<div class="title">Josh Doel</div>
-							<div class="company">Contractor</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-md-6 col-lg-6">
-					<div class="rs-testimonial-1">
-						<div class="media">
-							<img src="template_site/images/dummy-img-400x400.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="body">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum has been. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Nulla interdum dapibus erat nec elementum. </p>
-							<div class="title">Sasha Doel</div>
-							<div class="company">Freelance</div>
-						</div>
-					</div>
-				</div>
-
+				@endforeach
 			</div>
 
 		</div>
@@ -274,7 +235,7 @@
 
 				alert('Evento: ' + eventObj.title + '\n' +
 					'Local: ' + description.description + '\n' +
-					'Data/hora: ' + eventObj.start.toLocaleDateString() + ' '+ eventObj.start.toLocaleTimeString());
+					'Data/hora: ' + eventObj.start.toLocaleDateString() + ' ' + eventObj.start.toLocaleTimeString());
 				console.log(info)
 			},
 			initialView: 'dayGridMonth',

@@ -30,7 +30,7 @@ $(document).ready(function (e) {
                           show: true
                       });
                       $('#btn-inserir').html('Inserir');
-                      window.location.href = "/painel/prestacao-de-contas";
+                      window.location.reload();
                   } else {
                       if (response.resposta == 'vazio') {
                           texto_resposta.innerHTML = "Desculpe, mas é necessário que todos os campos estejam preenchidos!";
@@ -84,7 +84,6 @@ $(document).ready(function (e) {
                           show: true
                       });
                       $('#btn-alterar').html('Alterar');
-                      window.location.href = "/painel/prestacao-de-contas";
                   } else {
                       if (response.resposta == 'vazio') {
                           texto_resposta.innerHTML = "Desculpe, mas é necessário que todos os campos estejam preenchidos!";
@@ -147,7 +146,7 @@ function modalRemover(data, titulo, id_prestacao) {
   var modal_texto = document.getElementById('modal-texto');
   var modal_botao = document.getElementById('modal-botao');
   var dt = new Date(data);
-  dt = dt.toLocaleDateString();
+  dt = dt.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
 
   modal_texto.innerHTML = 'Você tem certeza que deseja remover a prestação de contas <b>' + titulo + '</b> com data de ' + dt + '?';
   modal_botao.setAttribute('onclick', 'remover(\'' + id_prestacao+ '\')');

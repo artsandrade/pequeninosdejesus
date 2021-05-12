@@ -31,6 +31,7 @@
             <br>
             <div class="form-group text-right">
                 <a href="/painel/prestacao-de-contas" class="btn btn-secondary">Voltar</a>
+                <a href="/painel/prestacao-de-contas/alterar?id={{$prestacao->id_prestacao}}" class="btn btn-primary">Alterar</a>
             </div>
         </div>
     </div>

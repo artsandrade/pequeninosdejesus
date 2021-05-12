@@ -28,10 +28,10 @@
                     <div class="form-group col-sm-12 col-md-2">
                         <label for="tipo_usuario">Tipo do usuário</label>
                         <select class="form-control" name="tipo_usuario" id="tipo_usuario">
-                            <option value="1" {{$usuario->situacao==1?'selected':''}}>Administrador</option>
-                            <option value="2" {{$usuario->situacao==2?'selected':''}}>Comum</option>
-                            <option value="3" {{$usuario->situacao==3?'selected':''}}>Financeiro</option>
-                            <option value="4" {{$usuario->situacao==4?'selected':''}}>Secretaria</option>
+                            <option value="1" {{$usuario->tipo_usuario==1?'selected':''}}>Administrador</option>
+                            <option value="2" {{$usuario->tipo_usuario==2?'selected':''}}>Comum</option>
+                            <option value="3" {{$usuario->tipo_usuario==3?'selected':''}}>Financeiro</option>
+                            <option value="4" {{$usuario->tipo_usuario==4?'selected':''}}>Secretaria</option>
                         </select>
                     </div>
                 </div>

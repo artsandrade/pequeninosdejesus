@@ -42,6 +42,7 @@
             <br>
             <div class="form-group text-right">
                 <a href="/painel/noticias" class="btn btn-secondary">Voltar</a>
+                <a href="/painel/noticias/alterar?id={{$noticia->id_noticia}}" class="btn btn-primary">Alterar</a>
             </div>
         </div>
     </div>

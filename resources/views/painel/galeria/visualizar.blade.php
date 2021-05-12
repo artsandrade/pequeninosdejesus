@@ -33,6 +33,7 @@
             <br>
             <div class="form-group text-right">
                 <a href="/painel/galeria" class="btn btn-secondary">Voltar</a>
+                <a href="/painel/galeria/alterar?id={{$album->id_album}}" class="btn btn-primary">Alterar</a>
             </div>
         </div>
     </div>

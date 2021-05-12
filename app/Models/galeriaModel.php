@@ -109,17 +109,18 @@ class galeriaModel extends Model
             DB::table('albuns')->where('id_album', $this->getId_album())->update([
                 'nome' => $this->getNome()
             ]);
-
-            foreach ($this->getImagem()['tmp_name'] as $key => $imagem) {
-                $diretorio = public_path('template_site/images/galeria/');
-                $ext = strtolower(substr($this->getImagem()['name'][$key], -4));
-                $nome = date('d_m_Y_H_i_s') . $key . $ext;
-                $arquivo = $diretorio . $nome;
-                DB::table('imagens_albuns')->insert([
-                    'imagem' => $nome,
-                    'album_id' => $this->getId_album()
-                ]);
-                move_uploaded_file($this->getImagem()['tmp_name'][$key], $arquivo);
+            if ($this->getImagem()['error'][0] != 4) {
+                foreach ($this->getImagem()['tmp_name'] as $key => $imagem) {
+                    $diretorio = public_path('template_site/images/galeria/');
+                    $ext = pathinfo($this->getImagem()['name'][$key], PATHINFO_EXTENSION);
+                    $nome = date('d_m_Y_H_i_s') . $key . '.' . $ext;
+                    $arquivo = $diretorio . $nome;
+                    DB::table('imagens_albuns')->insert([
+                        'imagem' => $nome,
+                        'album_id' => $this->getId_album()
+                    ]);
+                    move_uploaded_file($this->getImagem()['tmp_name'][$key], $arquivo);
+                }
             }
             $this->setResposta('alterado');
         } else {
@@ -134,22 +135,23 @@ class galeriaModel extends Model
                 'nome' => $this->getNome(),
                 'situacao' => '1'
             ]));
-
-            foreach ($this->getImagem()['tmp_name'] as $key => $imagem) {
-                $diretorio = public_path('template_site/images/galeria/');
-                $ext = strtolower(substr($this->getImagem()['name'][$key], -4));
-                $nome = date('d_m_Y_H_i_s') . $key . $ext;
-                $arquivo = $diretorio . $nome;
-                DB::table('imagens_albuns')->insert([
-                    'imagem' => $nome,
-                    'album_id' => $this->getId_album()
-                ]);
-                move_uploaded_file($this->getImagem()['tmp_name'][$key], $arquivo);
-
-                if ($key == 0) {
-                    DB::table('albuns')->where('id_album', $this->getId_album())->update([
-                        'capa' => $nome
+            if ($this->getImagem()['error'][0] != 4) {
+                foreach ($this->getImagem()['tmp_name'] as $key => $imagem) {
+                    $diretorio = public_path('template_site/images/galeria/');
+                    $ext = pathinfo($this->getImagem()['name'][$key], PATHINFO_EXTENSION);
+                    $nome = date('d_m_Y_H_i_s') . $key . '.' . $ext;
+                    $arquivo = $diretorio . $nome;
+                    DB::table('imagens_albuns')->insert([
+                        'imagem' => $nome,
+                        'album_id' => $this->getId_album()
                     ]);
+                    move_uploaded_file($this->getImagem()['tmp_name'][$key], $arquivo);
+
+                    if ($key == 0) {
+                        DB::table('albuns')->where('id_album', $this->getId_album())->update([
+                            'capa' => $nome
+                        ]);
+                    }
                 }
             }
             $this->setResposta('inserido');

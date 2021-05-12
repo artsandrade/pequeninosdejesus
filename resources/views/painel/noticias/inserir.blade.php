@@ -29,6 +29,7 @@
                 <textarea name="noticia" id="editor"></textarea>
                 <br>
                 <div class="form-group text-right">
+                    <a href="/painel/noticias" class="btn btn-secondary">Voltar</a>
                     <button type="submit" class="btn btn-primary" id="btn-inserir">Inserir</button>
                 </div>
             </form>

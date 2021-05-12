@@ -25,6 +25,7 @@ $(document).ready(function () {
               show: true
             });
             $('#btn-inserir').html('Inserir');
+            document.getElementById('form-inserir-evento').reset();
         }
         else {
           if (response.resposta == 'vazio') {

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\atendimentosController;
 use App\Http\Controllers\colaboradoresController;
+use App\Http\Controllers\depoimentosController;
 use App\Http\Controllers\eventosController;
 use App\Http\Controllers\galeriaController;
 use App\Http\Controllers\loginController;
@@ -30,7 +31,8 @@ Route::get('/', function () {
     $parametros_inicio = DB::table(('parametros_inicio'))->get();
     $eventos = DB::table('eventos')->where('situacao', '=', '1')->get();
     $fotos = DB::table('imagens_albuns')->orderByRaw('RAND()')->limit(6)->get();
-    return view('site/inicio', compact('parametros_inicio', 'eventos', 'fotos'));
+    $depoimentos = DB::table('depoimentos')->get();
+    return view('site/inicio', compact('parametros_inicio', 'eventos', 'fotos', 'depoimentos'));
 });
 
 Route::get('/colaboradores', function () {
@@ -138,135 +140,6 @@ Route::middleware(['autenticacao'])->group(function () {
 
     Route::get('/logout', [loginController::class, 'logout'])->name('logout');
 
-    //Atendimentos
-    Route::get('/painel/atendimentos', function () {
-        $atendimentos = DB::table('atendimentos')->get();
-        return view('painel/atendimentos/visualizar', compact('atendimentos'));
-    })->name('atendimentos');
-
-    Route::post('/painel/atendimentos', [atendimentosController::class, 'alterar'])->name('atendimentos_alterar');
-
-    //Colaboradores
-    Route::get('/painel/colaboradores', function () {
-        $colaboradores = DB::table('colaboradores')->orderBy('nome')->get();
-        return view('painel/colaboradores/colaboradores', compact('colaboradores'));
-    })->name('colaboradores');
-
-    Route::get('/painel/colaboradores/inserir', function () {
-        return view('painel/colaboradores/inserir');
-    });
-
-    Route::post('/painel/colaboradores/inserir', [colaboradoresController::class, 'inserir'])->name('colaborador_inserir');
-
-    Route::get('/painel/colaboradores/visualizar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->count()) > 0) {
-                $colaboradores = DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->get();
-                return view('painel/colaboradores/visualizar', compact('colaboradores'));
-            } else {
-                return redirect()->route('colaboradores');
-            }
-        } else {
-            return redirect()->route('colaboradores');
-        }
-    });
-
-    Route::get('/painel/colaboradores/alterar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->count()) > 0) {
-                $colaboradores = DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->get();
-                return view('painel/colaboradores/alterar', compact('colaboradores'));
-            } else {
-                return redirect()->route('colaboradores');
-            }
-        } else {
-            return redirect()->route('colaboradores');
-        }
-    });
-
-    Route::post('/painel/colaboradores/alterar', [colaboradoresController::class, 'alterar'])->name('colaborador_alterar');
-
-    Route::post('/painel/colaboradores/remover', [colaboradoresController::class, 'remover'])->name('colaborador_remover');
-
-    //Eventos
-    Route::get('/painel/eventos', function () {
-        $eventos = DB::table('eventos')->orderByDesc('data')->get();
-        return view('painel/eventos/eventos', compact('eventos'));
-    })->name('eventos');
-
-    Route::get('/painel/eventos/inserir', function () {
-        return view('painel/eventos/inserir');
-    });
-
-    Route::post('/painel/eventos/inserir', [eventosController::class, 'inserir'])->name('eventos_inserir');
-
-    Route::get('/painel/eventos/visualizar', function () {
-        return view('painel/eventos/visualizar');
-    });
-
-    Route::get('/painel/eventos/alterar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('eventos')->where('id_evento', '=', $_GET['id'])->count()) > 0) {
-                $eventos = DB::table('eventos')->where('id_evento', '=', $_GET['id'])->get();
-                return view('painel/eventos/alterar', compact('eventos'));
-            } else {
-                return redirect()->route('eventos');
-            }
-        } else {
-            return redirect()->route('eventos');
-        }
-    });
-
-    Route::post('/painel/eventos/alterar', [eventosController::class, 'alterar'])->name('eventos_alterar');
-
-    Route::post('/painel/eventos/remover', [eventosController::class, 'remover'])->name('eventos_remover');
-
-    //Galeria
-    Route::get('/painel/galeria', function () {
-        $galerias = DB::table('albuns')->paginate(6);
-        return view('painel/galeria/galeria', compact('galerias'));
-    })->name('galerias');
-
-    Route::get('/painel/galeria/inserir', function () {
-        return view('painel/galeria/inserir');
-    });
-
-    Route::post('/painel/galeria/inserir', [galeriaController::class, 'inserir'])->name('galeria_inserir');
-
-    Route::get('/painel/galeria/visualizar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('albuns')->where('id_album', '=', $_GET['id'])->count()) > 0) {
-                $albuns = DB::table('albuns')->where('id_album', '=', $_GET['id'])->get();
-                $imagens = DB::table('imagens_albuns')->where('album_id', '=', $_GET['id'])->get();
-                return view('painel/galeria/visualizar', compact('albuns', 'imagens'));
-            } else {
-                return redirect()->route('galerias');
-            }
-        } else {
-            return redirect()->route('galerias');
-        }
-    });
-
-    Route::get('/painel/galeria/alterar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('albuns')->where('id_album', '=', $_GET['id'])->count()) > 0) {
-                $albuns = DB::table('albuns')->where('id_album', '=', $_GET['id'])->get();
-                $imagens = DB::table('imagens_albuns')->where('album_id', '=', $_GET['id'])->get();
-                return view('painel/galeria/alterar', compact('albuns', 'imagens'));
-            } else {
-                return redirect()->route('galerias');
-            }
-        } else {
-            return redirect()->route('galerias');
-        }
-    });
-
-    Route::post('/painel/galeria/alterar', [galeriaController::class, 'alterar'])->name('galeria_alterar');
-
-    Route::post('/painel/galeria/remover', [galeriaController::class, 'remover'])->name('galeria_remover');
-
-    Route::post('/painel/galeria/remover_imagem', [galeriaController::class, 'remover_imagem'])->name('galeria_remover_imagem');
-
     //Login e perfil
     Route::get('/painel/meu-perfil', function () {
         return view('painel/perfil/perfil');
@@ -274,128 +147,311 @@ Route::middleware(['autenticacao'])->group(function () {
 
     Route::post('/painel/meu-perfil', [loginController::class, 'alterar_senha'])->name('perfil_alterar_senha');
 
-    //Noticias
-    Route::get('/painel/noticias', function () {
-        $noticias = DB::table('noticias')->orderByDesc('dt_criacao')->paginate(6);
-        return view('painel/noticias/noticias', compact('noticias'));
-    })->name('noticias');
+    //ADMIN E SECRETARIA
+    Route::middleware(['admin_sec'])->group(function () {
+        //Atendimentos
+        Route::get('/painel/atendimentos', function () {
+            $atendimentos = DB::table('atendimentos')->get();
+            return view('painel/atendimentos/visualizar', compact('atendimentos'));
+        })->name('atendimentos');
 
-    Route::get('/painel/noticias/inserir', function () {
-        return view('painel/noticias/inserir');
+        Route::post('/painel/atendimentos', [atendimentosController::class, 'alterar'])->name('atendimentos_alterar');
     });
 
-    Route::post('/painel/noticias/inserir', [noticiasController::class, 'inserir'])->name('noticias_inserir');
+    //ADMIN E COMUM
+    Route::middleware(['admin_comum'])->group(function () {
+        //Colaboradores
+        Route::get('/painel/colaboradores', function () {
+            $colaboradores = DB::table('colaboradores')->orderBy('nome')->get();
+            return view('painel/colaboradores/colaboradores', compact('colaboradores'));
+        })->name('colaboradores');
 
-    Route::get('/painel/noticias/visualizar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->count()) > 0) {
-                $noticias = DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->get();
-                return view('painel/noticias/visualizar', compact('noticias'));
+        Route::get('/painel/colaboradores/inserir', function () {
+            return view('painel/colaboradores/inserir');
+        });
+
+        Route::post('/painel/colaboradores/inserir', [colaboradoresController::class, 'inserir'])->name('colaborador_inserir');
+
+        Route::get('/painel/colaboradores/visualizar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->count()) > 0) {
+                    $colaboradores = DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->get();
+                    return view('painel/colaboradores/visualizar', compact('colaboradores'));
+                } else {
+                    return redirect()->route('colaboradores');
+                }
+            } else {
+                return redirect()->route('colaboradores');
+            }
+        });
+
+        Route::get('/painel/colaboradores/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->count()) > 0) {
+                    $colaboradores = DB::table('colaboradores')->where('id_colaborador', '=', $_GET['id'])->get();
+                    return view('painel/colaboradores/alterar', compact('colaboradores'));
+                } else {
+                    return redirect()->route('colaboradores');
+                }
+            } else {
+                return redirect()->route('colaboradores');
+            }
+        });
+
+        Route::post('/painel/colaboradores/alterar', [colaboradoresController::class, 'alterar'])->name('colaborador_alterar');
+
+        Route::post('/painel/colaboradores/remover', [colaboradoresController::class, 'remover'])->name('colaborador_remover');
+
+        //Depoimentos
+        Route::get('/painel/depoimentos', function () {
+            $depoimentos = DB::table('depoimentos')->orderBy('nome')->get();
+            return view('painel/depoimentos/depoimentos', compact('depoimentos'));
+        })->name('depoimentos');
+
+        Route::get('/painel/depoimentos/inserir', function () {
+            return view('painel/depoimentos/inserir');
+        });
+
+        Route::post('/painel/depoimentos/inserir', [depoimentosController::class, 'inserir'])->name('depoimento_inserir');
+
+        Route::get('/painel/depoimentos/visualizar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('depoimentos')->where('id_depoimento', '=', $_GET['id'])->count()) > 0) {
+                    $depoimentos = DB::table('depoimentos')->where('id_depoimento', '=', $_GET['id'])->get();
+                    return view('painel/depoimentos/visualizar', compact('depoimentos'));
+                } else {
+                    return redirect()->route('depoimentos');
+                }
+            } else {
+                return redirect()->route('depoimentos');
+            }
+        });
+
+        Route::get('/painel/depoimentos/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('depoimentos')->where('id_depoimento', '=', $_GET['id'])->count()) > 0) {
+                    $depoimentos = DB::table('depoimentos')->where('id_depoimento', '=', $_GET['id'])->get();
+                    return view('painel/depoimentos/alterar', compact('depoimentos'));
+                } else {
+                    return redirect()->route('depoimentos');
+                }
+            } else {
+                return redirect()->route('depoimentos');
+            }
+        });
+
+        Route::post('/painel/depoimentos/alterar', [depoimentosController::class, 'alterar'])->name('depoimento_alterar');
+
+        Route::post('/painel/depoimentos/remover', [depoimentosController::class, 'remover'])->name('depoimento_remover');
+
+        //Eventos
+        Route::get('/painel/eventos', function () {
+            $eventos = DB::table('eventos')->orderByDesc('data')->get();
+            return view('painel/eventos/eventos', compact('eventos'));
+        })->name('eventos');
+
+        Route::get('/painel/eventos/inserir', function () {
+            return view('painel/eventos/inserir');
+        });
+
+        Route::post('/painel/eventos/inserir', [eventosController::class, 'inserir'])->name('eventos_inserir');
+
+        Route::get('/painel/eventos/visualizar', function () {
+            return view('painel/eventos/visualizar');
+        });
+
+        Route::get('/painel/eventos/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('eventos')->where('id_evento', '=', $_GET['id'])->count()) > 0) {
+                    $eventos = DB::table('eventos')->where('id_evento', '=', $_GET['id'])->get();
+                    return view('painel/eventos/alterar', compact('eventos'));
+                } else {
+                    return redirect()->route('eventos');
+                }
+            } else {
+                return redirect()->route('eventos');
+            }
+        });
+
+        Route::post('/painel/eventos/alterar', [eventosController::class, 'alterar'])->name('eventos_alterar');
+
+        Route::post('/painel/eventos/remover', [eventosController::class, 'remover'])->name('eventos_remover');
+
+        //Galeria
+        Route::get('/painel/galeria', function () {
+            $galerias = DB::table('albuns')->paginate(6);
+            return view('painel/galeria/galeria', compact('galerias'));
+        })->name('galerias');
+
+        Route::get('/painel/galeria/inserir', function () {
+            return view('painel/galeria/inserir');
+        });
+
+        Route::post('/painel/galeria/inserir', [galeriaController::class, 'inserir'])->name('galeria_inserir');
+
+        Route::get('/painel/galeria/visualizar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('albuns')->where('id_album', '=', $_GET['id'])->count()) > 0) {
+                    $albuns = DB::table('albuns')->where('id_album', '=', $_GET['id'])->get();
+                    $imagens = DB::table('imagens_albuns')->where('album_id', '=', $_GET['id'])->get();
+                    return view('painel/galeria/visualizar', compact('albuns', 'imagens'));
+                } else {
+                    return redirect()->route('galerias');
+                }
+            } else {
+                return redirect()->route('galerias');
+            }
+        });
+
+        Route::get('/painel/galeria/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('albuns')->where('id_album', '=', $_GET['id'])->count()) > 0) {
+                    $albuns = DB::table('albuns')->where('id_album', '=', $_GET['id'])->get();
+                    $imagens = DB::table('imagens_albuns')->where('album_id', '=', $_GET['id'])->get();
+                    return view('painel/galeria/alterar', compact('albuns', 'imagens'));
+                } else {
+                    return redirect()->route('galerias');
+                }
+            } else {
+                return redirect()->route('galerias');
+            }
+        });
+
+        Route::post('/painel/galeria/alterar', [galeriaController::class, 'alterar'])->name('galeria_alterar');
+
+        Route::post('/painel/galeria/remover', [galeriaController::class, 'remover'])->name('galeria_remover');
+
+        Route::post('/painel/galeria/remover_imagem', [galeriaController::class, 'remover_imagem'])->name('galeria_remover_imagem');
+
+        //Noticias
+        Route::get('/painel/noticias', function () {
+            $noticias = DB::table('noticias')->orderByDesc('dt_criacao')->paginate(6);
+            return view('painel/noticias/noticias', compact('noticias'));
+        })->name('noticias');
+
+        Route::get('/painel/noticias/inserir', function () {
+            return view('painel/noticias/inserir');
+        });
+
+        Route::post('/painel/noticias/inserir', [noticiasController::class, 'inserir'])->name('noticias_inserir');
+
+        Route::get('/painel/noticias/visualizar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->count()) > 0) {
+                    $noticias = DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->get();
+                    return view('painel/noticias/visualizar', compact('noticias'));
+                } else {
+                    return redirect()->route('noticias');
+                }
             } else {
                 return redirect()->route('noticias');
             }
-        } else {
-            return redirect()->route('noticias');
-        }
-    });
+        });
 
-    Route::get('/painel/noticias/alterar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->count()) > 0) {
-                $noticias = DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->get();
-                return view('painel/noticias/alterar', compact('noticias'));
+        Route::get('/painel/noticias/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->count()) > 0) {
+                    $noticias = DB::table('noticias')->where('id_noticia', '=', $_GET['id'])->get();
+                    return view('painel/noticias/alterar', compact('noticias'));
+                } else {
+                    return redirect()->route('noticias');
+                }
             } else {
                 return redirect()->route('noticias');
             }
-        } else {
-            return redirect()->route('noticias');
-        }
+        });
+
+        Route::post('/painel/noticias/alterar', [noticiasController::class, 'alterar'])->name('noticias_alterar');
+
+        Route::post('/painel/noticias/remover', [noticiasController::class, 'remover'])->name('noticias_remover');
     });
 
-    Route::post('/painel/noticias/alterar', [noticiasController::class, 'alterar'])->name('noticias_alterar');
+    //ADMIN E FINANCEIRO
+    Route::middleware(['admin_fin'])->group(function () {
+        //Prestacao de contas
+        Route::get('/painel/prestacao-de-contas/inserir', function () {
+            return view('painel/prestacao-de-contas/inserir');
+        });
 
-    Route::post('/painel/noticias/remover', [noticiasController::class, 'remover'])->name('noticias_remover');
+        Route::post('/painel/prestacao-de-contas/inserir', [prestacaoDeContasController::class, 'inserir'])->name('prestacao_inserir');
 
-    //Parametros inicio
-    Route::get('/painel/parametros-inicio/alterar', function () {
-        $parametros_inicio = DB::table(('parametros_inicio'))->get();
-        return view('painel/parametros-inicio/alterar', compact('parametros_inicio'));
-    });
+        Route::get('/painel/prestacao-de-contas', function () {
+            $prestacoes = DB::table('prestacoes_de_contas')->orderByDesc('data')->get();
+            return view('painel/prestacao-de-contas/prestacao-de-contas', compact('prestacoes'));
+        })->name('prestacoes');
 
-    Route::post('/painel/parametros-inicio/alterar', [parametrosInicioController::class, 'alterar'])->name('parametros_alterar');
-
-    //Prestacao de contas
-    Route::get('/painel/prestacao-de-contas/inserir', function () {
-        return view('painel/prestacao-de-contas/inserir');
-    });
-
-    Route::post('/painel/prestacao-de-contas/inserir', [prestacaoDeContasController::class, 'inserir'])->name('prestacao_inserir');
-
-    Route::get('/painel/prestacao-de-contas', function () {
-        $prestacoes = DB::table('prestacoes_de_contas')->orderByDesc('data')->get();
-        return view('painel/prestacao-de-contas/prestacao-de-contas', compact('prestacoes'));
-    })->name('prestacoes');
-
-    Route::get('/painel/prestacao-de-contas/visualizar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
-                $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
-                return view('painel/prestacao-de-contas/visualizar', compact('prestacoes'));
+        Route::get('/painel/prestacao-de-contas/visualizar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
+                    $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
+                    return view('painel/prestacao-de-contas/visualizar', compact('prestacoes'));
+                } else {
+                    return redirect()->route('prestacoes');
+                }
             } else {
                 return redirect()->route('prestacoes');
             }
-        } else {
-            return redirect()->route('prestacoes');
-        }
-    });
+        });
 
-    Route::get('/painel/prestacao-de-contas/alterar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
-                $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
-                return view('painel/prestacao-de-contas/alterar', compact('prestacoes'));
+        Route::get('/painel/prestacao-de-contas/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
+                    $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
+                    return view('painel/prestacao-de-contas/alterar', compact('prestacoes'));
+                } else {
+                    return redirect()->route('prestacoes');
+                }
             } else {
                 return redirect()->route('prestacoes');
             }
-        } else {
-            return redirect()->route('prestacoes');
-        }
+        });
+
+        Route::post('/painel/prestacao-de-contas/alterar', [prestacaoDeContasController::class, 'alterar'])->name('prestacao_alterar');
+
+        Route::post('/painel/prestacao-de-contas/remover', [prestacaoDeContasController::class, 'remover'])->name('prestacao_remover');
     });
 
-    Route::post('/painel/prestacao-de-contas/alterar', [prestacaoDeContasController::class, 'alterar'])->name('prestacao_alterar');
+    //ADMIN APENAS
+    Route::middleware(['admin'])->group(function () {
+        //Parametros inicio
+        Route::get('/painel/parametros-inicio/alterar', function () {
+            $parametros_inicio = DB::table(('parametros_inicio'))->get();
+            return view('painel/parametros-inicio/alterar', compact('parametros_inicio'));
+        });
 
-    Route::post('/painel/prestacao-de-contas/remover', [prestacaoDeContasController::class, 'remover'])->name('prestacao_remover');
+        Route::post('/painel/parametros-inicio/alterar', [parametrosInicioController::class, 'alterar'])->name('parametros_alterar');
 
-    //Usuarios
-    Route::get('/painel/usuarios/inserir', function () {
-        return view('painel/usuarios/inserir');
-    });
+        //Usuarios
+        Route::get('/painel/usuarios/inserir', function () {
+            return view('painel/usuarios/inserir');
+        });
 
-    Route::post('/painel/usuarios/inserir', [usuariosController::class, 'inserir'])->name('usuario_inserir');
+        Route::post('/painel/usuarios/inserir', [usuariosController::class, 'inserir'])->name('usuario_inserir');
 
-    Route::get('/painel/usuarios', function () {
-        $usuarios = DB::table('usuarios')->orderBy('nome')->get();
-        return view('painel/usuarios/usuarios', compact('usuarios'));
-    })->name('usuarios');
+        Route::get('/painel/usuarios', function () {
+            $usuarios = DB::table('usuarios')->orderBy('nome')->get();
+            return view('painel/usuarios/usuarios', compact('usuarios'));
+        })->name('usuarios');
 
-    Route::get('/painel/usuarios/visualizar', function () {
-        return view('painel/usuarios/visualizar');
-    });
+        Route::get('/painel/usuarios/visualizar', function () {
+            return view('painel/usuarios/visualizar');
+        });
 
-    Route::get('/painel/usuarios/alterar', function () {
-        if (!empty($_GET['id'])) {
-            if ((DB::table('usuarios')->where('id_usuario', '=', $_GET['id'])->count()) > 0) {
-                $usuarios = DB::table('usuarios')->where('id_usuario', '=', $_GET['id'])->get();
-                return view('painel/usuarios/alterar', compact('usuarios'));
+        Route::get('/painel/usuarios/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('usuarios')->where('id_usuario', '=', $_GET['id'])->count()) > 0) {
+                    $usuarios = DB::table('usuarios')->where('id_usuario', '=', $_GET['id'])->get();
+                    return view('painel/usuarios/alterar', compact('usuarios'));
+                } else {
+                    return redirect()->route('usuarios');
+                }
             } else {
                 return redirect()->route('usuarios');
             }
-        } else {
-            return redirect()->route('usuarios');
-        }
+        });
+
+        Route::post('/painel/usuarios/alterar', [usuariosController::class, 'alterar'])->name('usuario_alterar');
+
+        Route::post('/painel/usuarios/remover', [usuariosController::class, 'remover'])->name('usuario_remover');
     });
-
-    Route::post('/painel/usuarios/alterar', [usuariosController::class, 'alterar'])->name('usuario_alterar');
-
-    Route::post('/painel/usuarios/remover', [usuariosController::class, 'remover'])->name('usuario_remover');
 });

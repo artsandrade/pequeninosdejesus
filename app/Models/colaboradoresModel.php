@@ -149,6 +149,7 @@ class colaboradoresModel extends Model
     {
         if (!empty($this->getId_colaborador())) {
             DB::table('colaboradores')->where('id_colaborador', '=', $this->getId_colaborador())->delete();
+            $this->setResposta('removido');
         } else {
             $this->setResposta('vazio');
         }
