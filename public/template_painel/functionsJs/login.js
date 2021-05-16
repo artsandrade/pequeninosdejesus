@@ -176,47 +176,51 @@ $(document).ready(function () {
 });
 
 //Alterar senha
-$(document).ready(function () {
-    $('#btn-alterar').click(function (e) {
+$(document).ready(function (e) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $('#form-alterar-senha').submit(function (e) {
         e.preventDefault();
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
 
         var texto_resposta = document.getElementById('texto-resposta');
         texto_resposta.innerHTML = "";
 
+        var form = new FormData(this);
 
-        $('#btn-alterar').html('Alterando senha...');
+        $('#btn-alterar').html('Alterando...');
         var url_atual = document.getElementById('url_form').value;
         $.ajax({
             url: "" + url_atual + "",
             method: 'post',
-            data: $('#form-alterar-senha').serialize(),
+            data: form,
+            cache: false,
+            contentType: false,
+            processData: false,
             success: function (response) {
 
                 if (response.resposta == 'alterado') {
-                    texto_resposta.innerHTML = "Senha alterada com sucesso!";
+                    texto_resposta.innerHTML = "Perfil alterado com sucesso!";
                     $('#modal-resposta').modal({
                         show: true
                     });
-                    $('#btn-alterar').html('Alterar senha');
+                    $('#btn-alterar').html('Alterar perfil');
                 } else {
                     if (response.resposta == 'vazio') {
-                        texto_resposta.innerHTML = "Desculpe, mas ' necessário que a senha antiga e a nova senha estejam preenchidas para que possa realizar a alteração'!";
+                        texto_resposta.innerHTML = "Desculpe, mas para alterar a senha é necessário preencher a senha antiga e nova senha!";
                         $('#modal-resposta').modal({
                             show: true
                         });
-                        $('#btn-alterar').html('Alterar senha');
+                        $('#btn-alterar').html('Alterar perfil');
                     } else {
                         if (response.resposta == 'senha_incorreta') {
                             texto_resposta.innerHTML = "Desculpe, mas a senha antiga nào confere com a senha cadastrada para esse usuário!";
                             $('#modal-resposta').modal({
                                 show: true
                             });
-                            $('#btn-alterar').html('Alterar senha');
+                            $('#btn-alterar').html('Alterar perfil');
                         }
                     }
                 }
@@ -226,8 +230,9 @@ $(document).ready(function () {
                 $('#modal-resposta').modal({
                     show: true
                 });
-                $('#btn-alterar').html('Alterar senha');
+                $('#btn-alterar').html('Alterar perfil');
             }
         });
+
     });
 });

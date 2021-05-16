@@ -44,6 +44,10 @@
                     </div>
                 </div>
                 <br>
+                <div class="form-group">
+                    <label for="avatar">Avatar</label>
+                    <input type="file" class="form-control-file" accept=".jpeg, .jpg, .gif, .png" id="avatar" name="avatar">
+                </div>
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-12">
                         <label for=""><b>Alterar senha</b></label>
@@ -60,7 +64,7 @@
                 <br>
                 <div class="form-group text-right">
                     <a href="/painel" class="btn btn-secondary">Voltar</a>
-                    <button type="submit" class="btn btn-primary" id="btn-alterar">Alterar senha</button>
+                    <button type="submit" class="btn btn-primary" id="btn-alterar">Alterar perfil</button>
                 </div>
             </form>
         </div>

@@ -23,6 +23,7 @@ class loginController extends Controller
   {
     $usuario = new loginModel();
     $usuario->setId_usuario($_POST['id_usuario']);
+    $usuario->setAvatar($_FILES['avatar']);
     $usuario->setSenha(password_hash($_POST['senha_nova'], PASSWORD_DEFAULT));
     $usuario->setSenha_antiga($_POST['senha_antiga']);
     $usuario->alterar_senha();
