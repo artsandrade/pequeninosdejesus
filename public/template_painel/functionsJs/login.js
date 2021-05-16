@@ -216,7 +216,7 @@ $(document).ready(function (e) {
                         $('#btn-alterar').html('Alterar perfil');
                     } else {
                         if (response.resposta == 'senha_incorreta') {
-                            texto_resposta.innerHTML = "Desculpe, mas a senha antiga nào confere com a senha cadastrada para esse usuário!";
+                            texto_resposta.innerHTML = "Desculpe, mas a senha antiga não confere com a senha cadastrada para esse usuário!";
                             $('#modal-resposta').modal({
                                 show: true
                             });

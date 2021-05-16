@@ -14,7 +14,7 @@
 <div class="card card-form">
     <div class="row no-gutters">
         <div class="col-lg-12 card-body">
-            <form action="javascript:void(0)" method="POST" id="form-alterar-senha">
+            <form action="javascript:void(0)" method="POST" id="form-alterar-senha"  enctype="multipart/form-data">
                 @CSRF
                 <input type="hidden" name="id_usuario" value="{{session('usuario_id')}}">
                 <input type="hidden" name="url_form" id="url_form" value="{{route('perfil_alterar_senha')}}">

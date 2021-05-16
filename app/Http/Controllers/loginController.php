@@ -23,9 +23,9 @@ class loginController extends Controller
   {
     $usuario = new loginModel();
     $usuario->setId_usuario($_POST['id_usuario']);
-    $usuario->setAvatar($_FILES['avatar']);
-    $usuario->setSenha(password_hash($_POST['senha_nova'], PASSWORD_DEFAULT));
-    $usuario->setSenha_antiga($_POST['senha_antiga']);
+    $_FILES['avatar']['error'] != 4 ? $usuario->setAvatar($_FILES['avatar']) : $usuario->setAvatar(null);
+    !empty($_POST['senha_nova']) ? $usuario->setSenha($_POST['senha_nova']) : $usuario->setSenha(null);
+    !empty($_POST['senha_antiga']) ? $usuario->setSenha_antiga($_POST['senha_antiga']) : $usuario->setSenha_antiga(null);
     $usuario->alterar_senha();
     $resposta = array('resposta' => $usuario->getResposta());
     return response()->json($resposta);

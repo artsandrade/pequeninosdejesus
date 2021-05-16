@@ -174,37 +174,34 @@ class loginModel extends Model
     public function alterar_senha()
     {
         if (!empty($this->getId_usuario())) {
-            if (!empty($this->getSenha()) && !empty($this->getSenha_antiga()) && $this->getAvatar()['error'] != 4) {
+            if (!empty($this->getSenha()) && !empty($this->getSenha_antiga())) {
                 $usuario = DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->first();
                 if (password_verify($this->getSenha_antiga(), $usuario->senha)) {
-                    $img_avatar = file_get_contents($this->getAvatar()['tmp_name']);
                     DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->update([
-                        'senha' => $this->getSenha(),
-                        'avatar' => $img_avatar
+                        'senha' => password_hash($this->getSenha(), PASSWORD_DEFAULT),
                     ]);
+
+                    if (!empty($this->getAvatar())) {
+                        $img_avatar = file_get_contents($this->getAvatar()['tmp_name']);
+                        DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->update([
+                            'avatar' => $img_avatar,
+                        ]);
+                    }
                     $this->setResposta('alterado');
                 } else {
                     $this->setResposta('senha_incorreta');
                 }
-            } else if (empty($this->getSenha()) && empty($this->getSenha_antiga()) && $this->getAvatar()['error'] != 4) {
+            } else if (!empty($this->getAvatar()) && empty($this->getSenha()) && empty($this->getSenha_antiga())) {
                 $img_avatar = file_get_contents($this->getAvatar()['tmp_name']);
                 DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->update([
-                    'avatar' => $img_avatar
+                    'avatar' => $img_avatar,
                 ]);
                 $this->setResposta('alterado');
-            } else if (!empty($this->getSenha()) && !empty($this->getSenha_antiga()) && $this->getAvatar()['error'] == 4) {
-                $usuario = DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->first();
-                if (password_verify($this->getSenha_antiga(), $usuario->senha)) {
-                    DB::table('usuarios')->where('id_usuario', '=', $this->getId_usuario())->update([
-                        'senha' => $this->getSenha(),
-                    ]);
-                    $this->setResposta('alterado');
-                } else {
-                    $this->setResposta('senha_incorreta');
-                }
-            } else if (!empty($this->getSenha()) && empty($this->getSenha_antiga()) && $this->getAvatar()['error'] == 4 || empty($this->getSenha()) && !empty($this->getSenha_antiga()) && $this->getAvatar()['error'] == 4 || empty($this->getSenha()) && empty($this->getSenha_antiga()) && $this->getAvatar()['error'] == 4) {
+            } else if (!empty($this->getSenha()) && empty($this->getSenha_antiga()) && empty($this->getAvatar()) || empty($this->getSenha()) && !empty($this->getSenha_antiga()) && empty($this->getAvatar()) || empty($this->getSenha()) && empty($this->getSenha_antiga()) && empty($this->getAvatar()) || !empty($this->getSenha()) && empty($this->getSenha_antiga()) && !empty($this->getAvatar()) || empty($this->getSenha()) && !empty($this->getSenha_antiga()) && !empty($this->getAvatar())) {
                 $this->setResposta('vazio');
             }
+        } else {
+            $this->setResposta('vazio');
         }
     }
 
