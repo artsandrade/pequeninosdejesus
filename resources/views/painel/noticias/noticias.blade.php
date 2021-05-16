@@ -30,9 +30,11 @@
                         <div class="col-sm-4">
                             <a href="/painel/noticias/visualizar?id={{$noticia->id_noticia}}" class="btn btn-secondary"><i class="material-icons">visibility</i></a>
                         </div>
+                        @if(session('usuario_tipo_usuario')=='1')
                         <div class="col-sm-4">
                             <a href="#" class="btn btn-danger" onclick="modalRemover('{{$noticia->titulo}}', '{{$noticia->id_noticia}}')"><i class="material-icons">delete</i></a>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -29,9 +29,11 @@
                         <div class="col-sm-4">
                             <a href="/painel/galeria/visualizar?id={{$galeria->id_album}}" class="btn btn-secondary"><i class="material-icons">visibility</i></a>
                         </div>
+                        @if(session('usuario_tipo_usuario')=='1')
                         <div class="col-sm-4">
                             <a href="#" class="btn btn-danger" onclick="modalRemover('{{$galeria->nome}}', '{{$galeria->id_album}}')"><i class="material-icons">delete</i></a>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

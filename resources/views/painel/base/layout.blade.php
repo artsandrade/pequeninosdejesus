@@ -307,6 +307,12 @@
                                         <span class="sidebar-menu-text">Retornar ao site</span>
                                     </a>
                                 </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/webmail" target="_blank">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-envelope"></i>
+                                        <span class="sidebar-menu-text">Acessar e-mail</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>

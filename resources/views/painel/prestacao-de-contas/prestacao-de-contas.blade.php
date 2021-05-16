@@ -31,8 +31,10 @@
             <td><small class="text-muted js-lists-values-data">{{$prestacao->titulo}}</small></td>
             <td>
               <a href="/painel/prestacao-de-contas/visualizar?id={{$prestacao->id_prestacao}}" class="text-muted" title="Visualizar"><i class="material-icons">visibility</i></a>
+              @if(session('usuario_tipo_usuario')=='1')
               <a href="/painel/prestacao-de-contas/alterar?id={{$prestacao->id_prestacao}}" class="text-muted" title="Alterar"><i class="material-icons">create</i></a>
               <a href="#" class="text-muted" onclick="modalRemover('{{$prestacao->data}}','{{$prestacao->titulo}}', '{{$prestacao->id_prestacao}}')" title="Remover"><i class="material-icons">delete</i></a>
+              @endif
             </td>
           </tr>
           @endforeach

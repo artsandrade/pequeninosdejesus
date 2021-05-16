@@ -43,7 +43,9 @@
             @endif
             <td>
               <a href="/painel/eventos/alterar?id={{$evento->id_evento}}" class="text-muted" title="Alterar"><i class="material-icons">create</i></a>
+              @if(session('usuario_tipo_usuario')=='1')
               <a href="#" class="text-muted" onclick="modalRemover('{{$evento->data}}','{{$evento->nome}}', '{{$evento->local}}','{{$evento->id_evento}}')" title="Remover"><i class="material-icons">delete</i></a>
+              @endif
             </td>
           </tr>
           @endforeach

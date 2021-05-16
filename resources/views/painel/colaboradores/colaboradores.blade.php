@@ -40,7 +40,9 @@
             <td>
               <a href="/painel/colaboradores/alterar?id={{$colaborador->id_colaborador}}" class="text-muted" title="Alterar"><i class="material-icons">create</i></a>
               <a href="/painel/colaboradores/visualizar?id={{$colaborador->id_colaborador}}" class="text-muted" title="Visualizar"><i class="material-icons">visibility</i></a>
+              @if(session('usuario_tipo_usuario')=='1')
               <a href="#" class="text-muted" onclick="modalRemover('{{$colaborador->nome}}','{{$colaborador->id_colaborador}}')" title="Remover"><i class="material-icons">delete</i></a>
+              @endif
             </td>
           </tr>
           @endforeach

@@ -45,7 +45,9 @@
                     <img src="/template_site/images/galeria/{{$imagem->imagem}}" style="min-height: 300px; max-height: 300px; min-width: 300px; max-width: 300px" alt="" class="card-img">
                     <br>
                     <br>
+                    @if(session('usuario_tipo_usuario')=='1')
                     <a href="#" class="btn btn-danger btn-lg btn-block" onclick="modalRemoverImagem('{{$imagem->id_imagem}}', '{{$imagem->imagem}}', '{{$imagem->album_id}}')"><i class="material-icons">delete</i></a>
+                    @endif
                 </div>
             </div>
         </div>

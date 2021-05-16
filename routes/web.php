@@ -393,21 +393,6 @@ Route::middleware(['autenticacao'])->group(function () {
             }
         });
 
-        Route::get('/painel/prestacao-de-contas/alterar', function () {
-            if (!empty($_GET['id'])) {
-                if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
-                    $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
-                    return view('painel/prestacao-de-contas/alterar', compact('prestacoes'));
-                } else {
-                    return redirect()->route('prestacoes');
-                }
-            } else {
-                return redirect()->route('prestacoes');
-            }
-        });
-
-        Route::post('/painel/prestacao-de-contas/alterar', [prestacaoDeContasController::class, 'alterar'])->name('prestacao_alterar');
-
         Route::post('/painel/prestacao-de-contas/remover', [prestacaoDeContasController::class, 'remover'])->name('prestacao_remover');
     });
 
@@ -453,5 +438,21 @@ Route::middleware(['autenticacao'])->group(function () {
         Route::post('/painel/usuarios/alterar', [usuariosController::class, 'alterar'])->name('usuario_alterar');
 
         Route::post('/painel/usuarios/remover', [usuariosController::class, 'remover'])->name('usuario_remover');
+
+        //ALTERACAO E REMOCAO
+        Route::get('/painel/prestacao-de-contas/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->count()) > 0) {
+                    $prestacoes = DB::table('prestacoes_de_contas')->where('id_prestacao', '=', $_GET['id'])->get();
+                    return view('painel/prestacao-de-contas/alterar', compact('prestacoes'));
+                } else {
+                    return redirect()->route('prestacoes');
+                }
+            } else {
+                return redirect()->route('prestacoes');
+            }
+        });
+
+        Route::post('/painel/prestacao-de-contas/alterar', [prestacaoDeContasController::class, 'alterar'])->name('prestacao_alterar');
     });
 });

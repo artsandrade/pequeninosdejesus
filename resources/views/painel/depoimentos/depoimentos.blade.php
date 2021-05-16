@@ -34,7 +34,9 @@
             <td>
               <a href="/painel/depoimentos/alterar?id={{$depoimento->id_depoimento}}" class="text-muted" title="Alterar"><i class="material-icons">create</i></a>
               <a href="/painel/depoimentos/visualizar?id={{$depoimento->id_depoimento}}" class="text-muted" title="Visualizar"><i class="material-icons">visibility</i></a>
+              @if(session('usuario_tipo_usuario')=='1')
               <a href="#" class="text-muted" onclick="modalRemover('{{$depoimento->nome}}','{{$depoimento->id_depoimento}}')" title="Remover"><i class="material-icons">delete</i></a>
+              @endif
             </td>
           </tr>
           @endforeach
