@@ -31,7 +31,9 @@
             <br>
             <div class="form-group text-right">
                 <a href="/painel/prestacao-de-contas" class="btn btn-secondary">Voltar</a>
+                @if(session('usuario_tipo_usuario')=='1')
                 <a href="/painel/prestacao-de-contas/alterar?id={{$prestacao->id_prestacao}}" class="btn btn-primary">Alterar</a>
+                @endif
             </div>
         </div>
     </div>
