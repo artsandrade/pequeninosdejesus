@@ -118,7 +118,7 @@
 							<div class="info-icon">
 								<span class="fa fa-envelope" style="color: #FD4D40;"></span>
 							</div>
-							<div class="info-text">contato@pequeninosdejesus.com.br</div>
+							<div class="info-text">atendimento@pequeninosdejesus.com.br</div>
 						</li>
 						<li>
 							<div class="info-icon">

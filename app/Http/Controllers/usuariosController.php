@@ -30,7 +30,7 @@ class usuariosController extends Controller
         $usuario->setEmail($_POST['email']);
         $usuario->setSenha(password_hash($_POST['senha'], PASSWORD_DEFAULT));
         $usuario->setTipo_usuario($_POST['tipo_usuario']);
-        $usuario->setAvatar($_FILES['avatar']);
+        isset($_FILES['avatar']) ? $usuario->setAvatar($_FILES['avatar']) : $usuario->setAvatar(NULL);
         $usuario->setSituacao($_POST['situacao']);
         $usuario->inserir();
         return response()->Json([

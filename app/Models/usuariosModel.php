@@ -175,10 +175,14 @@ class usuariosModel extends Model
 
     public function inserir()
     {
-        if (!empty($this->getNome()) && !empty($this->getTipo_usuario()) && !empty($this->getEmail()) && !empty($this->getSenha()) && $this->getAvatar()['error'] != 4) {
+        if (!empty($this->getNome()) && !empty($this->getTipo_usuario()) && !empty($this->getEmail()) && !empty($this->getSenha())) {
             $valida_email = DB::table('usuarios')->where('email', '=', $this->getEmail())->count();
             if ($valida_email <= 0) {
-                $img_avatar = file_get_contents($this->getAvatar()['tmp_name']);
+                if ($this->getAvatar()['error'] != 4) {
+                    $img_avatar = file_get_contents($this->getAvatar()['tmp_name']);
+                } else {
+                    $img_avatar = file_get_contents(public_path('user.png'));
+                }
                 DB::table('usuarios')->insert([
                     'nome' => $this->getNome(),
                     'email' => $this->getEmail(),

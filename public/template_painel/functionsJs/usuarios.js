@@ -12,60 +12,52 @@ $(document).ready(function (e) {
 
     var form = new FormData(this);
 
-    if (document.getElementById('avatar').value.length > 0) {
-      $('#btn-inserir').html('Inserindo...');
-      var url_atual = document.getElementById('url_form').value;
-      $.ajax({
-        url: "" + url_atual + "",
-        method: 'post',
-        data: form,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function (response) {
+    $('#btn-inserir').html('Inserindo...');
+    var url_atual = document.getElementById('url_form').value;
+    $.ajax({
+      url: "" + url_atual + "",
+      method: 'post',
+      data: form,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (response) {
 
-          if (response.resposta == 'inserido') {
-            texto_resposta.innerHTML = "Usuário inserido com sucesso!";
+        if (response.resposta == 'inserido') {
+          texto_resposta.innerHTML = "Usuário inserido com sucesso!";
+          $('#modal-resposta').modal({
+            show: true
+          });
+          $('#btn-inserir').html('Inserir');
+          document.getElementById('form-inserir').reset();
+        }
+        else {
+          if (response.resposta == 'vazio') {
+            texto_resposta.innerHTML = "Por favor, verifique se todos os campos estão preenchidos!";
             $('#modal-resposta').modal({
               show: true
             });
             $('#btn-inserir').html('Inserir');
-            document.getElementById('form-inserir').reset();
           }
           else {
-            if (response.resposta == 'vazio') {
-              texto_resposta.innerHTML = "Por favor, verifique se todos os campos estão preenchidos!";
+            if (response.resposta == 'email_cadastrado') {
+              texto_resposta.innerHTML = "Desculpe, mas o e-mail informado já está sendo utilizado por um usuário!";
               $('#modal-resposta').modal({
                 show: true
               });
               $('#btn-inserir').html('Inserir');
             }
-            else {
-              if (response.resposta == 'email_cadastrado') {
-                texto_resposta.innerHTML = "Desculpe, mas o e-mail informado já está sendo utilizado por um usuário!";
-                $('#modal-resposta').modal({
-                  show: true
-                });
-                $('#btn-inserir').html('Inserir');
-              }
-            }
           }
-        },
-        error: function () {
-          texto_resposta.innerHTML = "Desculpe, mas tivemos um erro durante essa solicitação. Entre em contato com o suporte ou tente novamente mais tarde!";
-          $('#modal-resposta').modal({
-            show: true
-          });
-          $('#btn-inserir').html('Inserir');
         }
-      });
-    }
-    else {
-      texto_resposta.innerHTML = "Desculpe, mas é necessário que todos os campos estejam preenchidos!";
-      $('#modal-resposta').modal({
-        show: true
-      });
-    }
+      },
+      error: function () {
+        texto_resposta.innerHTML = "Desculpe, mas tivemos um erro durante essa solicitação. Entre em contato com o suporte ou tente novamente mais tarde!";
+        $('#modal-resposta').modal({
+          show: true
+        });
+        $('#btn-inserir').html('Inserir');
+      }
+    });
 
   });
 });

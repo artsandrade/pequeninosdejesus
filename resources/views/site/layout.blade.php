@@ -73,7 +73,7 @@
 								<i class="fa fa-phone"></i> (34) 3423-5608
 							</div>
 							<div class="info-item">
-								<i class="fa fa-envelope-o"></i> <a href="mailto:contato@pequeninosdejesus.com.br" title="">atendimento@pequeninosdejesus.com.br</a>
+								<i class="fa fa-envelope-o"></i> <a href="mailto:atendimento@pequeninosdejesus.com.br" title="">atendimento@pequeninosdejesus.com.br</a>
 							</div>
 							<div class="info-item">
 								<i class="fa fa-wrench"></i> <a href="/login" title="">Intranet</a>
