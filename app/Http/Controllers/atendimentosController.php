@@ -12,6 +12,8 @@ class atendimentosController extends Controller
         $atendimento = new atendimentosModel();
         $atendimento->setId_atendimento($_POST['id_atendimento']);
         $atendimento->setSituacao($_POST['situacao']);
+        $atendimento->setId_usuario(session('usuario_id'));
+        $atendimento->setNome(session('usuario_nome'));
         $atendimento->alterar();
         return redirect()->route('atendimentos');
     }

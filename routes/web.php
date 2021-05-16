@@ -152,7 +152,8 @@ Route::middleware(['autenticacao'])->group(function () {
         //Atendimentos
         Route::get('/painel/atendimentos', function () {
             $atendimentos = DB::table('atendimentos')->get();
-            return view('painel/atendimentos/visualizar', compact('atendimentos'));
+            $historicos = DB::table('atendimentos_historico')->orderByDesc('dt_alteracao')->get();
+            return view('painel/atendimentos/visualizar', compact('atendimentos', 'historicos'));
         })->name('atendimentos');
 
         Route::post('/painel/atendimentos', [atendimentosController::class, 'alterar'])->name('atendimentos_alterar');

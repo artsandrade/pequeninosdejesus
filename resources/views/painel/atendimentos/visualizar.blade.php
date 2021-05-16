@@ -37,7 +37,7 @@
                         <td><span class="badge badge-danger js-lists-values-status">PENDENTE</span></td>
                         @endif
                         <td><small class="text-muted">{{date('d/m/Y', strtotime($atendimento->dt_criacao))}}</small></td>
-                        <td><a href="#" class="text-muted" title="Alterar" onclick="visualizaAtendimento('{{$atendimento->id_atendimento}}', '{{$atendimento->nome}}', '{{$atendimento->nome_aluno}}', '{{$atendimento->cpf_aluno}}', '{{$atendimento->email}}', '{{$atendimento->telefone}}', '{{$atendimento->celular}}', '{{$atendimento->assunto}}', '{{$atendimento->mensagem}}', '{{$atendimento->situacao}}')"><i class="material-icons">create</i></a></td>
+                        <td><a href="#" class="text-muted" title="Alterar" onclick="visualizaAtendimento('{{$atendimento->id_atendimento}}', '{{$atendimento->nome}}', '{{$atendimento->nome_aluno}}', '{{$atendimento->cpf_aluno}}', '{{$atendimento->email}}', '{{$atendimento->telefone}}', '{{$atendimento->celular}}', '{{$atendimento->assunto}}', '{{$atendimento->mensagem}}', '{{$atendimento->situacao}}', '{{$historicos}}')"><i class="material-icons">create</i></a></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -113,6 +113,11 @@
                         <div class="form-group">
                             <label for="mensagem">Mensagem</label>
                             <textarea class="form-control" name="mensagem" id="mensagem" cols="1" rows="3" disabled></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12" id="historico">
+                                <label for="historico">Histórico</label>
+                            </div>
                         </div>
                     </form>
                 </div>

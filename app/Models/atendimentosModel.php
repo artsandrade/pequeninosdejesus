@@ -23,6 +23,8 @@ class atendimentosModel extends Model
     private $dt_alteracao;
     private $resposta;
 
+    private $id_usuario;
+
     public function getId_atendimento()
     {
         return $this->id_atendimento;
@@ -167,6 +169,18 @@ class atendimentosModel extends Model
         return $this;
     }
 
+    public function getId_usuario()
+    {
+        return $this->id_usuario;
+    }
+
+    public function setId_usuario($id_usuario)
+    {
+        $this->id_usuario = $id_usuario;
+
+        return $this;
+    }
+
     public function getResposta()
     {
         return $this->resposta;
@@ -185,6 +199,29 @@ class atendimentosModel extends Model
             date_default_timezone_set('America/Sao_Paulo');
             DB::table('atendimentos')->where('id_atendimento', '=', $this->getId_atendimento())->update([
                 'situacao' => $this->getSituacao(),
+                'dt_alteracao' => date('Y-m-d H:i:s')
+            ]);
+
+            switch ($this->getSituacao()) {
+                case '1': {
+                        $nome_situacao = 'Concluído';
+                        break;
+                    }
+                case '2': {
+                        $nome_situacao = 'Em andamento';
+                        break;
+                    }
+                case '3': {
+                        $nome_situacao = 'Pendente';
+                        break;
+                    }
+            }
+
+            DB::table('atendimentos_historico')->insert([
+                'id_atendimento' => $this->getId_atendimento(),
+                'id_usuario' => $this->getId_usuario(),
+                'usuario' => $this->getNome(),
+                'situacao' => $nome_situacao,
                 'dt_alteracao' => date('Y-m-d H:i:s')
             ]);
         }
