@@ -122,6 +122,9 @@
 							<li class="nav-item">
 								<a class="nav-link" href="/fale-conosco">FALE CONOSCO</a>
 							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#doe">DOE</a>
+							</li>
 						</ul>
 					</div>
 				</nav> <!-- -->
@@ -193,6 +196,44 @@
 							<div class="sosmed-icon d-inline-flex">
 								<a href="https://www.facebook.com/InstitutoPequeninosdeJesus/" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
 								<a href="https://www.instagram.com/pequeninos_dejesus/" target="_blank" class="ig"><i class="fa fa-instagram"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-sm-12 col-md-12 col-lg-12" id="doe">
+						<div class="footer-item">
+							<div class="footer-title text-center" style="color: #FD4D40;">
+								Faça uma doação
+							</div>
+							<div class="row">
+								<div class="col-sm-12 col-md-4 col-lg-4">
+									<div class="footer-item text-center">
+										<p style="color: #000;"><b>PIX Qr Code</b></p>
+										<img src="/template_site/pix.png" style="width: auto; height: auto" alt="">
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 col-lg-4">
+									<div class="footer-item text-center">
+										<p style="color: #000;"><b>Conta bancária</b></p>
+										<p style="color: #000;"><span class="fa fa-dollar" style="color: #FD4D40;"></span> Banco Sicoob<br>Nº banco: 756<br>Agência: 3120-8<br>Conta corrente: 1838-4</p>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 col-lg-4">
+									<div class="footer-item text-center">
+										<p style="color: #000;"><b>Doe pelo PagSeguro</b></p>
+										<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+										<form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+											<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+											<input type="hidden" name="currency" value="BRL" />
+											<input type="hidden" name="receiverEmail" value="pequeninosdejesuscreche@gmail.com" />
+											<input type="hidden" name="iot" value="button" />
+											<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-azul-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+										</form>
+										<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
