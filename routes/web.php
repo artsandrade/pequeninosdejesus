@@ -245,39 +245,6 @@ Route::middleware(['autenticacao'])->group(function () {
 
         Route::post('/painel/depoimentos/remover', [depoimentosController::class, 'remover'])->name('depoimento_remover');
 
-        //Eventos
-        Route::get('/painel/eventos', function () {
-            $eventos = DB::table('eventos')->orderByDesc('data')->get();
-            return view('painel/eventos/eventos', compact('eventos'));
-        })->name('eventos');
-
-        Route::get('/painel/eventos/inserir', function () {
-            return view('painel/eventos/inserir');
-        });
-
-        Route::post('/painel/eventos/inserir', [eventosController::class, 'inserir'])->name('eventos_inserir');
-
-        Route::get('/painel/eventos/visualizar', function () {
-            return view('painel/eventos/visualizar');
-        });
-
-        Route::get('/painel/eventos/alterar', function () {
-            if (!empty($_GET['id'])) {
-                if ((DB::table('eventos')->where('id_evento', '=', $_GET['id'])->count()) > 0) {
-                    $eventos = DB::table('eventos')->where('id_evento', '=', $_GET['id'])->get();
-                    return view('painel/eventos/alterar', compact('eventos'));
-                } else {
-                    return redirect()->route('eventos');
-                }
-            } else {
-                return redirect()->route('eventos');
-            }
-        });
-
-        Route::post('/painel/eventos/alterar', [eventosController::class, 'alterar'])->name('eventos_alterar');
-
-        Route::post('/painel/eventos/remover', [eventosController::class, 'remover'])->name('eventos_remover');
-
         //Galeria
         Route::get('/painel/galeria', function () {
             $galerias = DB::table('albuns')->paginate(6);
@@ -365,6 +332,42 @@ Route::middleware(['autenticacao'])->group(function () {
         Route::post('/painel/noticias/alterar', [noticiasController::class, 'alterar'])->name('noticias_alterar');
 
         Route::post('/painel/noticias/remover', [noticiasController::class, 'remover'])->name('noticias_remover');
+    });
+
+    //ADMIN, COMUM E PEDAGOGIA
+    Route::middleware(['admin_comum_pedagogia'])->group(function () {
+        //Eventos
+        Route::get('/painel/eventos', function () {
+            $eventos = DB::table('eventos')->orderByDesc('data')->get();
+            return view('painel/eventos/eventos', compact('eventos'));
+        })->name('eventos');
+
+        Route::get('/painel/eventos/inserir', function () {
+            return view('painel/eventos/inserir');
+        });
+
+        Route::post('/painel/eventos/inserir', [eventosController::class, 'inserir'])->name('eventos_inserir');
+
+        Route::get('/painel/eventos/visualizar', function () {
+            return view('painel/eventos/visualizar');
+        });
+
+        Route::get('/painel/eventos/alterar', function () {
+            if (!empty($_GET['id'])) {
+                if ((DB::table('eventos')->where('id_evento', '=', $_GET['id'])->count()) > 0) {
+                    $eventos = DB::table('eventos')->where('id_evento', '=', $_GET['id'])->get();
+                    return view('painel/eventos/alterar', compact('eventos'));
+                } else {
+                    return redirect()->route('eventos');
+                }
+            } else {
+                return redirect()->route('eventos');
+            }
+        });
+
+        Route::post('/painel/eventos/alterar', [eventosController::class, 'alterar'])->name('eventos_alterar');
+
+        Route::post('/painel/eventos/remover', [eventosController::class, 'remover'])->name('eventos_remover');
     });
 
     //ADMIN E FINANCEIRO

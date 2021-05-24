@@ -29,6 +29,7 @@
                             <option value="1">Administrador</option>
                             <option value="2">Comum</option>
                             <option value="3">Financeiro</option>
+                            <option value="5">Pedagogia</option>
                             <option value="4">Secretaria</option>
                         </select>
                     </div>

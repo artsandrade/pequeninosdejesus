@@ -184,6 +184,8 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endif
+                                @if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='2' || session('usuario_tipo_usuario')=='5')
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#eventos_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-calendar"></i>
@@ -203,6 +205,8 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endif
+                                @if(session('usuario_tipo_usuario')=='1' || session('usuario_tipo_usuario')=='2')
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#galeria_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left fas fa-images"></i>

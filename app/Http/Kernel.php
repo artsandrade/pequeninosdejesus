@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'admin_comum' => \App\Http\Middleware\admin_comum::class,
         'admin_fin' => \App\Http\Middleware\admin_fin::class,
         'admin_sec' => \App\Http\Middleware\admin_sec::class,
+        'admin_comum_pedagogia' => \App\Http\Middleware\admin_comum_pedagogia::class,
     ];
 }

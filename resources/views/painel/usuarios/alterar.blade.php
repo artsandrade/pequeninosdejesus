@@ -31,6 +31,7 @@
                             <option value="1" {{$usuario->tipo_usuario==1?'selected':''}}>Administrador</option>
                             <option value="2" {{$usuario->tipo_usuario==2?'selected':''}}>Comum</option>
                             <option value="3" {{$usuario->tipo_usuario==3?'selected':''}}>Financeiro</option>
+                            <option value="5" {{$usuario->tipo_usuario==5?'selected':''}}>Pedagogia</option>
                             <option value="4" {{$usuario->tipo_usuario==4?'selected':''}}>Secretaria</option>
                         </select>
                     </div>

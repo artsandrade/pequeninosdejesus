@@ -2,6 +2,12 @@
 
 @section('conteudo')
 
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>
+
 <!-- BANNER -->
 <div id="oc-fullslider" class="banner">
 	<div class="owl-carousel owl-theme full-screen">
@@ -95,7 +101,7 @@
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-6">
 					<h2 class="section-heading">
-						Sejm bem-vindos
+						Sejam bem-vindos
 					</h2>
 					<p>É com imensa alegria que o Instituto Educacional Pequeninos de Jesus dá as boas-vindas aos alunos, pais e responsáveis e a toda equipe que compõe o quadro de funcionários.</p>
 					<p>Nossa clientela são crianças devidamente matriculadas na Educação Infantil de 1 ano a 5 anos e 11 meses. O Instituto, neste ano de 2021 completa 30 anos de fundação e traz em seu nome o maior educador de todos os tempos, Jesus Cristo.</p>
